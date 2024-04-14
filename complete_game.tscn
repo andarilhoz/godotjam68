@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b4pqbp85pfaw5"]
+[gd_scene load_steps=15 format=3 uid="uid://b4pqbp85pfaw5"]
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://player/Player.tscn" id="1_5le0k"]
 [ext_resource type="Script" path="res://general_script.gd" id="1_8yawa"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="4_3ybbp"]
 [ext_resource type="PackedScene" uid="uid://mxtp01fri8kh" path="res://ui/RequestCard.tscn" id="5_nwlop"]
 [ext_resource type="PackedScene" uid="uid://wjxf5pt6bq2p" path="res://ui/Elements/Timer/UI_Timer.tscn" id="6_o0wk6"]
+[ext_resource type="PackedScene" uid="uid://co3psefpehp0b" path="res://ui/Elements/Points/UI_Points.tscn" id="8_drioi"]
 [ext_resource type="PackedScene" uid="uid://bode7lhib546p" path="res://interactables/storage/storage.tscn" id="8_r4xfv"]
 [ext_resource type="PackedScene" uid="uid://ds13jc88emg6b" path="res://interactables/trash/trash.tscn" id="9_4l3rv"]
 [ext_resource type="PackedScene" uid="uid://bfw5bfequ0g0x" path="res://interactables/table/table.tscn" id="10_naw8p"]
@@ -933,10 +934,10 @@ limit_bottom = 225
 limit_smoothed = true
 editor_draw_limits = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="InGame_CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="Orders" type="HBoxContainer" parent="InGame_CanvasLayer"]
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 15.0
@@ -947,30 +948,43 @@ grow_horizontal = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="RequestCard" parent="CanvasLayer/HBoxContainer" instance=ExtResource("5_nwlop")]
+[node name="RequestCard" parent="InGame_CanvasLayer/Orders" instance=ExtResource("5_nwlop")]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
-[node name="RequestCard2" parent="CanvasLayer/HBoxContainer" instance=ExtResource("5_nwlop")]
+[node name="RequestCard2" parent="InGame_CanvasLayer/Orders" instance=ExtResource("5_nwlop")]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="Timer" type="MarginContainer" parent="InGame_CanvasLayer"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -169.06
-offset_top = -88.115
-offset_right = -9.05969
-offset_bottom = -8.11499
+offset_left = -169.035
+offset_top = -88.13
+offset_right = -9.03467
+offset_bottom = -8.13
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="UiTimer" parent="CanvasLayer/MarginContainer" instance=ExtResource("6_o0wk6")]
+[node name="UiTimer" parent="InGame_CanvasLayer/Timer" instance=ExtResource("6_o0wk6")]
+layout_mode = 2
+
+[node name="Points" type="MarginContainer" parent="InGame_CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.85
+offset_top = -89.23
+offset_right = 250.85
+offset_bottom = -9.22998
+grow_vertical = 0
+
+[node name="UiPoints" parent="InGame_CanvasLayer/Points" instance=ExtResource("8_drioi")]
 layout_mode = 2
 
 [node name="Storage2" parent="." instance=ExtResource("8_r4xfv")]

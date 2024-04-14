@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://co3psefpehp0b"]
+
+[ext_resource type="Shader" uid="uid://cs5ob1g6hfjaa" path="res://ui/Elements/Points/UI_Points.tres" id="1_hgwx0"]
+[ext_resource type="Texture2D" uid="uid://cpd5py31hdtcy" path="res://tilemap.png" id="2_5xeln"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yi4g5"]
+shader = ExtResource("1_hgwx0")
+
+[sub_resource type="Gradient" id="Gradient_0vdqi"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bnueu"]
+gradient = SubResource("Gradient_0vdqi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rj57m"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = SubResource("GradientTexture2D_bnueu")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx2ha"]
+atlas = ExtResource("2_5xeln")
+region = Rect2(152.808, 118.025, 16.2157, 17.7021)
+
+[node name="UiPoints" type="Control"]
+custom_minimum_size = Vector2(240, 80)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_yi4g5")
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rj57m")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = -3.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Why are you reading this? GO FORGE NOW!"
+theme_override_colors/default_color = Color(0.992157, 0.745098, 0.32549, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]99[/center]"
+autowrap_mode = 0
+
+[node name="CoinIcon" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 6.0
+offset_right = 104.0
+offset_bottom = 74.0
+texture = SubResource("AtlasTexture_hx2ha")
