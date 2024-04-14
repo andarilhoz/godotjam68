@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://oak2a85ikl0d"]
 
-[ext_resource type="Script" path="res://PlayerScript.gd" id="1_t0ktx"]
+[ext_resource type="Script" path="res://player/PlayerScript.gd" id="1_t0ktx"]
 [ext_resource type="Texture2D" uid="uid://cgqvcdsvwt07" path="res://tilemap2.png" id="2_l0jeq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d7kf8"]

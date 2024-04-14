@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://mxtp01fri8kh"]
+
+[ext_resource type="Theme" uid="uid://cktp1ct1h4ho" path="res://ui/forge_theme.tres" id="1_s1j6i"]
+[ext_resource type="Texture2D" uid="uid://8ntfxts8ycqk" path="res://ui/panel-010.png" id="2_hekn3"]
+[ext_resource type="Texture2D" uid="uid://cgqvcdsvwt07" path="res://tilemap2.png" id="3_d1o88"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_taw43"]
+texture = ExtResource("2_hekn3")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7cb4"]
+atlas = ExtResource("3_d1o88")
+region = Rect2(170, 136, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek7sy"]
+atlas = ExtResource("3_d1o88")
+region = Rect2(119, 153, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrpxo"]
+atlas = ExtResource("3_d1o88")
+region = Rect2(102, 153, 16, 16)
+
+[node name="RequestCard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 266.0
+offset_bottom = 112.0
+theme = ExtResource("1_s1j6i")
+theme_override_styles/panel = SubResource("StyleBoxTexture_taw43")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_top = 8.0
+offset_right = 30.0
+offset_bottom = 61.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_w7cb4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -51.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Iron" type="TextureRect" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_ek7sy")
+expand_mode = 2
+
+[node name="Iron2" type="TextureRect" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_ek7sy")
+expand_mode = 2
+
+[node name="Wood" type="TextureRect" parent="Panel/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_jrpxo")
+expand_mode = 2
