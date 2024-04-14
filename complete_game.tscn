@@ -921,7 +921,7 @@ position = Vector2(86, 163)
 collision_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-offset = Vector2(0, 1)
+offset = Vector2(128, -64)
 zoom = Vector2(2.1, 2.1)
 limit_left = -110
 limit_top = -70
