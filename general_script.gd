@@ -4,3 +4,6 @@ func _input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
 			get_tree().quit()
+			
+func _ready():
+	$InGame_CanvasLayer.visible = true

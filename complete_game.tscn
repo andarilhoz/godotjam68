@@ -937,6 +937,7 @@ editor_draw_limits = true
 
 [node name="InGame_CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
+visible = false
 
 [node name="Orders" type="HBoxContainer" parent="InGame_CanvasLayer"]
 anchors_preset = 10

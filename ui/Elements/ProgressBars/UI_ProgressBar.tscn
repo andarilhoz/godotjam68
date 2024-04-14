@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://p7p4vf44b1m6"]
+
+[ext_resource type="Shader" uid="uid://dwuaikhjopydu" path="res://ui/Elements/ProgressBars/UI_ProgressBar.tres" id="1_2qlu8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yi4g5"]
+shader = ExtResource("1_2qlu8")
+shader_parameter/Percent = 35
+
+[sub_resource type="Gradient" id="Gradient_0vdqi"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bnueu"]
+gradient = SubResource("Gradient_0vdqi")
+width = 8
+height = 8
+use_hdr = true
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rj57m"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = SubResource("GradientTexture2D_bnueu")
+
+[node name="UI_ProgressBar" type="Control"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 100)
+
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_yi4g5")
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 9.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rj57m")
