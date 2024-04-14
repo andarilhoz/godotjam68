@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://wjxf5pt6bq2p"]
+
+[ext_resource type="Shader" uid="uid://can03kjer2rp4" path="res://ui/UI_Timer.tres" id="1_dcy7p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yi4g5"]
+shader = ExtResource("1_dcy7p")
+
+[sub_resource type="Gradient" id="Gradient_0vdqi"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bnueu"]
+gradient = SubResource("Gradient_0vdqi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rj57m"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+texture = SubResource("GradientTexture2D_bnueu")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+
+[node name="UiTimer" type="Control"]
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_yi4g5")
+custom_minimum_size = Vector2(160, 80)
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rj57m")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Why are you reading this? GO FORGE NOW!"
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]99[/center]"
+autowrap_mode = 0
