@@ -1,2 +1,1 @@
-enum ForgeMaterial {WOOD,IRON,NONE}
-enum ForgeItem {SWORD,SHIELD,SPEAR,STAFF}
+enum ForgeItem {WOOD,IRON,NONE,SWORD,SHIELD,SPEAR,STAFF}

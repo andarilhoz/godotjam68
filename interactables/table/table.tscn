@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfw5bfequ0g0x"]
+
+[ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="1_2enk3"]
+[ext_resource type="Script" path="res://interactables/table/table.gd" id="2_0xpxp"]
+[ext_resource type="Texture2D" uid="uid://cgqvcdsvwt07" path="res://tilemap2.png" id="3_6k3ey"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mgn7"]
+atlas = ExtResource("3_6k3ey")
+region = Rect2(0, 102, 16, 16)
+
+[node name="Table" instance=ExtResource("1_2enk3")]
+script = ExtResource("2_0xpxp")
+
+[node name="ItemSprite" parent="." index="0"]
+texture = SubResource("AtlasTexture_8mgn7")

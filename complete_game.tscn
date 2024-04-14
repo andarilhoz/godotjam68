@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4pqbp85pfaw5"]
+[gd_scene load_steps=14 format=3 uid="uid://b4pqbp85pfaw5"]
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://player/Player.tscn" id="1_5le0k"]
 [ext_resource type="Script" path="res://general_script.gd" id="1_8yawa"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://wjxf5pt6bq2p" path="res://ui/Elements/Timer/UI_Timer.tscn" id="6_o0wk6"]
 [ext_resource type="PackedScene" uid="uid://bode7lhib546p" path="res://interactables/storage/storage.tscn" id="8_r4xfv"]
 [ext_resource type="PackedScene" uid="uid://ds13jc88emg6b" path="res://interactables/trash/trash.tscn" id="9_4l3rv"]
+[ext_resource type="PackedScene" uid="uid://bfw5bfequ0g0x" path="res://interactables/table/table.tscn" id="10_naw8p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7iqhm"]
 texture = ExtResource("2_frfc4")
@@ -978,3 +979,6 @@ storage_material = 1
 
 [node name="Trash" parent="." instance=ExtResource("9_4l3rv")]
 position = Vector2(-55, 43)
+
+[node name="Table" parent="." instance=ExtResource("10_naw8p")]
+position = Vector2(-23, 109)

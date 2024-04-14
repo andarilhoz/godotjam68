@@ -8,7 +8,7 @@ const friction = 1000
 
 var input = Vector2.ZERO
 
-var holding_material: ForgeEnum.ForgeMaterial = ForgeEnum.ForgeMaterial.NONE
+var holding_material: ForgeEnum.ForgeItem = ForgeEnum.ForgeItem.NONE
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -32,16 +32,16 @@ func player_movement(delta):
 	
 	move_and_slide()
 
-func reveice_material(material: ForgeEnum.ForgeMaterial):
-	if holding_material != ForgeEnum.ForgeMaterial.NONE:
+func reveice_material(material: ForgeEnum.ForgeItem):
+	if holding_material != ForgeEnum.ForgeItem.NONE:
 		print("ERROR, already has material in hands")
 		return
-	print("Received material: ", ForgeEnum.ForgeMaterial.keys()[material])
+	print("Received material: ", ForgeEnum.ForgeItem.keys()[material])
 	holding_material = material
 
 func delete_material():
-	if holding_material == ForgeEnum.ForgeMaterial.NONE:
+	if holding_material == ForgeEnum.ForgeItem.NONE:
 		print("ERROR, no material in hand")
 		return
-	print("Removing material: ",  ForgeEnum.ForgeMaterial.keys()[holding_material])
-	holding_material = ForgeEnum.ForgeMaterial.NONE
+	print("Removing material: ",  ForgeEnum.ForgeItem.keys()[holding_material])
+	holding_material = ForgeEnum.ForgeItem.NONE
