@@ -1,10 +1,14 @@
 extends CharacterBody2D
 
+const ForgeEnum = preload("res://forge_enum.gd")
+
 const max_speed = 70
 const acceleration = 800
 const friction = 1000
 
 var input = Vector2.ZERO
+
+var holding_material: ForgeEnum.ForgeMaterial = ForgeEnum.ForgeMaterial.NONE
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -27,3 +31,11 @@ func player_movement(delta):
 		velocity = velocity.limit_length(max_speed)
 	
 	move_and_slide()
+
+func reveice_material(material: ForgeEnum.ForgeMaterial):
+	if holding_material != ForgeEnum.ForgeMaterial.NONE:
+		print("ERROR, already has material in hands")
+		return
+	print("Received material: ", ForgeEnum.ForgeMaterial.keys()[material])
+	holding_material = material
+		

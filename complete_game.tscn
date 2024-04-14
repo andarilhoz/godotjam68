@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b4pqbp85pfaw5"]
+[gd_scene load_steps=12 format=3 uid="uid://b4pqbp85pfaw5"]
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://player/Player.tscn" id="1_5le0k"]
 [ext_resource type="Script" path="res://general_script.gd" id="1_8yawa"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="4_3ybbp"]
 [ext_resource type="PackedScene" uid="uid://mxtp01fri8kh" path="res://ui/RequestCard.tscn" id="5_nwlop"]
 [ext_resource type="PackedScene" uid="uid://wjxf5pt6bq2p" path="res://ui/Elements/Timer/UI_Timer.tscn" id="6_o0wk6"]
+[ext_resource type="PackedScene" uid="uid://bode7lhib546p" path="res://interactables/storage/storage.tscn" id="8_r4xfv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7iqhm"]
 texture = ExtResource("2_frfc4")
@@ -969,3 +970,7 @@ grow_vertical = 0
 
 [node name="UiTimer" parent="CanvasLayer/MarginContainer" instance=ExtResource("6_o0wk6")]
 layout_mode = 2
+
+[node name="Storage2" parent="." instance=ExtResource("8_r4xfv")]
+position = Vector2(172, -4)
+storage_material = 1
