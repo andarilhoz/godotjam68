@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://wjxf5pt6bq2p"]
 
-[ext_resource type="Shader" uid="uid://can03kjer2rp4" path="res://ui/UI_Timer.tres" id="1_dcy7p"]
+[ext_resource type="Shader" uid="uid://can03kjer2rp4" path="res://ui/Elements/Timer/UI_Timer.tres" id="1_dcy7p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yi4g5"]
 shader = ExtResource("1_dcy7p")
@@ -24,6 +24,7 @@ texture_margin_bottom = 32.0
 [node name="UiTimer" type="Control"]
 custom_minimum_size = Vector2(160, 80)
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
