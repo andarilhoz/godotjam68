@@ -19,5 +19,5 @@ shape = SubResource("CapsuleShape2D_d7kf8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-5.68434e-14, 1)
-scale = Vector2(0.757813, 0.78125)
+scale = Vector2(1.2, 1.236)
 texture = SubResource("AtlasTexture_j01pa")
