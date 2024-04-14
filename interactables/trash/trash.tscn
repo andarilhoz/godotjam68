@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds13jc88emg6b"]
+[gd_scene load_steps=6 format=3 uid="uid://ds13jc88emg6b"]
 
 [ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="1_chq1q"]
 [ext_resource type="Script" path="res://interactables/trash/trash.gd" id="2_6y27x"]
@@ -8,8 +8,18 @@
 atlas = ExtResource("3_ysaix")
 region = Rect2(153, 68, 16, 16)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wjjsk"]
+radius = 8.0
+
 [node name="Trash" instance=ExtResource("1_chq1q")]
 script = ExtResource("2_6y27x")
 
 [node name="ItemSprite" parent="." index="0"]
 texture = SubResource("AtlasTexture_a6377")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_wjjsk")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 1)
