@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4pqbp85pfaw5"]
+[gd_scene load_steps=8 format=3 uid="uid://b4pqbp85pfaw5"]
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://Player.tscn" id="1_5le0k"]
+[ext_resource type="Script" path="res://general_script.gd" id="1_8yawa"]
 [ext_resource type="Texture2D" uid="uid://cpd5py31hdtcy" path="res://tilemap.png" id="2_frfc4"]
 [ext_resource type="Texture2D" uid="uid://cgqvcdsvwt07" path="res://tilemap2.png" id="3_oc5qa"]
 
@@ -898,6 +899,7 @@ sources/0 = SubResource("TileSetAtlasSource_7iqhm")
 sources/1 = SubResource("TileSetAtlasSource_4ansh")
 
 [node name="complete_game" type="Node2D"]
+script = ExtResource("1_8yawa")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(101, 54)
