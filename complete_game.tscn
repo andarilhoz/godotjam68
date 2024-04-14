@@ -944,3 +944,8 @@ size_flags_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+
+[node name="RequestCard2" parent="CanvasLayer/HBoxContainer" instance=ExtResource("5_nwlop")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
