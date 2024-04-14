@@ -10,13 +10,15 @@ config_version=5
 
 [application]
 
-config/name="LD55"
+config/name="GODOT WILD JAM 68"
 run/main_scene="res://complete_game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=1600
+window/size/viewport_height=900
 window/stretch/mode="viewport"
 
 [input]
