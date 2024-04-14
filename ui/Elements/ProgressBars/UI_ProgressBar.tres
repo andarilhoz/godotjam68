@@ -111,7 +111,6 @@ void fragment() {
 
 // Input:21
 	vec2 n_out21p0 = UV;
-	float n_out21p1 = n_out21p0.r;
 
 
 	vec2 n_out22p0;
@@ -216,7 +215,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-388.277, 997.06)
+graph_offset = Vector2(-946.158, 185.823)
 mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2(2112, 384)

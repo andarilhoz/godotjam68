@@ -15,6 +15,7 @@ func send_item(player_body: Node2D):
 		print("No material to give")
 		return
 	player_body.reveice_material(holding_material)
+	holding_material = ForgeEnum.ForgeItem.NONE
 
 
 func reveice_material(player_body: Node2D):
