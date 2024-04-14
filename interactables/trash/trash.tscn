@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds13jc88emg6b"]
+
+[ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="1_chq1q"]
+[ext_resource type="Script" path="res://interactables/trash/trash.gd" id="2_6y27x"]
+[ext_resource type="Texture2D" uid="uid://cpd5py31hdtcy" path="res://tilemap.png" id="3_ysaix"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6377"]
+atlas = ExtResource("3_ysaix")
+region = Rect2(153, 68, 16, 16)
+
+[node name="Trash" instance=ExtResource("1_chq1q")]
+script = ExtResource("2_6y27x")
+
+[node name="ItemSprite" parent="." index="0"]
+texture = SubResource("AtlasTexture_a6377")

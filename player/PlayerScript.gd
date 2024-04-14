@@ -38,4 +38,10 @@ func reveice_material(material: ForgeEnum.ForgeMaterial):
 		return
 	print("Received material: ", ForgeEnum.ForgeMaterial.keys()[material])
 	holding_material = material
-		
+
+func delete_material():
+	if holding_material == ForgeEnum.ForgeMaterial.NONE:
+		print("ERROR, no material in hand")
+		return
+	print("Removing material: ",  ForgeEnum.ForgeMaterial.keys()[holding_material])
+	holding_material = ForgeEnum.ForgeMaterial.NONE
