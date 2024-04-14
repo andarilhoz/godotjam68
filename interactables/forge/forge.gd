@@ -46,13 +46,16 @@ func _process(delta):
 	if processing != true:
 		return
 	if timer.time_left > 0:
+		$UI_ProgressBar.visible = true
 		var percent_of_time = ( (1 - timer.time_left / timer.wait_time) * 100)
 		var use_int = int(percent_of_time)
+		$UI_ProgressBar.get_node("Panel").material.set_shader_parameter("Percent", use_int)
 		print("Timer time: ", use_int)
 	
 
 func _on_process_timer_timeout():
 	print("Timer end")
+	$UI_ProgressBar.visible = false
 	processing = false
 	holding_itens.clear()
 	processed_item = ForgeEnum.ForgeItem.SWORD
