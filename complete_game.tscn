@@ -1055,6 +1055,7 @@ editor_draw_limits = true
 
 [node name="InGame_CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
+visible = false
 
 [node name="Orders" type="HBoxContainer" parent="InGame_CanvasLayer"]
 anchors_preset = 10
@@ -1067,8 +1068,17 @@ grow_horizontal = 2
 scale = Vector2(0.5, 0.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_constants/separation = -512
 
 [node name="RequestCard" parent="InGame_CanvasLayer/Orders" instance=ExtResource("5_nwlop")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RequestCard2" parent="InGame_CanvasLayer/Orders" instance=ExtResource("5_nwlop")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RequestCard3" parent="InGame_CanvasLayer/Orders" instance=ExtResource("5_nwlop")]
 layout_mode = 2
 size_flags_horizontal = 3
 
