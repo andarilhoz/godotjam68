@@ -111,6 +111,7 @@ void fragment() {
 
 // Input:21
 	vec2 n_out21p0 = UV;
+	float n_out21p1 = n_out21p0.r;
 
 
 	vec2 n_out22p0;
