@@ -1113,7 +1113,6 @@ grow_vertical = 0
 
 [node name="UiPoints" parent="InGame_CanvasLayer/Points" instance=ExtResource("8_drioi")]
 layout_mode = 2
-points_per_order = 25
 
 [node name="Storage2" parent="." instance=ExtResource("8_r4xfv")]
 position = Vector2(195, -25)
@@ -1145,4 +1144,7 @@ scale = Vector2(2, 2)
 position = Vector2(31, -48)
 scale = Vector2(2, 2)
 
+[node name="LevelTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="InGame_CanvasLayer/Orders/OrderCountDown" to="InGame_CanvasLayer/Orders" method="_on_order_count_down_timeout"]
+[connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]

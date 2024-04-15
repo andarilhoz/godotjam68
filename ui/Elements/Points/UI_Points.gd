@@ -18,7 +18,6 @@ func increase_points():
 	points += points_per_order
 	update_label()
 
-
 func update_label():
 	text_label.text = "[center]" + str(points) + "[/center]"
 
