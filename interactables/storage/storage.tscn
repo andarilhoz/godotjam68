@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bode7lhib546p"]
 
 [ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="1_0fuk1"]
-[ext_resource type="Script" path="res://Storage.gd" id="2_j786f"]
+[ext_resource type="Script" path="res://interactables/storage/Storage.gd" id="2_j786f"]
 
 [node name="Storage" instance=ExtResource("1_0fuk1")]
 script = ExtResource("2_j786f")

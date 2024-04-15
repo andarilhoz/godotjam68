@@ -3,9 +3,9 @@
 [ext_resource type="Resource" uid="uid://cm6tth7ayjght" path="res://items/sword.tres" id="1_dtypp"]
 [ext_resource type="Resource" uid="uid://bxprkkhwfok6" path="res://items/iron.tres" id="2_8nht6"]
 [ext_resource type="Resource" uid="uid://cuxyo3sqva6qp" path="res://items/wood.tres" id="3_usk5f"]
-[ext_resource type="Script" path="res://order.gd" id="4_tiskd"]
+[ext_resource type="Script" path="res://scripts/order.gd" id="4_tiskd"]
 
 [resource]
 script = ExtResource("4_tiskd")
-recipe_sprites = Array[Resource("res://item.gd")]([ExtResource("2_8nht6"), ExtResource("2_8nht6"), ExtResource("3_usk5f")])
+recipe_sprites = Array[Resource("res://scripts/item.gd")]([ExtResource("2_8nht6"), ExtResource("2_8nht6"), ExtResource("3_usk5f")])
 item = ExtResource("1_dtypp")

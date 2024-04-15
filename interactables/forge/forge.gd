@@ -1,5 +1,5 @@
 extends "res://interactables/interactable.gd"
-const ForgeEnum = preload("res://forge_enum.gd")
+const ForgeEnum = preload("res://scripts/forge_enum.gd")
 
 @export var processing_time: float = 2
 @export var recipes: Array[Order]

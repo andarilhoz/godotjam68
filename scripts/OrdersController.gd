@@ -1,5 +1,5 @@
 extends GridContainer
-const ForgeEnum = preload("res://forge_enum.gd")
+const ForgeEnum = preload("res://scripts/forge_enum.gd")
 const request_card = preload("res://ui/Elements/RequestCard/RequestCard.tscn")
 
 @onready var timer: Timer = $OrderCountDown

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const ForgeEnum = preload("res://forge_enum.gd")
+const ForgeEnum = preload("res://scripts/forge_enum.gd")
 
 @onready var holding_item: TextureRect = $HoldingItem
 
@@ -38,7 +38,7 @@ func reveice_material(material: Item):
 	if holding_material != null:
 		print("ERROR, already has material in hands")
 		return
-	print("Received material: ", ForgeEnum.ForgeItem.keys()[material.item_type])
+	print("Redceived material: ", ForgeEnum.ForgeItem.keys()[material.item_type])
 	holding_material = material
 	holding_item.texture = material.sprite
 	holding_item.show()

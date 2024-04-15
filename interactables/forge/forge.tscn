@@ -18,7 +18,7 @@ region = Rect2(170, 119, 16, 16)
 [node name="Forge" instance=ExtResource("1_m7ehu")]
 script = ExtResource("2_aw1k6")
 processing_time = 2.0
-recipes = Array[Resource("res://order.gd")]([ExtResource("3_47mkm"), ExtResource("4_tk8qk"), ExtResource("5_uxwen"), ExtResource("6_aba0p")])
+recipes = Array[Resource("res://scripts/order.gd")]([ExtResource("3_47mkm"), ExtResource("4_tk8qk"), ExtResource("5_uxwen"), ExtResource("6_aba0p")])
 
 [node name="ItemSprite" parent="." index="0"]
 texture = SubResource("AtlasTexture_3im5o")

@@ -1,5 +1,5 @@
 extends "res://interactables/interactable.gd"
-const ForgeEnum = preload("res://forge_enum.gd")
+const ForgeEnum = preload("res://scripts/forge_enum.gd")
 
 var holding_material : Item = null
 @onready var holding_item: TextureRect = $HoldingItem

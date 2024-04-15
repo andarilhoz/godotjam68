@@ -1,12 +1,12 @@
 [gd_scene load_steps=22 format=3 uid="uid://b4pqbp85pfaw5"]
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://player/Player.tscn" id="1_5le0k"]
-[ext_resource type="Script" path="res://general_script.gd" id="1_8yawa"]
+[ext_resource type="Script" path="res://scripts/general_script.gd" id="1_8yawa"]
 [ext_resource type="Texture2D" uid="uid://cpd5py31hdtcy" path="res://tilemap.png" id="2_frfc4"]
 [ext_resource type="Texture2D" uid="uid://cgqvcdsvwt07" path="res://tilemap2.png" id="3_oc5qa"]
 [ext_resource type="PackedScene" uid="uid://wjxf5pt6bq2p" path="res://ui/Elements/Timer/UI_Timer.tscn" id="6_o0wk6"]
 [ext_resource type="Texture2D" uid="uid://bcc17ikw7s7at" path="res://ui/Images/UI_shield.png" id="6_s4wa0"]
-[ext_resource type="Script" path="res://OrdersController.gd" id="6_u5e3h"]
+[ext_resource type="Script" path="res://scripts/OrdersController.gd" id="6_u5e3h"]
 [ext_resource type="Resource" uid="uid://bms6w2cjkng7" path="res://recipes/shield.tres" id="7_7srjl"]
 [ext_resource type="PackedScene" uid="uid://co3psefpehp0b" path="res://ui/Elements/Points/UI_Points.tscn" id="8_drioi"]
 [ext_resource type="Resource" uid="uid://82jsikiecvkl" path="res://recipes/spear.tres" id="8_n4f6w"]
@@ -1080,7 +1080,7 @@ theme_override_constants/h_separation = 50
 columns = 5
 script = ExtResource("6_u5e3h")
 max_orders = 4
-item_list = Array[Resource("res://order.gd")]([ExtResource("7_7srjl"), ExtResource("8_n4f6w"), ExtResource("9_woln8"), ExtResource("10_q8ln3")])
+item_list = Array[Resource("res://scripts/order.gd")]([ExtResource("7_7srjl"), ExtResource("8_n4f6w"), ExtResource("9_woln8"), ExtResource("10_q8ln3")])
 
 [node name="OrderCountDown" type="Timer" parent="InGame_CanvasLayer/Orders"]
 
