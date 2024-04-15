@@ -1,27 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://mxtp01fri8kh"]
+[gd_scene load_steps=8 format=3 uid="uid://bkhl4cyilme6l"]
 
-[ext_resource type="Theme" uid="uid://cktp1ct1h4ho" path="res://ui/Elements/RequestCard/forge_theme.tres" id="1_s1j6i"]
-[ext_resource type="Texture2D" uid="uid://8ntfxts8ycqk" path="res://ui/Elements/RequestCard/panel-010.png" id="2_hekn3"]
-[ext_resource type="Texture2D" uid="uid://cgqvcdsvwt07" path="res://tilemap2.png" id="3_d1o88"]
+[ext_resource type="Script" path="res://ui/Elements/RequestCard/RequestCard.gd" id="1_1t6os"]
+[ext_resource type="Theme" uid="uid://cm7cf72i5gr6c" path="res://ui/Elements/RequestCard/forge_theme.tres" id="1_s1j6i"]
+[ext_resource type="Texture2D" uid="uid://dg5lbuk8djldp" path="res://ui/Images/UI_paper-order.png" id="2_2x5mu"]
+[ext_resource type="Texture2D" uid="uid://dra8olsun02hx" path="res://ui/Images/UI_sketchy_spear.png" id="3_l7xce"]
+[ext_resource type="Texture2D" uid="uid://ct1kinwlxnbsk" path="res://ui/Images/UI_iron.png" id="4_ee66k"]
+[ext_resource type="Texture2D" uid="uid://bd6u2n0cfqra8" path="res://ui/Images/UI_wood.png" id="5_o3w0e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_taw43"]
-texture = ExtResource("2_hekn3")
-texture_margin_left = 12.0
-texture_margin_top = 12.0
-texture_margin_right = 12.0
-texture_margin_bottom = 12.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w7cb4"]
-atlas = ExtResource("3_d1o88")
-region = Rect2(170, 136, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ek7sy"]
-atlas = ExtResource("3_d1o88")
-region = Rect2(119, 153, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jrpxo"]
-atlas = ExtResource("3_d1o88")
-region = Rect2(102, 153, 16, 16)
+texture = ExtResource("2_2x5mu")
 
 [node name="RequestCard" type="Control"]
 custom_minimum_size = Vector2(256, 128)
@@ -31,56 +18,56 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_1t6os")
 
 [node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(256, 128)
 layout_mode = 0
 offset_right = 256.0
-offset_bottom = 128.0
+offset_bottom = 324.0
 theme = ExtResource("1_s1j6i")
 theme_override_styles/panel = SubResource("StyleBoxTexture_taw43")
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -48.0
-offset_right = 32.0
-offset_bottom = 16.0
+[node name="RecipeIcon" type="TextureRect" parent="Panel"]
+layout_mode = 2
+offset_left = 23.0
+offset_top = 60.0
+offset_right = 224.0
+offset_bottom = 232.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(32, 32)
-texture = SubResource("AtlasTexture_w7cb4")
+texture = ExtResource("3_l7xce")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 80.0
-offset_bottom = -16.0
+offset_left = 10.0
+offset_top = 249.0
+offset_right = -26.0
+offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Iron" type="TextureRect" parent="Panel/HBoxContainer"]
+[node name="Item1" type="TextureRect" parent="Panel/HBoxContainer"]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
-texture = SubResource("AtlasTexture_ek7sy")
+texture = ExtResource("5_o3w0e")
 expand_mode = 2
 
-[node name="Iron2" type="TextureRect" parent="Panel/HBoxContainer"]
+[node name="Item2" type="TextureRect" parent="Panel/HBoxContainer"]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
-texture = SubResource("AtlasTexture_ek7sy")
+texture = ExtResource("5_o3w0e")
 expand_mode = 2
 
-[node name="Wood" type="TextureRect" parent="Panel/HBoxContainer"]
+[node name="Item3" type="TextureRect" parent="Panel/HBoxContainer"]
 layout_mode = 2
-texture = SubResource("AtlasTexture_jrpxo")
+texture = ExtResource("4_ee66k")
 expand_mode = 2

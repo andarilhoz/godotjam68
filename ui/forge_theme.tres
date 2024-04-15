@@ -1,6 +1,0 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://fn8b5i2g15bq"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tybbe"]
-
-[resource]
-Panel/styles/panel = SubResource("StyleBoxTexture_tybbe")

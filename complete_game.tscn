@@ -1,16 +1,20 @@
-[gd_scene load_steps=16 format=3 uid="uid://b4pqbp85pfaw5"]
+[gd_scene load_steps=20 format=3 uid="uid://b4pqbp85pfaw5"]
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://player/Player.tscn" id="1_5le0k"]
 [ext_resource type="Script" path="res://general_script.gd" id="1_8yawa"]
 [ext_resource type="Texture2D" uid="uid://cpd5py31hdtcy" path="res://tilemap.png" id="2_frfc4"]
 [ext_resource type="Texture2D" uid="uid://cgqvcdsvwt07" path="res://tilemap2.png" id="3_oc5qa"]
 [ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="4_3ybbp"]
-[ext_resource type="PackedScene" uid="uid://5xdhp00nekpi" path="res://ui/RequestCard.tscn" id="5_nwlop"]
 [ext_resource type="PackedScene" uid="uid://wjxf5pt6bq2p" path="res://ui/Elements/Timer/UI_Timer.tscn" id="6_o0wk6"]
+[ext_resource type="Script" path="res://OrdersController.gd" id="6_u5e3h"]
+[ext_resource type="Resource" uid="uid://bms6w2cjkng7" path="res://recipes/shield.tres" id="7_7srjl"]
 [ext_resource type="PackedScene" uid="uid://co3psefpehp0b" path="res://ui/Elements/Points/UI_Points.tscn" id="8_drioi"]
+[ext_resource type="Resource" uid="uid://82jsikiecvkl" path="res://recipes/spear.tres" id="8_n4f6w"]
 [ext_resource type="PackedScene" uid="uid://bode7lhib546p" path="res://interactables/storage/storage.tscn" id="8_r4xfv"]
 [ext_resource type="PackedScene" uid="uid://ds13jc88emg6b" path="res://interactables/trash/trash.tscn" id="9_4l3rv"]
+[ext_resource type="Resource" uid="uid://bd5k53oviw0wl" path="res://recipes/staff.tres" id="9_woln8"]
 [ext_resource type="PackedScene" uid="uid://bfw5bfequ0g0x" path="res://interactables/table/table.tscn" id="10_naw8p"]
+[ext_resource type="Resource" uid="uid://cwktcxkefau7h" path="res://recipes/sword.tres" id="10_q8ln3"]
 [ext_resource type="PackedScene" uid="uid://bfqpo5vryw575" path="res://interactables/forge/forge.tscn" id="12_ymthb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7iqhm"]
@@ -1055,32 +1059,23 @@ editor_draw_limits = true
 
 [node name="InGame_CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
-visible = false
 
-[node name="Orders" type="HBoxContainer" parent="InGame_CanvasLayer"]
+[node name="Orders" type="GridContainer" parent="InGame_CanvasLayer"]
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 15.0
-offset_bottom = 527.0
+offset_left = 50.0
+offset_top = 20.0
+offset_right = 50.0
+offset_bottom = 220.0
 grow_horizontal = 2
-scale = Vector2(0.5, 0.5)
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_constants/separation = -512
+scale = Vector2(0.75, 0.75)
+theme_override_constants/h_separation = 50
+columns = 5
+script = ExtResource("6_u5e3h")
+max_orders = 4
+item_list = Array[Resource("res://order.gd")]([ExtResource("7_7srjl"), ExtResource("8_n4f6w"), ExtResource("9_woln8"), ExtResource("10_q8ln3")])
 
-[node name="RequestCard" parent="InGame_CanvasLayer/Orders" instance=ExtResource("5_nwlop")]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="RequestCard2" parent="InGame_CanvasLayer/Orders" instance=ExtResource("5_nwlop")]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="RequestCard3" parent="InGame_CanvasLayer/Orders" instance=ExtResource("5_nwlop")]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="OrderCountDown" type="Timer" parent="InGame_CanvasLayer/Orders"]
 
 [node name="Timer" type="MarginContainer" parent="InGame_CanvasLayer"]
 anchors_preset = 3
@@ -1127,3 +1122,5 @@ scale = Vector2(2, 2)
 [node name="Forge" parent="." instance=ExtResource("12_ymthb")]
 position = Vector2(302, 64)
 scale = Vector2(2, 2)
+
+[connection signal="timeout" from="InGame_CanvasLayer/Orders/OrderCountDown" to="InGame_CanvasLayer/Orders" method="_on_order_count_down_timeout"]
