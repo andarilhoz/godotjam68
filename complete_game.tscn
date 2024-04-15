@@ -1113,6 +1113,7 @@ grow_vertical = 0
 
 [node name="UiPoints" parent="InGame_CanvasLayer/Points" instance=ExtResource("8_drioi")]
 layout_mode = 2
+points_per_order = 25
 
 [node name="Storage2" parent="." instance=ExtResource("8_r4xfv")]
 position = Vector2(195, -25)

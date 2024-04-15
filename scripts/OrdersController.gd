@@ -60,6 +60,7 @@ func remove_order(index):
 
 func _on_card_expire(card: Node):
 	print("Node expired: ", card.get_instance_id())
+	SignalManager.on_order_expired.emit()
 	remove_order(card.get_instance_id())
 	pass
 
