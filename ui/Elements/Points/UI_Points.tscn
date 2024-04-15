@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://co3psefpehp0b"]
+[gd_scene load_steps=9 format=3 uid="uid://co3psefpehp0b"]
 
 [ext_resource type="Shader" uid="uid://cs5ob1g6hfjaa" path="res://ui/Elements/Points/UI_Points.tres" id="1_hgwx0"]
+[ext_resource type="Script" path="res://ui/Elements/Points/UI_Points.gd" id="1_kmpsw"]
 [ext_resource type="Texture2D" uid="uid://cpd5py31hdtcy" path="res://tilemap.png" id="2_5xeln"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yi4g5"]
@@ -34,6 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kmpsw")
 
 [node name="Panel" type="Panel" parent="."]
 material = SubResource("ShaderMaterial_yi4g5")

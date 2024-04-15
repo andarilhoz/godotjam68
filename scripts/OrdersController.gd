@@ -51,7 +51,7 @@ func _on_order_received(item: Item):
 		SignalManager.on_order_misplaced.emit()
 		return
 	remove_order(order["index"])
-	SignalManager.on_order_deliver.emit()
+	SignalManager.on_order_successful.emit()
 	pass
 
 func remove_order(index):
