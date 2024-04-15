@@ -3,7 +3,6 @@ extends Control
 @onready var play_btn : Button = $MarginContainer/VBoxContainer/Play
 
 func _ready():
-	print("teste")
 	play_btn.grab_focus()
 
 func _on_play_pressed():
