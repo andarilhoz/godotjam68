@@ -2,13 +2,15 @@ extends CharacterBody2D
 
 const ForgeEnum = preload("res://forge_enum.gd")
 
+@onready var holding_item: TextureRect = $HoldingItem
+
 const max_speed = 140
 const acceleration = 800
 const friction = 1000
 
 var input = Vector2.ZERO
 
-var holding_material: ForgeEnum.ForgeItem = ForgeEnum.ForgeItem.NONE
+var holding_material: Item
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -32,16 +34,19 @@ func player_movement(delta):
 	
 	move_and_slide()
 
-func reveice_material(material: ForgeEnum.ForgeItem):
-	if holding_material != ForgeEnum.ForgeItem.NONE:
+func reveice_material(material: Item):
+	if holding_material != null:
 		print("ERROR, already has material in hands")
 		return
-	print("Received material: ", ForgeEnum.ForgeItem.keys()[material])
+	print("Received material: ", ForgeEnum.ForgeItem.keys()[material.item_type])
 	holding_material = material
-
+	holding_item.texture = material.sprite
+	holding_item.show()
+	
 func delete_material():
-	if holding_material == ForgeEnum.ForgeItem.NONE:
+	if holding_material == null:
 		print("ERROR, no material in hand")
 		return
-	print("Removing material: ",  ForgeEnum.ForgeItem.keys()[holding_material])
-	holding_material = ForgeEnum.ForgeItem.NONE
+	print("Removing material: ",  ForgeEnum.ForgeItem.keys()[holding_material.item_type])
+	holding_material = null
+	holding_item.hide()

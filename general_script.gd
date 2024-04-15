@@ -7,4 +7,3 @@ func _input(event):
 
 func _ready():
 	$InGame_CanvasLayer.visible = true
-

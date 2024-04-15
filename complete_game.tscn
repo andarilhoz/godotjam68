@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b4pqbp85pfaw5"]
+[gd_scene load_steps=22 format=3 uid="uid://b4pqbp85pfaw5"]
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://player/Player.tscn" id="1_5le0k"]
 [ext_resource type="Script" path="res://general_script.gd" id="1_8yawa"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cgqvcdsvwt07" path="res://tilemap2.png" id="3_oc5qa"]
 [ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="4_3ybbp"]
 [ext_resource type="PackedScene" uid="uid://wjxf5pt6bq2p" path="res://ui/Elements/Timer/UI_Timer.tscn" id="6_o0wk6"]
+[ext_resource type="Texture2D" uid="uid://bcc17ikw7s7at" path="res://ui/Images/UI_shield.png" id="6_s4wa0"]
 [ext_resource type="Script" path="res://OrdersController.gd" id="6_u5e3h"]
 [ext_resource type="Resource" uid="uid://bms6w2cjkng7" path="res://recipes/shield.tres" id="7_7srjl"]
 [ext_resource type="PackedScene" uid="uid://co3psefpehp0b" path="res://ui/Elements/Points/UI_Points.tscn" id="8_drioi"]
@@ -16,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bfw5bfequ0g0x" path="res://interactables/table/table.tscn" id="10_naw8p"]
 [ext_resource type="Resource" uid="uid://cwktcxkefau7h" path="res://recipes/sword.tres" id="10_q8ln3"]
 [ext_resource type="PackedScene" uid="uid://bfqpo5vryw575" path="res://interactables/forge/forge.tscn" id="12_ymthb"]
+[ext_resource type="Resource" uid="uid://bxprkkhwfok6" path="res://items/iron.tres" id="14_iefvc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7iqhm"]
 texture = ExtResource("2_frfc4")
@@ -1047,6 +1049,15 @@ scale = Vector2(2, 2)
 scale = Vector2(2, 2)
 collision_mask = 2
 
+[node name="HoldingItem" type="TextureRect" parent="Player"]
+visible = false
+offset_left = -5.0
+offset_top = 7.5
+offset_right = 260.0
+offset_bottom = 278.5
+scale = Vector2(0.0399541, 0.0399541)
+texture = ExtResource("6_s4wa0")
+
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(128, -64)
 zoom = Vector2(2.1, 2.1)
@@ -1109,7 +1120,7 @@ layout_mode = 2
 [node name="Storage2" parent="." instance=ExtResource("8_r4xfv")]
 position = Vector2(195, -25)
 scale = Vector2(2, 2)
-storage_material = 1
+storage_material = ExtResource("14_iefvc")
 
 [node name="Trash" parent="." instance=ExtResource("9_4l3rv")]
 position = Vector2(-16, 77)
