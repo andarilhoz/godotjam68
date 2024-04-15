@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b4pqbp85pfaw5"]
+[gd_scene load_steps=24 format=3 uid="uid://b4pqbp85pfaw5"]
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://player/Player.tscn" id="1_5le0k"]
 [ext_resource type="Script" path="res://scripts/general_script.gd" id="1_8yawa"]
@@ -19,6 +19,7 @@
 [ext_resource type="Resource" uid="uid://bxprkkhwfok6" path="res://items/iron.tres" id="14_iefvc"]
 [ext_resource type="Resource" uid="uid://cuxyo3sqva6qp" path="res://items/wood.tres" id="15_i0au3"]
 [ext_resource type="PackedScene" uid="uid://drxlqqfv1yty1" path="res://interactables/deliver/deliver.tscn" id="19_qe31l"]
+[ext_resource type="Texture2D" uid="uid://cdh7p2q2aixxi" path="res://Art/stage_background.png" id="20_t2wt8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7iqhm"]
 texture = ExtResource("2_frfc4")
@@ -1031,6 +1032,7 @@ sources/1 = SubResource("TileSetAtlasSource_4ansh")
 script = ExtResource("1_8yawa")
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 position = Vector2(110, 54)
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_dnspk")
@@ -1043,6 +1045,7 @@ layer_1/navigation_enabled = false
 layer_1/tile_data = PackedInt32Array(-458765, 458752, 0, -393229, 458752, 1, -327693, 458752, 1, -262157, 458752, 1, -196621, 458752, 2, -458764, 458752, 0, -393228, 458752, 1, -327692, 458752, 1, -262156, 458752, 1, -196620, 393216, 2, -458763, 458752, 0, -393227, 458752, 1, -327691, 458752, 1, -262155, 458752, 1, -196619, 458752, 1, -131083, 458752, 2, -458762, 458752, 2, -393226, 524288, 1, -327690, 524288, 1, -262154, 524288, 1, -196618, 524288, 1, -458761, 458752, 2, -393225, 393216, 1, -196617, 393216, 1, -458760, 458752, 0, -393224, 458752, 1, -327688, 393216, 2, -262152, 393216, 0, -196616, 458752, 1, -131080, 458752, 2, -458759, 458752, 0, -393223, 458752, 1, -327687, 458752, 1, -262151, 458752, 1, -196615, 458752, 1, -131079, 458752, 2, -393222, 524288, 1, -327686, 524288, 1, -262150, 524288, 1, -196614, 524288, 1, -393221, 0, 4, -327685, 0, 5, -262149, 0, 6, -393220, 196608, 4, -327684, 65536, 5, -262148, 65536, 6, -393219, 131072, 4, -327683, 131072, 5, -262147, 65536, 7, -327682, 262144, 0, -262146, 262144, 1, 196596, 0, 4, 262132, 0, 5, 327668, 0, 6, 393204, 131072, 0, 196597, 65536, 4, 262133, 65536, 5, 327669, 65536, 6, 393205, 0, 0, 196598, 65536, 4, 262134, 65536, 5, 327670, 65536, 6, 393206, 0, 3, 196599, 131072, 4, 262135, 131072, 5, 327671, 65536, 7, 393207, 65536, 3, 262136, 262144, 0, 327672, 262144, 1, 393208, 65536, 3, -327669, 720896, 7, 393221, 720896, 10, -65543, 524288, 3, -7, 524288, 4, 65529, 524288, 4, 131065, 524288, 4, 196601, 524288, 4, 262137, 720896, 5, 327675, 524288, 6, 327676, 589824, 3, 327677, 589824, 3, 327678, 589824, 3, 327679, 589824, 3, 262144, 589824, 3, 262145, 589824, 3, 262146, 589824, 3, 262147, 589824, 3, 262148, 589824, 3, 262149, 589824, 3, 262150, 589824, 3, 262151, 589824, 3, 262152, 655360, 5, -196600, 655360, 4, -131064, 655360, 4, -65528, 655360, 4, 8, 655360, 4, 65544, 655360, 4, 131080, 655360, 4, 196616, 655360, 4, -262136, 655360, 3, -196610, 524288, 6, -196609, 589824, 3, -262144, 589824, 3, -262143, 589824, 3, -262142, 589824, 3, -262141, 589824, 3, -262140, 589824, 3, -262139, 589824, 3, -262138, 589824, 3, -262137, 589824, 3, -196612, 655360, 6, -196613, 524288, 3, -65541, 655360, 5, -65542, 589824, 3, -131077, 720896, 4, 327674, 65536, 3, 327673, 196608, 3, -327671, 131072, 0, 327689, 131072, 0, 327690, 65536, 0, 327688, 65536, 0, -262134, 65536, 0, -327674, 65536, 0, 196618, 524288, 7, 262154, 524288, 8, -196596, 0, 4, -131060, 0, 5, -65524, 0, 6, -196595, 65536, 4, -131059, 65536, 5, -65523, 65536, 6, 327691, 262144, 4, 393227, 262144, 5, 458763, 262144, 6, 327692, 327680, 4, 393228, 327680, 5, 458764, 327680, 6, -327672, 327680, 2, 65527, 327680, 1, 393216, 65536, 0, 393217, 131072, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_5le0k")]
+position = Vector2(290, 53)
 scale = Vector2(2, 2)
 collision_mask = 2
 
@@ -1078,7 +1081,8 @@ offset_bottom = 220.0
 grow_horizontal = 2
 scale = Vector2(0.75, 0.75)
 theme_override_constants/h_separation = 50
-columns = 5
+theme_override_constants/v_separation = 200
+columns = 2
 script = ExtResource("6_u5e3h")
 max_orders = 4
 item_list = Array[Resource("res://scripts/order.gd")]([ExtResource("7_7srjl"), ExtResource("8_n4f6w"), ExtResource("9_woln8"), ExtResource("10_q8ln3")])
@@ -1114,37 +1118,108 @@ grow_vertical = 0
 [node name="UiPoints" parent="InGame_CanvasLayer/Points" instance=ExtResource("8_drioi")]
 layout_mode = 2
 
-[node name="Storage2" parent="." instance=ExtResource("8_r4xfv")]
-position = Vector2(195, -25)
-scale = Vector2(2, 2)
+[node name="LevelTimer" type="Timer" parent="."]
+
+[node name="Scene" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(139, 64)
+scale = Vector2(0.297043, 0.297043)
+texture = ExtResource("20_t2wt8")
+
+[node name="Node2D" type="Node2D" parent="Scene"]
+position = Vector2(-467.946, -215.457)
+scale = Vector2(3.36652, 3.36652)
+
+[node name="Table" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(80, -21)
+scale = Vector2(3.55945, 3.55945)
+
+[node name="Table2" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(80, 25)
+scale = Vector2(3.55945, 3.55945)
+
+[node name="Table3" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(80, 119)
+scale = Vector2(3.55945, 3.55945)
+
+[node name="Table4" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(80, 166)
+scale = Vector2(3.55945, 3.55945)
+
+[node name="Table5" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(130, 166)
+scale = Vector2(3.55945, 3.55945)
+
+[node name="Table6" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(178, 166)
+scale = Vector2(3.55945, 3.55945)
+
+[node name="Table7" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(224, 166)
+scale = Vector2(3.55945, 3.55945)
+
+[node name="Table8" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(269, 166)
+scale = Vector2(3.55945, 3.55945)
+
+[node name="Table9" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(316, 166)
+scale = Vector2(3.55945, 3.55945)
+
+[node name="Table10" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(361, 166)
+scale = Vector2(3.55945, 3.55945)
+
+[node name="Table11" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(361, 119)
+scale = Vector2(3.55945, 3.55945)
+
+[node name="Table12" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(361, 71)
+scale = Vector2(3.55945, 3.55945)
+
+[node name="Table13" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(361, 25)
+scale = Vector2(3.55945, 3.55945)
+
+[node name="Table14" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(361, -22)
+scale = Vector2(3.55945, 3.55945)
+
+[node name="Table15" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(223, -22)
+scale = Vector2(3.55945, 3.55945)
+
+[node name="Table16" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(223, 25)
+scale = Vector2(3.55945, 3.55945)
+
+[node name="Deliver" parent="Scene" instance=ExtResource("19_qe31l")]
+position = Vector2(353.485, 329.919)
+rotation = -1.55956
+scale = Vector2(12.4675, 12.4675)
+
+[node name="IronStorage" parent="Scene" instance=ExtResource("8_r4xfv")]
+position = Vector2(-198.625, 26.9322)
+scale = Vector2(13.7021, 13.7021)
 storage_material = ExtResource("14_iefvc")
 
-[node name="Storage3" parent="." instance=ExtResource("8_r4xfv")]
-position = Vector2(208, 159)
-scale = Vector2(2, 2)
+[node name="WoodStorage" parent="Scene" instance=ExtResource("8_r4xfv")]
+position = Vector2(747.367, 23.5656)
+scale = Vector2(13.4178, 13.4178)
 storage_material = ExtResource("15_i0au3")
 
-[node name="Trash" parent="." instance=ExtResource("9_4l3rv")]
-position = Vector2(-16, 77)
-scale = Vector2(2, 2)
+[node name="Trash" parent="Scene" instance=ExtResource("9_4l3rv")]
+position = Vector2(282.788, -134.661)
+scale = Vector2(10.7729, 10.7729)
 
-[node name="Table" parent="." instance=ExtResource("10_naw8p")]
-position = Vector2(56, 163)
-scale = Vector2(2, 2)
+[node name="Forge" parent="Scene" instance=ExtResource("12_ymthb")]
+position = Vector2(47.1313, -296.254)
+scale = Vector2(6.73304, 6.73304)
 
-[node name="Forge" parent="." instance=ExtResource("12_ymthb")]
-position = Vector2(321, 30)
-scale = Vector2(2, 2)
-
-[node name="Forge2" parent="." instance=ExtResource("12_ymthb")]
-position = Vector2(321, 127)
-scale = Vector2(2, 2)
-
-[node name="Deliver" parent="." instance=ExtResource("19_qe31l")]
-position = Vector2(31, -48)
-scale = Vector2(2, 2)
-
-[node name="LevelTimer" type="Timer" parent="."]
+[node name="Forge2" parent="Scene" instance=ExtResource("12_ymthb")]
+position = Vector2(515.078, -296.254)
+scale = Vector2(6.73304, 6.73304)
 
 [connection signal="timeout" from="InGame_CanvasLayer/Orders/OrderCountDown" to="InGame_CanvasLayer/Orders" method="_on_order_count_down_timeout"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]

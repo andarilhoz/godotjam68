@@ -2,25 +2,28 @@
 
 [ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="1_2enk3"]
 [ext_resource type="Script" path="res://interactables/table/table.gd" id="2_0xpxp"]
-[ext_resource type="Texture2D" uid="uid://cgqvcdsvwt07" path="res://tilemap2.png" id="3_6k3ey"]
+[ext_resource type="Texture2D" uid="uid://du8320j3x4t1x" path="res://Art/station_bench-blank.png" id="3_e35o0"]
 [ext_resource type="Texture2D" uid="uid://ct1kinwlxnbsk" path="res://ui/Images/UI_iron.png" id="4_macdk"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8mgn7"]
-atlas = ExtResource("3_6k3ey")
-region = Rect2(0, 102, 16, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oldfg"]
+size = Vector2(12, 12)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bpy5w"]
-radius = 9.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smhhe"]
+size = Vector2(20, 12)
 
 [node name="Table" instance=ExtResource("1_2enk3")]
 script = ExtResource("2_0xpxp")
 
 [node name="ItemSprite" parent="." index="0"]
-texture = SubResource("AtlasTexture_8mgn7")
+scale = Vector2(0.0733316, 0.0733316)
+texture = ExtResource("3_e35o0")
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
 position = Vector2(0, 0)
-shape = SubResource("CircleShape2D_bpy5w")
+shape = SubResource("RectangleShape2D_oldfg")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_smhhe")
 
 [node name="HoldingItem" type="TextureRect" parent="." index="4"]
 visible = false

@@ -2,14 +2,25 @@
 
 [ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="1_4lu2s"]
 [ext_resource type="Script" path="res://interactables/deliver/deliver.gd" id="2_7bnnb"]
-[ext_resource type="Texture2D" uid="uid://cgqvcdsvwt07" path="res://tilemap2.png" id="3_auvkv"]
+[ext_resource type="Texture2D" uid="uid://tdn0o5np8mqr" path="res://Art/station_deliver.png" id="3_kx1mt"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5nikp"]
-atlas = ExtResource("3_auvkv")
-region = Rect2(119, 17, 16, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu05b"]
+size = Vector2(25, 26)
 
 [node name="Deliver" instance=ExtResource("1_4lu2s")]
 script = ExtResource("2_7bnnb")
 
 [node name="ItemSprite" parent="." index="0"]
-texture = SubResource("AtlasTexture_5nikp")
+scale = Vector2(0.0745326, 0.0745326)
+texture = ExtResource("3_kx1mt")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-1.4038, -2.38419e-07)
+scale = Vector2(0.975949, 0.975949)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_mu05b")
+
+[node name="ActionBtn" parent="." index="3"]
+rotation = 1.56036
