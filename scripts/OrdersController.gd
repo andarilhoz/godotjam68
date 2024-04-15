@@ -39,7 +39,8 @@ func generate_order():
 func instantiate_card(item: Order):
 	var request_card_item = request_card.instantiate()	
 	add_child(request_card_item)
-	request_card_item.set_sprites(item)
+	request_card_item.initialize_card(item)
+	request_card_item.on_card_expire.connect(_on_card_expire)
 	request_card_list.append(request_card_item)
 	
 
@@ -56,7 +57,11 @@ func _on_order_received(item: Item):
 	var request_card = request_card_list[order["index"]]
 	request_card.queue_free()
 	request_card_list.remove_at(order["index"])
+	
 	SignalManager.on_order_deliver.emit()
+	pass
+
+func _on_card_expire():
 	pass
 
 func get_order_by_item(item: Item):

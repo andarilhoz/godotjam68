@@ -71,3 +71,7 @@ expand_mode = 2
 layout_mode = 2
 texture = ExtResource("4_ee66k")
 expand_mode = 2
+
+[node name="OrderTimeout" type="Timer" parent="."]
+
+[connection signal="timeout" from="OrderTimeout" to="." method="_on_order_timeout_timeout"]

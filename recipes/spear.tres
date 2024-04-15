@@ -9,3 +9,4 @@
 script = ExtResource("4_tiskd")
 recipe_sprites = Array[Resource("res://scripts/item.gd")]([ExtResource("2_8nht6"), ExtResource("2_8nht6"), ExtResource("3_usk5f")])
 item = ExtResource("1_dtypp")
+expire_time_in_seconds = 15.0
