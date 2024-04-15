@@ -39,7 +39,7 @@ func do_action(player_body):
 	reveice_material(player_body)
 
 func reveice_material(player_body: Node2D):
-	print("Received material: ", ForgeEnum.ForgeItem.keys()[player_body.holding_material.item_type])
+	print("Received material: ", player_body.holding_material.get_item_name())
 	holding_itens.append(player_body.holding_material)
 	if holding_itens.size() > 2:
 		start_processing()
@@ -86,7 +86,7 @@ func _process(delta):
 func get_array_string_item_name(array_item: Array[Item]):
 	var array_string: Array[String]
 	for item in array_item:
-		array_string.append(ForgeEnum.ForgeItem.keys()[item.item_type])
+		array_string.append(item.get_item_name())
 	array_string.sort()
 	return array_string
 	

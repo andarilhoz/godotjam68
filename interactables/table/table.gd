@@ -24,7 +24,7 @@ func reveice_material(player_body: Node2D):
 	if holding_material != null:
 		print("ERROR, already has material in table")
 		return
-	print("Received material: ", ForgeEnum.ForgeItem.keys()[player_body.holding_material.item_type])
+	print("Received material: ", player_body.holding_material.get_item_name())
 	holding_material = player_body.holding_material
 	holding_item.texture = holding_material.sprite
 	holding_item.show()

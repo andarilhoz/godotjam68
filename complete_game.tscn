@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b4pqbp85pfaw5"]
+[gd_scene load_steps=23 format=3 uid="uid://b4pqbp85pfaw5"]
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://player/Player.tscn" id="1_5le0k"]
 [ext_resource type="Script" path="res://scripts/general_script.gd" id="1_8yawa"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bfqpo5vryw575" path="res://interactables/forge/forge.tscn" id="12_ymthb"]
 [ext_resource type="Resource" uid="uid://bxprkkhwfok6" path="res://items/iron.tres" id="14_iefvc"]
 [ext_resource type="Resource" uid="uid://cuxyo3sqva6qp" path="res://items/wood.tres" id="15_i0au3"]
+[ext_resource type="PackedScene" uid="uid://drxlqqfv1yty1" path="res://interactables/deliver/deliver.tscn" id="19_qe31l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7iqhm"]
 texture = ExtResource("2_frfc4")
@@ -1137,6 +1138,10 @@ scale = Vector2(2, 2)
 
 [node name="Forge2" parent="." instance=ExtResource("12_ymthb")]
 position = Vector2(321, 127)
+scale = Vector2(2, 2)
+
+[node name="Deliver" parent="." instance=ExtResource("19_qe31l")]
+position = Vector2(31, -48)
 scale = Vector2(2, 2)
 
 [connection signal="timeout" from="InGame_CanvasLayer/Orders/OrderCountDown" to="InGame_CanvasLayer/Orders" method="_on_order_count_down_timeout"]

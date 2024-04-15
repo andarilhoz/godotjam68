@@ -38,7 +38,7 @@ func reveice_material(material: Item):
 	if holding_material != null:
 		print("ERROR, already has material in hands")
 		return
-	print("Redceived material: ", ForgeEnum.ForgeItem.keys()[material.item_type])
+	print("Redceived material: ", material.get_item_name())
 	holding_material = material
 	holding_item.texture = material.sprite
 	holding_item.show()
@@ -47,6 +47,6 @@ func delete_material():
 	if holding_material == null:
 		print("ERROR, no material in hand")
 		return
-	print("Removing material: ",  ForgeEnum.ForgeItem.keys()[holding_material.item_type])
+	print("Removing material: ",  holding_material.get_item_name())
 	holding_material = null
 	holding_item.hide()
