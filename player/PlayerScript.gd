@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const ForgeEnum = preload("res://forge_enum.gd")
 
-const max_speed = 70
+const max_speed = 140
 const acceleration = 800
 const friction = 1000
 
