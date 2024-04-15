@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b4pqbp85pfaw5"]
+[gd_scene load_steps=16 format=3 uid="uid://b4pqbp85pfaw5"]
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://player/Player.tscn" id="1_5le0k"]
 [ext_resource type="Script" path="res://general_script.gd" id="1_8yawa"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bode7lhib546p" path="res://interactables/storage/storage.tscn" id="8_r4xfv"]
 [ext_resource type="PackedScene" uid="uid://ds13jc88emg6b" path="res://interactables/trash/trash.tscn" id="9_4l3rv"]
 [ext_resource type="PackedScene" uid="uid://bfw5bfequ0g0x" path="res://interactables/table/table.tscn" id="10_naw8p"]
+[ext_resource type="PackedScene" uid="uid://cx0yfpusttwd8" path="res://orders_controller.tscn" id="12_ynwfs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7iqhm"]
 texture = ExtResource("2_frfc4")
@@ -1016,3 +1017,7 @@ scale = Vector2(2, 2)
 [node name="Table" parent="." instance=ExtResource("10_naw8p")]
 position = Vector2(56, 163)
 scale = Vector2(2, 2)
+
+[node name="OrdersController" parent="." instance=ExtResource("12_ynwfs")]
+position = Vector2(110, 54)
+item_list = Array[int]([3, 4, 5, 6])
