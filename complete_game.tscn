@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cpd5py31hdtcy" path="res://tilemap.png" id="2_frfc4"]
 [ext_resource type="Texture2D" uid="uid://cgqvcdsvwt07" path="res://tilemap2.png" id="3_oc5qa"]
 [ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="4_3ybbp"]
-[ext_resource type="PackedScene" uid="uid://mxtp01fri8kh" path="res://ui/Elements/RequestCard/RequestCard.tscn" id="5_nwlop"]
+[ext_resource type="PackedScene" uid="uid://5xdhp00nekpi" path="res://ui/RequestCard.tscn" id="5_nwlop"]
 [ext_resource type="PackedScene" uid="uid://wjxf5pt6bq2p" path="res://ui/Elements/Timer/UI_Timer.tscn" id="6_o0wk6"]
 [ext_resource type="PackedScene" uid="uid://co3psefpehp0b" path="res://ui/Elements/Points/UI_Points.tscn" id="8_drioi"]
 [ext_resource type="PackedScene" uid="uid://bode7lhib546p" path="res://interactables/storage/storage.tscn" id="8_r4xfv"]
@@ -1055,7 +1055,6 @@ editor_draw_limits = true
 
 [node name="InGame_CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
-visible = false
 
 [node name="Orders" type="HBoxContainer" parent="InGame_CanvasLayer"]
 anchors_preset = 10
@@ -1063,20 +1062,15 @@ anchor_right = 1.0
 offset_left = 15.0
 offset_top = 15.0
 offset_right = 15.0
-offset_bottom = 15.0
+offset_bottom = 527.0
 grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
 [node name="RequestCard" parent="InGame_CanvasLayer/Orders" instance=ExtResource("5_nwlop")]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-
-[node name="RequestCard2" parent="InGame_CanvasLayer/Orders" instance=ExtResource("5_nwlop")]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
+size_flags_horizontal = 3
 
 [node name="Timer" type="MarginContainer" parent="InGame_CanvasLayer"]
 anchors_preset = 3
