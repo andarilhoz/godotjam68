@@ -10,9 +10,7 @@ const request_card = preload("res://ui/Elements/RequestCard/RequestCard.tscn")
 
 @export var item_list: Array[Order]
 
-@export var order_list: Array[Order]
-var request_card_list: Array[Node]
-
+@export var order_list : Dictionary
 
 func _ready():
 	SignalManager.on_order_deliver.connect(_on_order_received)
@@ -27,10 +25,9 @@ func generate_order():
 		return
 
 	var random_item = randi() % item_list.size()
-	order_list.append(item_list[random_item])
+	var request_card_item = instantiate_card(item_list[random_item])
 	print("Added item to the list: ", item_list[random_item].item.get_item_name())
-	instantiate_card(item_list[random_item])
-	print("List size: ", order_list.size())
+	order_list[request_card_item.get_instance_id()] = {"order": item_list[random_item], "card": request_card_item}
 	timer.start(time_between_orders)
 	time_between_orders = time_between_orders - decrease_time_between_orders
 	if time_between_orders < min_time_between_orders:
@@ -41,7 +38,7 @@ func instantiate_card(item: Order):
 	add_child(request_card_item)
 	request_card_item.initialize_card(item)
 	request_card_item.on_card_expire.connect(_on_card_expire)
-	request_card_list.append(request_card_item)
+	return request_card_item
 	
 
 func _on_order_count_down_timeout():
@@ -53,22 +50,24 @@ func _on_order_received(item: Item):
 	if order == null:
 		SignalManager.on_order_misplaced.emit()
 		return
-	order_list.remove_at(order["index"])
-	var request_card = request_card_list[order["index"]]
-	request_card.queue_free()
-	request_card_list.remove_at(order["index"])
-	
+	remove_order(order["index"])
 	SignalManager.on_order_deliver.emit()
 	pass
 
-func _on_card_expire():
+func remove_order(index):
+	order_list[index]["card"].queue_free()	
+	order_list.erase(index)
+
+func _on_card_expire(card: Node):
+	print("Node expired: ", card.get_instance_id())
+	remove_order(card.get_instance_id())
 	pass
 
 func get_order_by_item(item: Item):
 	var order_match
-	for index in range(order_list.size()):
-		if order_list[index].item.get_item_name() == item.get_item_name():
-			order_match = {"index": index, "order":order_list[index]}
+	for key in order_list:
+		if order_list[key]["order"].item.get_item_name() == item.get_item_name():
+			order_match = {"index": key, "order":order_list[key]["order"]}
 			break
 	return order_match
 			

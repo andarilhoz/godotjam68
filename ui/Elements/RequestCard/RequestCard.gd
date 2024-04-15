@@ -22,4 +22,4 @@ func initialize_card(order: Order):
 
 
 func _on_order_timeout_timeout():
-	on_card_expire.emit()
+	on_card_expire.emit(self)

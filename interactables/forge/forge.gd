@@ -11,6 +11,8 @@ const ForgeEnum = preload("res://scripts/forge_enum.gd")
 
 @onready var forged_item: TextureRect = $ForgedItem
 
+const raw_materials = [ForgeEnum.ForgeItem.IRON, ForgeEnum.ForgeItem.WOOD]
+
 var holding_itens : Array[Item]
 var processing : bool = false
 var processed_item: Item
@@ -27,6 +29,10 @@ func do_action(player_body):
 		return
 	if player_body.holding_material != null and processed_item != null:
 		print("busy forge")
+		return
+	
+	if player_body.holding_material != null and raw_materials.has(player_body.holding_material.item_type) == false:
+		print("Not raw material")
 		return
 	
 	if processed_item != null and player_body.holding_material == null:
