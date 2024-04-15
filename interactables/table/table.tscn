@@ -25,8 +25,8 @@ shape = SubResource("CircleShape2D_bpy5w")
 [node name="HoldingItem" type="TextureRect" parent="." index="4"]
 visible = false
 offset_left = -5.0
-offset_top = 10.0
+offset_top = -5.0
 offset_right = 5.0
-offset_bottom = 16.0
+offset_bottom = 1.0
 texture = ExtResource("4_macdk")
 expand_mode = 1
