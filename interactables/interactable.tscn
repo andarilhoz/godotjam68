@@ -57,7 +57,7 @@ shape = SubResource("CircleShape2D_aq51a")
 
 [node name="ActionBtn" type="AnimatedSprite2D" parent="."]
 light_mask = 0
-z_index = 1
+z_index = 5
 position = Vector2(13, -10)
 scale = Vector2(0.52, 0.52)
 sprite_frames = SubResource("SpriteFrames_ipgqg")

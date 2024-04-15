@@ -6,3 +6,6 @@
 [node name="Storage" instance=ExtResource("1_0fuk1")]
 script = ExtResource("2_j786f")
 storage_material = 0
+
+[node name="ActionBtn" parent="." index="3"]
+z_index = 5
