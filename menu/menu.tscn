@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://do64tlqxvjbh7"]
+[gd_scene load_steps=4 format=3 uid="uid://do64tlqxvjbh7"]
 
+[ext_resource type="Theme" uid="uid://5jdis1w6dpq2" path="res://menu/Default_Theme.tres" id="1_6hama"]
 [ext_resource type="Script" path="res://menu/menu.gd" id="1_wgnd0"]
+[ext_resource type="Texture2D" uid="uid://nuwy4d5l636p" path="res://menu/title.png" id="2_rcgrf"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -9,38 +11,75 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_6hama")
 script = ExtResource("1_wgnd0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.882353, 0.901961, 0.933333, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -50.5
-offset_right = 35.0
-offset_bottom = 50.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBox_Menu" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+alignment = 1
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Título_Img" type="TextureRect" parent="MarginContainer/VBox_Menu"]
 layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_rcgrf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBox_Botões" type="VBoxContainer" parent="MarginContainer/VBox_Menu"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Play" type="Button" parent="MarginContainer/VBox_Menu/VBox_Botões"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 20
 text = "Play
 "
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Options" type="Button" parent="MarginContainer/VBox_Menu/VBox_Botões"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 20
 text = "Options"
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Tutorial" type="Button" parent="MarginContainer/VBox_Menu/VBox_Botões"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 20
+text = "Tutorial"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBox_Menu/VBox_Botões"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 20
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBox_Menu/VBox_Botões/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBox_Menu/VBox_Botões/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBox_Menu/VBox_Botões/Tutorial" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBox_Menu/VBox_Botões/Quit" to="." method="_on_quit_pressed"]
