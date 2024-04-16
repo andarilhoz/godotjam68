@@ -1,30 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://oak2a85ikl0d"]
+[gd_scene load_steps=5 format=3 uid="uid://oak2a85ikl0d"]
 
 [ext_resource type="Script" path="res://player/PlayerScript.gd" id="1_t0ktx"]
-[ext_resource type="Texture2D" uid="uid://cgqvcdsvwt07" path="res://tilemap2.png" id="2_l0jeq"]
+[ext_resource type="Texture2D" uid="uid://b7ujcjvmbuefo" path="res://Art/player_character_still.png" id="2_gy3d8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d7kf8"]
-radius = 7.0
-height = 14.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j01pa"]
-atlas = ExtResource("2_l0jeq")
-region = Rect2(51, 119, 16, 16)
+radius = 87.0
+height = 194.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o4g37"]
-radius = 18.0278
+radius = 254.238
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_t0ktx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 82)
 shape = SubResource("CapsuleShape2D_d7kf8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 3
-position = Vector2(0, -1)
-scale = Vector2(1, 1.03)
-texture = SubResource("AtlasTexture_j01pa")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_gy3d8")
 
 [node name="Area2D" type="Area2D" parent="."]
 

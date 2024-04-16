@@ -6,6 +6,7 @@ const ForgeEnum = preload("res://scripts/forge_enum.gd")
 
 @onready var holding_item: TextureRect = $HoldingItem
 @onready var area2d : Area2D = $Area2D
+@onready var player_sprite: Sprite2D = $Sprite2D
 
 const max_speed = 800
 const acceleration = 2000
@@ -38,6 +39,8 @@ func player_movement(delta):
 		velocity = velocity.limit_length(max_speed)
 	
 	move_and_slide()
+	if velocity.x != 0:  # verifica se há movimento horizontal
+		player_sprite.flip_h = velocity.x < 0  # flipa horizontalmente se movendo para a esquerda
 
 func reveice_material(material: Item):
 	if holding_material != null:

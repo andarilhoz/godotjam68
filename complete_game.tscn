@@ -36,15 +36,15 @@ editor_draw_limits = true
 
 [node name="Player" parent="." instance=ExtResource("1_5le0k")]
 position = Vector2(290, 53)
-scale = Vector2(8, 8)
+scale = Vector2(0.8, 0.8)
 collision_mask = 2
 
 [node name="HoldingItem" type="TextureRect" parent="Player"]
 visible = false
-offset_left = -4.5
-offset_top = 7.875
-offset_right = 4.5
-offset_bottom = 15.875
+offset_left = 100.0
+offset_top = 30.0
+offset_right = 190.0
+offset_bottom = 112.0
 texture = ExtResource("3_o7ltg")
 expand_mode = 2
 stretch_mode = 5
@@ -161,7 +161,6 @@ position = Vector2(282, -290)
 [node name="Deliver" parent="." instance=ExtResource("19_qe31l")]
 position = Vector2(355, 336)
 rotation = -1.55956
-take_out_timer_in_seconds = 1.0
 
 [node name="IronStorage" parent="." instance=ExtResource("8_r4xfv")]
 position = Vector2(-200, 32)
