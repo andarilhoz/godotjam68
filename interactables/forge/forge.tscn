@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bfqpo5vryw575"]
+[gd_scene load_steps=12 format=3 uid="uid://bfqpo5vryw575"]
 
 [ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="1_m7ehu"]
 [ext_resource type="Script" path="res://interactables/forge/forge.gd" id="2_aw1k6"]
@@ -15,9 +15,6 @@
 atlas = ExtResource("3_dtwsy")
 region = Rect2(170, 119, 16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_al1s1"]
-size = Vector2(16, 16)
-
 [node name="Forge" instance=ExtResource("1_m7ehu")]
 script = ExtResource("2_aw1k6")
 processing_time = 2.0
@@ -26,12 +23,9 @@ recipes = Array[Resource("res://scripts/order.gd")]([ExtResource("3_47mkm"), Ext
 [node name="ItemSprite" parent="." index="0"]
 texture = SubResource("AtlasTexture_3im5o")
 
-[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
-shape = SubResource("RectangleShape2D_al1s1")
+[node name="ProcessTimer" type="Timer" parent="." index="3"]
 
-[node name="ProcessTimer" type="Timer" parent="." index="4"]
-
-[node name="UI_ProgressBar" parent="." index="5" instance=ExtResource("4_dxxqa")]
+[node name="UI_ProgressBar" parent="." index="4" instance=ExtResource("4_dxxqa")]
 visible = false
 offset_left = -32.0
 offset_top = -100.0
@@ -39,7 +33,7 @@ offset_right = 68.0
 offset_bottom = 1.52588e-05
 scale = Vector2(0.12, 0.12)
 
-[node name="Items" type="GridContainer" parent="." index="6"]
+[node name="Items" type="GridContainer" parent="." index="5"]
 offset_left = -12.0
 offset_top = 9.0
 offset_right = 188.0
@@ -75,7 +69,7 @@ size_flags_vertical = 0
 texture = ExtResource("5_cgdvt")
 expand_mode = 4
 
-[node name="ForgedItem" type="TextureRect" parent="." index="7"]
+[node name="ForgedItem" type="TextureRect" parent="." index="6"]
 visible = false
 offset_left = -8.0
 offset_top = 9.0

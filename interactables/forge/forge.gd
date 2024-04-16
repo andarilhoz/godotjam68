@@ -44,6 +44,11 @@ func do_action(player_body):
 	
 	reveice_material(player_body)
 
+func on_player_close(player: Player):
+	if player.holding_material == null:
+		return
+	super.on_player_close(player)
+
 func reveice_material(player_body: Node2D):
 	print("Received material: ", player_body.holding_material.get_item_name())
 	holding_itens.append(player_body.holding_material)

@@ -1,15 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfw5bfequ0g0x"]
+[gd_scene load_steps=5 format=3 uid="uid://bfw5bfequ0g0x"]
 
 [ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="1_2enk3"]
 [ext_resource type="Script" path="res://interactables/table/table.gd" id="2_0xpxp"]
 [ext_resource type="Texture2D" uid="uid://du8320j3x4t1x" path="res://Art/station_bench-blank.png" id="3_e35o0"]
 [ext_resource type="Texture2D" uid="uid://ct1kinwlxnbsk" path="res://ui/Images/UI_iron.png" id="4_macdk"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oldfg"]
-size = Vector2(12, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_smhhe"]
-size = Vector2(20, 12)
 
 [node name="Table" instance=ExtResource("1_2enk3")]
 script = ExtResource("2_0xpxp")
@@ -20,12 +14,8 @@ texture = ExtResource("3_e35o0")
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
 position = Vector2(0, 0)
-shape = SubResource("RectangleShape2D_oldfg")
 
-[node name="CollisionShape2D" parent="Area2D" index="0"]
-shape = SubResource("RectangleShape2D_smhhe")
-
-[node name="HoldingItem" type="TextureRect" parent="." index="4"]
+[node name="HoldingItem" type="TextureRect" parent="." index="3"]
 visible = false
 offset_left = -5.0
 offset_top = -5.0

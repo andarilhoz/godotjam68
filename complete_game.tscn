@@ -109,19 +109,19 @@ position = Vector2(-467.946, -215.457)
 scale = Vector2(3.36652, 3.36652)
 
 [node name="Table" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(80, -21)
-scale = Vector2(3.55945, 3.55945)
+position = Vector2(83, -21)
+scale = Vector2(3.59093, 3.55945)
 
 [node name="Table2" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(80, 25)
+position = Vector2(83, 25)
 scale = Vector2(3.55945, 3.55945)
 
 [node name="Table3" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(80, 119)
+position = Vector2(83, 119)
 scale = Vector2(3.55945, 3.55945)
 
 [node name="Table4" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(80, 166)
+position = Vector2(83, 166)
 scale = Vector2(3.55945, 3.55945)
 
 [node name="Table5" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
@@ -129,61 +129,54 @@ position = Vector2(130, 166)
 scale = Vector2(3.55945, 3.55945)
 
 [node name="Table6" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(178, 166)
-scale = Vector2(3.55945, 3.55945)
-
-[node name="Table7" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(224, 166)
-scale = Vector2(3.55945, 3.55945)
-
-[node name="Table8" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(269, 166)
+position = Vector2(177, 166)
 scale = Vector2(3.55945, 3.55945)
 
 [node name="Table9" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(316, 166)
+position = Vector2(313, 167)
 scale = Vector2(3.55945, 3.55945)
 
 [node name="Table10" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(361, 166)
+position = Vector2(359, 167)
 scale = Vector2(3.55945, 3.55945)
 
 [node name="Table11" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(361, 119)
-scale = Vector2(3.55945, 3.55945)
-
-[node name="Table12" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(361, 71)
+position = Vector2(359, 122)
 scale = Vector2(3.55945, 3.55945)
 
 [node name="Table13" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(361, 25)
+position = Vector2(359, 27)
 scale = Vector2(3.55945, 3.55945)
 
 [node name="Table14" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(361, -22)
+position = Vector2(359, -20)
 scale = Vector2(3.55945, 3.55945)
 
 [node name="Table15" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
 position = Vector2(223, -22)
 scale = Vector2(3.55945, 3.55945)
 
-[node name="Table16" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(223, 25)
-scale = Vector2(3.55945, 3.55945)
+[node name="StaticBody2D" type="StaticBody2D" parent="Scene/Node2D"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Scene/Node2D/StaticBody2D"]
+position = Vector2(106, -42)
+build_mode = 1
+polygon = PackedVector2Array(0, 43, -0.999992, 185, 230, 187, 230, 42, 139, 43, 139, 87.9999, 94.9999, 87.9999, 93.9999, 42)
 
 [node name="Deliver" parent="Scene" instance=ExtResource("19_qe31l")]
-position = Vector2(353.485, 329.919)
+position = Vector2(356.851, 333.285)
 rotation = -1.55956
-scale = Vector2(12.4675, 12.4675)
+scale = Vector2(11.3888, 11.3888)
 
 [node name="IronStorage" parent="Scene" instance=ExtResource("8_r4xfv")]
-position = Vector2(-198.625, 26.9322)
+position = Vector2(-198.624, 26.9321)
 scale = Vector2(13.7021, 13.7021)
 storage_material = ExtResource("14_iefvc")
 
 [node name="WoodStorage" parent="Scene" instance=ExtResource("8_r4xfv")]
-position = Vector2(747.367, 23.5656)
+position = Vector2(747.367, 37.0317)
 scale = Vector2(13.4178, 13.4178)
 storage_material = ExtResource("15_i0au3")
 

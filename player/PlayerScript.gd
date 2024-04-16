@@ -1,8 +1,11 @@
+class_name Player
+
 extends CharacterBody2D
 
 const ForgeEnum = preload("res://scripts/forge_enum.gd")
 
 @onready var holding_item: TextureRect = $HoldingItem
+@onready var area2d : Area2D = $Area2D
 
 const max_speed = 140
 const acceleration = 800
@@ -11,6 +14,8 @@ const friction = 1000
 var input = Vector2.ZERO
 
 var holding_material: Item
+
+var closest_interactable : Interactable = null
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -50,3 +55,58 @@ func delete_material():
 	print("Removing material: ",  holding_material.get_item_name())
 	holding_material = null
 	holding_item.hide()
+	
+
+func _process(delta):
+	if not area2d.has_overlapping_bodies():
+		return
+	
+	var bodies = area2d.get_overlapping_bodies()
+	
+	var interactables : Array[Interactable] = []
+	for body in bodies:
+		if not is_instance_valid(body) and not body is StaticBody2D:
+			continue
+		var parent = body.get_parent()
+		if not parent is Interactable:
+			continue
+		interactables.append(parent)
+	
+	if interactables.size() < 1:
+		return
+		
+	var current_closest = get_closest_interactable(interactables)
+	if closest_interactable == current_closest:
+		return
+	
+	if closest_interactable != null :
+		closest_interactable.on_player_leave()
+		
+	current_closest.on_player_close(self)
+	closest_interactable = current_closest
+
+func get_closest_interactable(interactables: Array[Interactable]):
+	var closest_interactable : Interactable = null
+	var min_distance = INF
+	
+	for interactable in interactables:
+		var distance = position.distance_squared_to(interactable.position)
+		if distance < min_distance:
+			min_distance = distance
+			closest_interactable = interactable
+	
+	return closest_interactable
+
+func _on_area_2d_body_exited(body):
+	if closest_interactable == null :
+		return
+	
+	if not is_instance_valid(body) and not body is StaticBody2D:
+		return
+		
+	var parent = body.get_parent()
+	if not parent is Interactable:
+		return
+		
+	parent.on_player_leave()
+	closest_interactable = null

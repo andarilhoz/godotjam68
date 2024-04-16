@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cuxyo3sqva6qp"]
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://cuxyo3sqva6qp"]
 
 [ext_resource type="Script" path="res://scripts/item.gd" id="1_0eexv"]
+[ext_resource type="Texture2D" uid="uid://bumh5k4xqixfu" path="res://Art/station_wood-pile.png" id="1_a76ti"]
 [ext_resource type="Texture2D" uid="uid://bd6u2n0cfqra8" path="res://ui/Images/UI_wood.png" id="2_j0r4o"]
 
 [resource]
 script = ExtResource("1_0eexv")
 item_type = 1
 sprite = ExtResource("2_j0r4o")
+deposit_sprite = ExtResource("1_a76ti")

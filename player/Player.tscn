@@ -1,15 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://oak2a85ikl0d"]
+[gd_scene load_steps=6 format=3 uid="uid://oak2a85ikl0d"]
 
 [ext_resource type="Script" path="res://player/PlayerScript.gd" id="1_t0ktx"]
 [ext_resource type="Texture2D" uid="uid://cgqvcdsvwt07" path="res://tilemap2.png" id="2_l0jeq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d7kf8"]
-radius = 7.21
-height = 16.6
+radius = 7.0
+height = 16.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j01pa"]
 atlas = ExtResource("2_l0jeq")
 region = Rect2(51, 119, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o4g37"]
+radius = 18.0278
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_t0ktx")
@@ -21,3 +24,10 @@ shape = SubResource("CapsuleShape2D_d7kf8")
 position = Vector2(0, -1)
 scale = Vector2(1, 1.03)
 texture = SubResource("AtlasTexture_j01pa")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_o4g37")
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
