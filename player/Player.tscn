@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d7kf8"]
 radius = 7.0
-height = 16.0
+height = 14.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j01pa"]
 atlas = ExtResource("2_l0jeq")
@@ -21,6 +21,7 @@ script = ExtResource("1_t0ktx")
 shape = SubResource("CapsuleShape2D_d7kf8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 3
 position = Vector2(0, -1)
 scale = Vector2(1, 1.03)
 texture = SubResource("AtlasTexture_j01pa")

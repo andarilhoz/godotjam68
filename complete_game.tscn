@@ -40,7 +40,7 @@ scale = Vector2(8, 8)
 collision_mask = 2
 
 [node name="HoldingItem" type="TextureRect" parent="Player"]
-z_index = 10
+visible = false
 offset_left = -4.5
 offset_top = 7.875
 offset_right = 4.5
@@ -120,7 +120,7 @@ collision_mask = 3
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/ColliderArea"]
 position = Vector2(-113, -208)
 build_mode = 1
-polygon = PackedVector2Array(3, -11, -6, 476, 782, 476, 778, -7, 475, -4, 475, 151, 316, 151, 321, -11)
+polygon = PackedVector2Array(3, -11, -9, 480, 785, 480, 778, -7, 475, -4, 475, 151, 316, 151, 321, -11)
 
 [node name="Table" parent="Node2D" instance=ExtResource("10_naw8p")]
 position = Vector2(-200, -290)
@@ -161,6 +161,7 @@ position = Vector2(282, -290)
 [node name="Deliver" parent="." instance=ExtResource("19_qe31l")]
 position = Vector2(355, 336)
 rotation = -1.55956
+take_out_timer_in_seconds = 1.0
 
 [node name="IronStorage" parent="." instance=ExtResource("8_r4xfv")]
 position = Vector2(-200, 32)

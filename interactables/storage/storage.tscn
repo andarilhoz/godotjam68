@@ -10,6 +10,3 @@ storage_material = null
 
 [node name="ItemSprite" parent="." index="0"]
 texture = ExtResource("3_qwx33")
-
-[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
-position = Vector2(0, 0)
