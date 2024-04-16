@@ -1,9 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://b4pqbp85pfaw5"]
+[gd_scene load_steps=20 format=3 uid="uid://b4pqbp85pfaw5"]
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://player/Player.tscn" id="1_5le0k"]
 [ext_resource type="Script" path="res://scripts/general_script.gd" id="1_8yawa"]
+[ext_resource type="Texture2D" uid="uid://dra8olsun02hx" path="res://ui/Images/UI_sketchy_spear.png" id="3_o7ltg"]
 [ext_resource type="PackedScene" uid="uid://wjxf5pt6bq2p" path="res://ui/Elements/Timer/UI_Timer.tscn" id="6_o0wk6"]
-[ext_resource type="Texture2D" uid="uid://bcc17ikw7s7at" path="res://ui/Images/UI_shield.png" id="6_s4wa0"]
 [ext_resource type="Script" path="res://scripts/OrdersController.gd" id="6_u5e3h"]
 [ext_resource type="Resource" uid="uid://bms6w2cjkng7" path="res://recipes/shield.tres" id="7_7srjl"]
 [ext_resource type="PackedScene" uid="uid://co3psefpehp0b" path="res://ui/Elements/Points/UI_Points.tscn" id="8_drioi"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://bd5k53oviw0wl" path="res://recipes/staff.tres" id="9_woln8"]
 [ext_resource type="PackedScene" uid="uid://bfw5bfequ0g0x" path="res://interactables/table/table.tscn" id="10_naw8p"]
 [ext_resource type="Resource" uid="uid://cwktcxkefau7h" path="res://recipes/sword.tres" id="10_q8ln3"]
+[ext_resource type="Texture2D" uid="uid://d06atvroa4c6o" path="res://image.png" id="12_liuua"]
 [ext_resource type="PackedScene" uid="uid://bfqpo5vryw575" path="res://interactables/forge/forge.tscn" id="12_ymthb"]
 [ext_resource type="Resource" uid="uid://bxprkkhwfok6" path="res://items/iron.tres" id="14_iefvc"]
 [ext_resource type="Resource" uid="uid://cuxyo3sqva6qp" path="res://items/wood.tres" id="15_i0au3"]
@@ -22,29 +23,31 @@
 [node name="complete_game" type="Node2D"]
 script = ExtResource("1_8yawa")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(290, 53)
+scale = Vector2(8, 8)
+zoom = Vector2(0.833, 0.833)
+limit_left = -960
+limit_top = -540
+limit_right = 960
+limit_bottom = 540
+limit_smoothed = true
+editor_draw_limits = true
+
 [node name="Player" parent="." instance=ExtResource("1_5le0k")]
 position = Vector2(290, 53)
-scale = Vector2(2, 2)
+scale = Vector2(8, 8)
 collision_mask = 2
 
 [node name="HoldingItem" type="TextureRect" parent="Player"]
-visible = false
-offset_left = -5.0
-offset_top = 7.5
-offset_right = 260.0
-offset_bottom = 278.5
-scale = Vector2(0.0399541, 0.0399541)
-texture = ExtResource("6_s4wa0")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-offset = Vector2(128, -64)
-zoom = Vector2(2.1, 2.1)
-limit_left = -110
-limit_top = -70
-limit_right = 400
-limit_bottom = 225
-limit_smoothed = true
-editor_draw_limits = true
+z_index = 10
+offset_left = -4.5
+offset_top = 7.875
+offset_right = 4.5
+offset_bottom = 15.875
+texture = ExtResource("3_o7ltg")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="InGame_CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
@@ -100,97 +103,81 @@ layout_mode = 2
 
 [node name="Scene" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(139, 64)
-scale = Vector2(0.297043, 0.297043)
 texture = ExtResource("20_t2wt8")
 
-[node name="Node2D" type="Node2D" parent="Scene"]
-position = Vector2(-467.946, -215.457)
-scale = Vector2(3.36652, 3.36652)
+[node name="Ref" type="Sprite2D" parent="."]
+visible = false
+z_index = -10
+scale = Vector2(1.36, 1.36)
+texture = ExtResource("12_liuua")
 
-[node name="Table" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(83, -21)
-scale = Vector2(3.59093, 3.55945)
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="Table2" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(83, 25)
-scale = Vector2(3.55945, 3.55945)
-
-[node name="Table3" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(83, 119)
-scale = Vector2(3.55945, 3.55945)
-
-[node name="Table4" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(83, 166)
-scale = Vector2(3.55945, 3.55945)
-
-[node name="Table5" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(130, 166)
-scale = Vector2(3.55945, 3.55945)
-
-[node name="Table6" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(177, 166)
-scale = Vector2(3.55945, 3.55945)
-
-[node name="Table9" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(313, 167)
-scale = Vector2(3.55945, 3.55945)
-
-[node name="Table10" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(359, 167)
-scale = Vector2(3.55945, 3.55945)
-
-[node name="Table11" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(359, 122)
-scale = Vector2(3.55945, 3.55945)
-
-[node name="Table13" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(359, 27)
-scale = Vector2(3.55945, 3.55945)
-
-[node name="Table14" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(359, -20)
-scale = Vector2(3.55945, 3.55945)
-
-[node name="Table15" parent="Scene/Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(223, -22)
-scale = Vector2(3.55945, 3.55945)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Scene/Node2D"]
+[node name="ColliderArea" type="StaticBody2D" parent="Node2D"]
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Scene/Node2D/StaticBody2D"]
-position = Vector2(106, -42)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/ColliderArea"]
+position = Vector2(-113, -208)
 build_mode = 1
-polygon = PackedVector2Array(0, 43, -0.999992, 185, 230, 187, 230, 42, 139, 43, 139, 87.9999, 94.9999, 87.9999, 93.9999, 42)
+polygon = PackedVector2Array(3, -11, -6, 476, 782, 476, 778, -7, 475, -4, 475, 151, 316, 151, 321, -11)
 
-[node name="Deliver" parent="Scene" instance=ExtResource("19_qe31l")]
-position = Vector2(356.851, 333.285)
+[node name="Table" parent="Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(-200, -290)
+
+[node name="Table2" parent="Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(-200, -127)
+
+[node name="Table3" parent="Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(-200, 191)
+
+[node name="Table4" parent="Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(-200, 350)
+
+[node name="Table5" parent="Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(-40, 350)
+
+[node name="Table6" parent="Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(120, 350)
+
+[node name="Table7" parent="Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(592, 350)
+
+[node name="Table8" parent="Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(750, 350)
+
+[node name="Table9" parent="Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(750, 190)
+
+[node name="Table10" parent="Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(750, -128)
+
+[node name="Table11" parent="Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(750, -290)
+
+[node name="Table12" parent="Node2D" instance=ExtResource("10_naw8p")]
+position = Vector2(282, -290)
+
+[node name="Deliver" parent="." instance=ExtResource("19_qe31l")]
+position = Vector2(355, 336)
 rotation = -1.55956
-scale = Vector2(11.3888, 11.3888)
 
-[node name="IronStorage" parent="Scene" instance=ExtResource("8_r4xfv")]
-position = Vector2(-198.624, 26.9321)
-scale = Vector2(13.7021, 13.7021)
+[node name="IronStorage" parent="." instance=ExtResource("8_r4xfv")]
+position = Vector2(-200, 32)
 storage_material = ExtResource("14_iefvc")
 
-[node name="WoodStorage" parent="Scene" instance=ExtResource("8_r4xfv")]
-position = Vector2(747.367, 37.0317)
-scale = Vector2(13.4178, 13.4178)
+[node name="WoodStorage" parent="." instance=ExtResource("8_r4xfv")]
+position = Vector2(750, 30)
 storage_material = ExtResource("15_i0au3")
 
-[node name="Trash" parent="Scene" instance=ExtResource("9_4l3rv")]
+[node name="Trash" parent="." instance=ExtResource("9_4l3rv")]
 position = Vector2(282.788, -134.661)
-scale = Vector2(10.7729, 10.7729)
 
-[node name="Forge" parent="Scene" instance=ExtResource("12_ymthb")]
+[node name="Forge" parent="." instance=ExtResource("12_ymthb")]
 position = Vector2(47.1313, -296.254)
-scale = Vector2(6.73304, 6.73304)
 
-[node name="Forge2" parent="Scene" instance=ExtResource("12_ymthb")]
+[node name="Forge2" parent="." instance=ExtResource("12_ymthb")]
 position = Vector2(515.078, -296.254)
-scale = Vector2(6.73304, 6.73304)
 
 [connection signal="timeout" from="InGame_CanvasLayer/Orders/OrderCountDown" to="InGame_CanvasLayer/Orders" method="_on_order_count_down_timeout"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]

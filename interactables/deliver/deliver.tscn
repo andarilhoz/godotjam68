@@ -8,12 +8,7 @@
 script = ExtResource("2_7bnnb")
 
 [node name="ItemSprite" parent="." index="0"]
-scale = Vector2(0.0745326, 0.0745326)
 texture = ExtResource("3_kx1mt")
-
-[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
-position = Vector2(-1, 2.38419e-07)
-scale = Vector2(0.975949, 0.975949)
 
 [node name="ActionBtn" parent="." index="2"]
 position = Vector2(9, 8)

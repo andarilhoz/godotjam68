@@ -36,5 +36,5 @@ material = SubResource("ShaderMaterial_yi4g5")
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
 offset_right = 64.0
-offset_bottom = 9.0
+offset_bottom = 64.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_rj57m")

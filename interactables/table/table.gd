@@ -2,7 +2,7 @@ extends "res://interactables/interactable.gd"
 const ForgeEnum = preload("res://scripts/forge_enum.gd")
 
 var holding_material : Item = null
-@onready var holding_item: TextureRect = $HoldingItem
+@onready var holding_item: TextureRect = $ItemSprite/ItemImage
 
 func do_action(player_body):
 	if player_body.holding_material == null:
@@ -20,7 +20,7 @@ func send_item(player_body: Node2D):
 	holding_item.hide()
 
 func on_player_close(player: Player):
-	if player.holding_material == null:
+	if player.holding_material == null && holding_material == null:
 		return
 	super.on_player_close(player)
 

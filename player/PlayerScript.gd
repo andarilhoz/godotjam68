@@ -7,9 +7,9 @@ const ForgeEnum = preload("res://scripts/forge_enum.gd")
 @onready var holding_item: TextureRect = $HoldingItem
 @onready var area2d : Area2D = $Area2D
 
-const max_speed = 140
-const acceleration = 800
-const friction = 1000
+const max_speed = 800
+const acceleration = 2000
+const friction = 3000
 
 var input = Vector2.ZERO
 

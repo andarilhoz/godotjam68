@@ -9,5 +9,7 @@ script = ExtResource("2_6y27x")
 
 [node name="ItemSprite" parent="." index="0"]
 position = Vector2(-2.26498e-06, -2.26498e-06)
-scale = Vector2(0.0782123, 0.0782123)
 texture = ExtResource("3_s5yuf")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(0, 0)

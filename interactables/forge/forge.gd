@@ -45,7 +45,7 @@ func do_action(player_body):
 	reveice_material(player_body)
 
 func on_player_close(player: Player):
-	if player.holding_material == null:
+	if player.holding_material == null && forged_item == null:
 		return
 	super.on_player_close(player)
 
