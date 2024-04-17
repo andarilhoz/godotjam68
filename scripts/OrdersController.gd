@@ -20,13 +20,11 @@ func _ready():
 
 func generate_order():
 	if order_list.size() >= max_orders:
-		print("Max array size, waiting")
 		timer.start(time_between_orders)
 		return
 
 	var random_item = randi() % item_list.size()
 	var request_card_item = instantiate_card(item_list[random_item])
-	print("Added item to the list: ", item_list[random_item].item.get_item_name())
 	order_list[request_card_item.get_instance_id()] = {"order": item_list[random_item], "card": request_card_item}
 	timer.start(time_between_orders)
 	time_between_orders = time_between_orders - decrease_time_between_orders
@@ -59,7 +57,6 @@ func remove_order(index):
 	order_list.erase(index)
 
 func _on_card_expire(card: Node):
-	print("Node expired: ", card.get_instance_id())
 	SignalManager.on_order_expired.emit()
 	remove_order(card.get_instance_id())
 	pass

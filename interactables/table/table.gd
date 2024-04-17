@@ -20,9 +20,12 @@ func send_item(player_body: Node2D):
 	holding_item.hide()
 
 func on_player_close(player: Player):
-	if player.holding_material == null && holding_material == null:
+	if not _should_interact(player):
 		return
 	super.on_player_close(player)
+	
+func _should_interact(player: Player):
+	return player.holding_material != null or holding_material != null
 
 func reveice_material(player_body: Node2D):
 	if holding_material != null:

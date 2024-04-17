@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://player/Player.tscn" id="1_5le0k"]
 [ext_resource type="Script" path="res://scripts/general_script.gd" id="1_8yawa"]
-[ext_resource type="Texture2D" uid="uid://dra8olsun02hx" path="res://ui/Images/UI_sketchy_spear.png" id="3_o7ltg"]
 [ext_resource type="PackedScene" uid="uid://wjxf5pt6bq2p" path="res://ui/Elements/Timer/UI_Timer.tscn" id="6_o0wk6"]
 [ext_resource type="Script" path="res://scripts/OrdersController.gd" id="6_u5e3h"]
 [ext_resource type="Resource" uid="uid://bms6w2cjkng7" path="res://recipes/shield.tres" id="7_7srjl"]
@@ -15,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://cwktcxkefau7h" path="res://recipes/sword.tres" id="10_q8ln3"]
 [ext_resource type="Texture2D" uid="uid://d06atvroa4c6o" path="res://image.png" id="12_liuua"]
 [ext_resource type="PackedScene" uid="uid://bfqpo5vryw575" path="res://interactables/forge/forge.tscn" id="12_ymthb"]
+[ext_resource type="Texture2D" uid="uid://cec3jcphmc7n6" path="res://Art/station_down-face.png" id="13_ehdvk"]
 [ext_resource type="Resource" uid="uid://bxprkkhwfok6" path="res://items/iron.tres" id="14_iefvc"]
 [ext_resource type="Resource" uid="uid://cuxyo3sqva6qp" path="res://items/wood.tres" id="15_i0au3"]
 [ext_resource type="PackedScene" uid="uid://drxlqqfv1yty1" path="res://interactables/deliver/deliver.tscn" id="19_qe31l"]
@@ -35,19 +35,9 @@ limit_smoothed = true
 editor_draw_limits = true
 
 [node name="Player" parent="." instance=ExtResource("1_5le0k")]
-position = Vector2(290, 53)
+position = Vector2(282, 92)
 scale = Vector2(0.8, 0.8)
 collision_mask = 2
-
-[node name="HoldingItem" type="TextureRect" parent="Player"]
-visible = false
-offset_left = 100.0
-offset_top = 30.0
-offset_right = 190.0
-offset_bottom = 112.0
-texture = ExtResource("3_o7ltg")
-expand_mode = 2
-stretch_mode = 5
 
 [node name="InGame_CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
@@ -158,6 +148,11 @@ position = Vector2(750, -290)
 [node name="Table12" parent="Node2D" instance=ExtResource("10_naw8p")]
 position = Vector2(282, -290)
 
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(283, -41)
+scale = Vector2(0.88, 0.88)
+texture = ExtResource("13_ehdvk")
+
 [node name="Deliver" parent="." instance=ExtResource("19_qe31l")]
 position = Vector2(355, 336)
 rotation = -1.55956
@@ -174,7 +169,7 @@ storage_material = ExtResource("15_i0au3")
 position = Vector2(282.788, -134.661)
 
 [node name="Forge" parent="." instance=ExtResource("12_ymthb")]
-position = Vector2(47.1313, -296.254)
+position = Vector2(38, -296)
 
 [node name="Forge2" parent="." instance=ExtResource("12_ymthb")]
 position = Vector2(515.078, -296.254)
