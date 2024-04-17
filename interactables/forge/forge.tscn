@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfqpo5vryw575"]
+[gd_scene load_steps=12 format=3 uid="uid://bfqpo5vryw575"]
 
 [ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="1_m7ehu"]
 [ext_resource type="Script" path="res://interactables/forge/forge.gd" id="2_aw1k6"]
@@ -8,8 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://ct1kinwlxnbsk" path="res://ui/Images/UI_iron.png" id="5_cgdvt"]
 [ext_resource type="Resource" uid="uid://bd5k53oviw0wl" path="res://recipes/staff.tres" id="5_uxwen"]
 [ext_resource type="Resource" uid="uid://cwktcxkefau7h" path="res://recipes/sword.tres" id="6_aba0p"]
-[ext_resource type="Texture2D" uid="uid://b66qs4pfy4n1e" path="res://ui/Images/UI_sword.png" id="6_weo0k"]
 [ext_resource type="Texture2D" uid="uid://cr6pb68orb4fc" path="res://Art/station_forge.png" id="7_33t76"]
+[ext_resource type="Texture2D" uid="uid://dra8olsun02hx" path="res://ui/Images/UI_sketchy_spear.png" id="10_3nvse"]
+[ext_resource type="Texture2D" uid="uid://bd6u2n0cfqra8" path="res://ui/Images/UI_wood.png" id="10_qrilp"]
 
 [node name="Forge" instance=ExtResource("1_m7ehu")]
 script = ExtResource("2_aw1k6")
@@ -39,7 +40,7 @@ columns = 3
 
 [node name="Item1" type="TextureRect" parent="Items" index="0"]
 visible = false
-custom_minimum_size = Vector2(350, 800)
+custom_minimum_size = Vector2(280, 800)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -48,30 +49,30 @@ expand_mode = 5
 
 [node name="Item2" type="TextureRect" parent="Items" index="1"]
 visible = false
-custom_minimum_size = Vector2(350, 800)
+custom_minimum_size = Vector2(280, 800)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("5_cgdvt")
+texture = ExtResource("10_qrilp")
 expand_mode = 5
 
 [node name="Item3" type="TextureRect" parent="Items" index="2"]
 visible = false
-custom_minimum_size = Vector2(350, 800)
+custom_minimum_size = Vector2(280, 800)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource("5_cgdvt")
-expand_mode = 5
+expand_mode = 4
 
 [node name="ForgedItem" type="TextureRect" parent="." index="6"]
 visible = false
-offset_left = -44.3182
-offset_top = -200.0
-offset_right = 305.682
-offset_bottom = 100.0
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_weo0k")
-expand_mode = 1
+offset_left = -43.1818
+offset_top = -192.045
+offset_right = 46.8182
+offset_bottom = -110.045
+texture = ExtResource("10_3nvse")
+expand_mode = 2
+stretch_mode = 5
 
 [connection signal="timeout" from="ProcessTimer" to="." method="_on_process_timer_timeout"]

@@ -4,9 +4,9 @@ extends CharacterBody2D
 
 const ForgeEnum = preload("res://scripts/forge_enum.gd")
 
-@onready var holding_item: TextureRect = $HoldingItem
+@onready var holding_item: TextureRect = $Smoothing2D/AnimatedSprite2D/HoldingItem
 @onready var area2d : Area2D = $Area2D
-@onready var player_sprite: Sprite2D = $Sprite2D
+@onready var player_sprite: AnimatedSprite2D = $Smoothing2D/AnimatedSprite2D
 
 const max_speed = 800
 const acceleration = 2000
@@ -59,8 +59,12 @@ func delete_material():
 	holding_material = null
 	holding_item.hide()
 	
+func _input(event):
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_SPACE:
+			manual_process()
 
-func _process(delta):
+func _process(delta):		
 	if not area2d.has_overlapping_bodies():
 		return
 	
@@ -73,7 +77,40 @@ func _process(delta):
 		var parent = body.get_parent()
 		if not parent is Interactable:
 			continue
-		interactables.append(parent)
+			
+		if (parent as Interactable)._should_interact(self):
+			interactables.append(parent)
+	
+	if interactables.size() < 1:
+		return
+		
+	var current_closest = get_closest_interactable(interactables)
+	if closest_interactable == current_closest:
+		return
+	
+	if closest_interactable != null :
+		closest_interactable.on_player_leave()
+		
+	current_closest.on_player_close(self)
+	closest_interactable = current_closest
+
+func manual_process():
+	print("manual process")
+	if not area2d.has_overlapping_bodies():
+		return
+	
+	var bodies = area2d.get_overlapping_bodies()
+	
+	var interactables : Array[Interactable] = []
+	for body in bodies:
+		if not is_instance_valid(body) and not body is StaticBody2D:
+			continue
+		var parent = body.get_parent()
+		if not parent is Interactable:
+			continue
+			
+		if (parent as Interactable)._should_interact(self):
+			interactables.append(parent)
 	
 	if interactables.size() < 1:
 		return
@@ -100,10 +137,7 @@ func get_closest_interactable(interactables: Array[Interactable]):
 	
 	return closest_interactable
 
-func _on_area_2d_body_exited(body):
-	if closest_interactable == null :
-		return
-	
+func _on_area_2d_body_exited(body):	
 	if not is_instance_valid(body) and not body is StaticBody2D:
 		return
 		
@@ -112,4 +146,4 @@ func _on_area_2d_body_exited(body):
 		return
 		
 	parent.on_player_leave()
-	closest_interactable = null
+

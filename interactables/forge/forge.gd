@@ -45,9 +45,12 @@ func do_action(player_body):
 	reveice_material(player_body)
 
 func on_player_close(player: Player):
-	if player.holding_material == null && forged_item == null:
+	if not _should_interact(player):
 		return
 	super.on_player_close(player)
+
+func _should_interact(player: Player):
+	return (player.holding_material != null and processed_item == null) or (player.holding_material == null and processed_item != null)
 
 func reveice_material(player_body: Node2D):
 	print("Received material: ", player_body.holding_material.get_item_name())

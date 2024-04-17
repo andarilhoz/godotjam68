@@ -3,22 +3,23 @@
 [ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="1_4lu2s"]
 [ext_resource type="Script" path="res://interactables/deliver/deliver.gd" id="2_7bnnb"]
 [ext_resource type="Texture2D" uid="uid://tdn0o5np8mqr" path="res://Art/station_deliver.png" id="3_kx1mt"]
-[ext_resource type="Texture2D" uid="uid://dra8olsun02hx" path="res://ui/Images/UI_sketchy_spear.png" id="4_hoe2h"]
+[ext_resource type="Texture2D" uid="uid://bcc17ikw7s7at" path="res://ui/Images/UI_shield.png" id="4_qgbvk"]
 
 [node name="Deliver" instance=ExtResource("1_4lu2s")]
 script = ExtResource("2_7bnnb")
-take_out_timer_in_seconds = 1.0
+take_out_timer_in_seconds = 2.0
 
 [node name="ItemSprite" parent="." index="0"]
 texture = ExtResource("3_kx1mt")
 
 [node name="ItemImage" type="TextureRect" parent="ItemSprite" index="0"]
 visible = false
-offset_left = -53.0
-offset_top = -52.0
-offset_right = 52.0
-offset_bottom = 49.0
-texture = ExtResource("4_hoe2h")
+offset_left = 73.0
+offset_top = -93.0
+offset_right = 248.0
+offset_bottom = 65.0
+rotation = 1.5708
+texture = ExtResource("4_qgbvk")
 expand_mode = 2
 stretch_mode = 5
 
@@ -27,3 +28,5 @@ position = Vector2(9, 8)
 rotation = 1.56036
 
 [node name="FadeTimer" type="Timer" parent="." index="3"]
+
+[connection signal="timeout" from="FadeTimer" to="." method="_on_fade_timer_timeout"]
