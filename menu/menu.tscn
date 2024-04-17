@@ -15,6 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_6hama")
 script = ExtResource("1_wgnd0")
+metadata/_edit_vertical_guides_ = [801.0]
 
 [node name="MenuBg" type="TextureRect" parent="."]
 layout_mode = 0
@@ -30,10 +31,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
 
 [node name="VBox_Botoes" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -99,10 +100,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -529.0
-offset_top = -333.0
-offset_right = 571.0
-offset_bottom = 767.0
+offset_left = -559.0
+offset_top = -287.0
+offset_right = 541.0
+offset_bottom = 813.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(500, 500)
