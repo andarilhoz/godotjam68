@@ -7,6 +7,7 @@ const ForgeEnum = preload("res://scripts/forge_enum.gd")
 @onready var holding_item: TextureRect = $Smoothing2D/AnimatedSprite2D/HoldingItem
 @onready var area2d : Area2D = $Area2D
 @onready var player_sprite: AnimatedSprite2D = $Smoothing2D/AnimatedSprite2D
+@export var speed_reducer_carry = 0.2
 
 const max_speed = 800
 const acceleration = 2000
@@ -32,11 +33,15 @@ func player_movement(delta):
 	if input == Vector2.ZERO:
 		if velocity.length() > (friction * delta):
 			velocity -= velocity.normalized() * (friction * delta)
+
 		else:
 			velocity = Vector2.ZERO
 	else:
 		velocity += (input * acceleration * delta)
 		velocity = velocity.limit_length(max_speed)
+		
+	if holding_material != null:
+		velocity = velocity * ( 1 - speed_reducer_carry)
 	
 	move_and_slide()
 	if velocity.x != 0:  # verifica se há movimento horizontal
@@ -47,7 +52,7 @@ func reveice_material(material: Item):
 	if holding_material != null:
 		print("ERROR, already has material in hands")
 		return
-	print("Redceived material: ", material.get_item_name())
+	print("Received material: ", material.get_item_name())
 	holding_material = material
 	player_sprite.animation = "idle_box"
 	holding_item.texture = material.sprite

@@ -284,7 +284,7 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_i8aoa")
 animation = &"idle_box"
 autoplay = "idle"
-frame_progress = 0.93565
+frame_progress = 0.719565
 
 [node name="HoldingItem" type="TextureRect" parent="Smoothing2D/AnimatedSprite2D"]
 visible = false
