@@ -1,6 +1,7 @@
 extends Control
 
 @onready var play_btn : Button = $MarginContainer/VBox_Botoes/Play
+
 func _ready():
 	play_btn.grab_focus()
 
