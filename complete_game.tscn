@@ -112,7 +112,7 @@ position = Vector2(-200, -290)
 position = Vector2(-200, -127)
 
 [node name="Table3" parent="Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(-200, 191)
+position = Vector2(-200, 32)
 
 [node name="Table4" parent="Node2D" instance=ExtResource("10_naw8p")]
 position = Vector2(-200, 350)
@@ -130,7 +130,7 @@ position = Vector2(592, 350)
 position = Vector2(750, 350)
 
 [node name="Table9" parent="Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(750, 190)
+position = Vector2(750, 30)
 
 [node name="Table10" parent="Node2D" instance=ExtResource("10_naw8p")]
 position = Vector2(750, -128)
@@ -151,11 +151,12 @@ position = Vector2(355, 336)
 rotation = -1.55956
 
 [node name="IronStorage" parent="." instance=ExtResource("8_r4xfv")]
-position = Vector2(-200, 32)
+position = Vector2(-200, 191)
 storage_material = ExtResource("14_iefvc")
 
 [node name="WoodStorage" parent="." instance=ExtResource("8_r4xfv")]
-position = Vector2(750, 30)
+position = Vector2(750, 190)
+scale = Vector2(0.88, 0.895714)
 storage_material = ExtResource("15_i0au3")
 
 [node name="Trash" parent="." instance=ExtResource("9_4l3rv")]
