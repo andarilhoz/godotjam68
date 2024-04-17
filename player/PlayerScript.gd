@@ -48,6 +48,7 @@ func reveice_material(material: Item):
 		return
 	print("Redceived material: ", material.get_item_name())
 	holding_material = material
+	player_sprite.animation = "idle_box"
 	holding_item.texture = material.sprite
 	holding_item.show()
 	
@@ -56,6 +57,7 @@ func delete_material():
 		print("ERROR, no material in hand")
 		return
 	print("Removing material: ",  holding_material.get_item_name())
+	player_sprite.animation = "idle"
 	holding_material = null
 	holding_item.hide()
 	
