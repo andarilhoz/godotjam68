@@ -146,4 +146,4 @@ func _on_area_2d_body_exited(body):
 		return
 		
 	parent.on_player_leave()
-
+	closest_interactable = null

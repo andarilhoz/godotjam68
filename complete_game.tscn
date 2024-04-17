@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b4pqbp85pfaw5"]
+[gd_scene load_steps=19 format=3 uid="uid://b4pqbp85pfaw5"]
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://player/Player.tscn" id="1_5le0k"]
 [ext_resource type="Script" path="res://scripts/general_script.gd" id="1_8yawa"]
@@ -12,7 +12,6 @@
 [ext_resource type="Resource" uid="uid://bd5k53oviw0wl" path="res://recipes/staff.tres" id="9_woln8"]
 [ext_resource type="PackedScene" uid="uid://bfw5bfequ0g0x" path="res://interactables/table/table.tscn" id="10_naw8p"]
 [ext_resource type="Resource" uid="uid://cwktcxkefau7h" path="res://recipes/sword.tres" id="10_q8ln3"]
-[ext_resource type="Texture2D" uid="uid://d06atvroa4c6o" path="res://image.png" id="12_liuua"]
 [ext_resource type="PackedScene" uid="uid://bfqpo5vryw575" path="res://interactables/forge/forge.tscn" id="12_ymthb"]
 [ext_resource type="Texture2D" uid="uid://cec3jcphmc7n6" path="res://Art/station_down-face.png" id="13_ehdvk"]
 [ext_resource type="Resource" uid="uid://bxprkkhwfok6" path="res://items/iron.tres" id="14_iefvc"]
@@ -95,12 +94,6 @@ layout_mode = 2
 z_index = -10
 texture = ExtResource("20_t2wt8")
 
-[node name="Ref" type="Sprite2D" parent="."]
-visible = false
-z_index = -10
-scale = Vector2(1.36, 1.36)
-texture = ExtResource("12_liuua")
-
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="ColliderArea" type="StaticBody2D" parent="Node2D"]
@@ -110,7 +103,7 @@ collision_mask = 3
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/ColliderArea"]
 position = Vector2(-113, -208)
 build_mode = 1
-polygon = PackedVector2Array(3, -11, -9, 480, 785, 480, 778, -7, 475, -4, 475, 151, 316, 151, 321, -11)
+polygon = PackedVector2Array(-11, -8, -9, 480, 785, 480, 778, -7, 467, -10, 467, 150, 309, 153, 310, -12)
 
 [node name="Table" parent="Node2D" instance=ExtResource("10_naw8p")]
 position = Vector2(-200, -290)
@@ -146,10 +139,10 @@ position = Vector2(750, -128)
 position = Vector2(750, -290)
 
 [node name="Table12" parent="Node2D" instance=ExtResource("10_naw8p")]
-position = Vector2(282, -290)
+position = Vector2(275, -290)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
-position = Vector2(283, -41)
+position = Vector2(276, -41)
 scale = Vector2(0.88, 0.88)
 texture = ExtResource("13_ehdvk")
 
@@ -166,13 +159,13 @@ position = Vector2(750, 30)
 storage_material = ExtResource("15_i0au3")
 
 [node name="Trash" parent="." instance=ExtResource("9_4l3rv")]
-position = Vector2(282.788, -134.661)
+position = Vector2(276, -135)
 
 [node name="Forge" parent="." instance=ExtResource("12_ymthb")]
-position = Vector2(38, -296)
+position = Vector2(32, -304)
 
 [node name="Forge2" parent="." instance=ExtResource("12_ymthb")]
-position = Vector2(515.078, -296.254)
+position = Vector2(508, -301)
 
 [connection signal="timeout" from="InGame_CanvasLayer/Orders/OrderCountDown" to="InGame_CanvasLayer/Orders" method="_on_order_count_down_timeout"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]

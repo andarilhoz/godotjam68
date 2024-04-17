@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfqpo5vryw575"]
+[gd_scene load_steps=15 format=3 uid="uid://bfqpo5vryw575"]
 
 [ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="1_m7ehu"]
 [ext_resource type="Script" path="res://interactables/forge/forge.gd" id="2_aw1k6"]
@@ -11,25 +11,47 @@
 [ext_resource type="Texture2D" uid="uid://cr6pb68orb4fc" path="res://Art/station_forge.png" id="7_33t76"]
 [ext_resource type="Texture2D" uid="uid://dra8olsun02hx" path="res://ui/Images/UI_sketchy_spear.png" id="10_3nvse"]
 [ext_resource type="Texture2D" uid="uid://bd6u2n0cfqra8" path="res://ui/Images/UI_wood.png" id="10_qrilp"]
+[ext_resource type="Script" path="res://PointLight2D2.gd" id="12_ksim4"]
+
+[sub_resource type="Gradient" id="Gradient_xu4d2"]
+offsets = PackedFloat32Array(0.265306, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vrndm"]
+gradient = SubResource("Gradient_xu4d2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.6, 0)
 
 [node name="Forge" instance=ExtResource("1_m7ehu")]
 script = ExtResource("2_aw1k6")
 processing_time = 2.0
 recipes = Array[Resource("res://scripts/order.gd")]([ExtResource("3_47mkm"), ExtResource("4_tk8qk"), ExtResource("5_uxwen"), ExtResource("6_aba0p")])
 
-[node name="ItemSprite" parent="." index="0"]
+[node name="PointLight2D2" type="PointLight2D" parent="." index="0"]
+position = Vector2(-70, 40)
+scale = Vector2(8.86452, 9.54368)
+color = Color(1, 1, 0, 1)
+energy = 0.8
+shadow_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_vrndm")
+script = ExtResource("12_ksim4")
+
+[node name="FlickerForgeLightTimer" type="Timer" parent="PointLight2D2" index="0"]
+
+[node name="ItemSprite" parent="." index="1"]
 texture = ExtResource("7_33t76")
 
-[node name="ProcessTimer" type="Timer" parent="." index="3"]
+[node name="ProcessTimer" type="Timer" parent="." index="4"]
 
-[node name="UI_ProgressBar" parent="." index="4" instance=ExtResource("4_dxxqa")]
+[node name="UI_ProgressBar" parent="." index="5" instance=ExtResource("4_dxxqa")]
 visible = false
 offset_left = -30.0
 offset_top = -250.0
 offset_right = 70.0
 offset_bottom = -150.0
 
-[node name="Items" type="GridContainer" parent="." index="5"]
+[node name="Items" type="GridContainer" parent="." index="6"]
 offset_left = -152.273
 offset_top = -180.682
 offset_right = 1097.73
@@ -65,7 +87,7 @@ size_flags_vertical = 0
 texture = ExtResource("5_cgdvt")
 expand_mode = 4
 
-[node name="ForgedItem" type="TextureRect" parent="." index="6"]
+[node name="ForgedItem" type="TextureRect" parent="." index="7"]
 visible = false
 offset_left = -43.1818
 offset_top = -192.045
@@ -75,4 +97,5 @@ texture = ExtResource("10_3nvse")
 expand_mode = 2
 stretch_mode = 5
 
+[connection signal="timeout" from="PointLight2D2/FlickerForgeLightTimer" to="PointLight2D2" method="_on_flicker_forge_light_timer_timeout"]
 [connection signal="timeout" from="ProcessTimer" to="." method="_on_process_timer_timeout"]
