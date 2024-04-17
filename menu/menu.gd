@@ -1,6 +1,6 @@
 extends Control
 
-@onready var play_btn : Button = $"MarginContainer/VBox_Menu/VBox_Botões/Play"
+@onready var play_btn : Button = $MarginContainer/VBox_Botoes/Play
 func _ready():
 	play_btn.grab_focus()
 
