@@ -24,7 +24,7 @@ expand_mode = 2
 stretch_mode = 5
 
 [node name="ActionBtn" parent="." index="2"]
-position = Vector2(9, 8)
+position = Vector2(-1.90735e-06, -1.13637)
 rotation = 1.56036
 
 [node name="FadeTimer" type="Timer" parent="." index="3"]

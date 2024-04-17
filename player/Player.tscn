@@ -1,10 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://oak2a85ikl0d"]
+[gd_scene load_steps=45 format=3 uid="uid://oak2a85ikl0d"]
 
 [ext_resource type="Script" path="res://player/PlayerScript.gd" id="1_t0ktx"]
 [ext_resource type="Script" path="res://addons/smoothing/smoothing_2d.gd" id="2_fiill"]
 [ext_resource type="Texture2D" uid="uid://bc0atg6yan2dr" path="res://animation/character_idle_sprite.png" id="3_ctw8w"]
 [ext_resource type="Texture2D" uid="uid://dra8olsun02hx" path="res://ui/Images/UI_sketchy_spear.png" id="3_rltq8"]
-[ext_resource type="Shader" uid="uid://ct5ypgoud8l4s" path="res://player/Player.tres" id="5_rfuix"]
+[ext_resource type="Texture2D" uid="uid://ccuey2r8bigeu" path="res://animation/character_idle-box_sprite.png" id="4_ghu4o"]
+[ext_resource type="Shader" uid="uid://bwg3i3b3nh48k" path="res://player/Player.tres" id="5_rfuix"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d7kf8"]
 radius = 87.0
@@ -74,6 +75,70 @@ region = Rect2(4392, 732, 732, 732)
 atlas = ExtResource("3_ctw8w")
 region = Rect2(5124, 732, 732, 732)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnnub"]
+atlas = ExtResource("4_ghu4o")
+region = Rect2(0, 0, 732, 732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b512w"]
+atlas = ExtResource("4_ghu4o")
+region = Rect2(732, 0, 732, 732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ntkq"]
+atlas = ExtResource("4_ghu4o")
+region = Rect2(1464, 0, 732, 732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7oog"]
+atlas = ExtResource("4_ghu4o")
+region = Rect2(2196, 0, 732, 732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icihj"]
+atlas = ExtResource("4_ghu4o")
+region = Rect2(2928, 0, 732, 732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf1xo"]
+atlas = ExtResource("4_ghu4o")
+region = Rect2(3660, 0, 732, 732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfw8o"]
+atlas = ExtResource("4_ghu4o")
+region = Rect2(4392, 0, 732, 732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y22pj"]
+atlas = ExtResource("4_ghu4o")
+region = Rect2(5124, 0, 732, 732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s04pf"]
+atlas = ExtResource("4_ghu4o")
+region = Rect2(0, 732, 732, 732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqfs3"]
+atlas = ExtResource("4_ghu4o")
+region = Rect2(732, 732, 732, 732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qnnt"]
+atlas = ExtResource("4_ghu4o")
+region = Rect2(1464, 732, 732, 732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e75yx"]
+atlas = ExtResource("4_ghu4o")
+region = Rect2(2196, 732, 732, 732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i68q"]
+atlas = ExtResource("4_ghu4o")
+region = Rect2(2928, 732, 732, 732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymy7o"]
+atlas = ExtResource("4_ghu4o")
+region = Rect2(3660, 732, 732, 732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4q63"]
+atlas = ExtResource("4_ghu4o")
+region = Rect2(4392, 732, 732, 732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nvkc"]
+atlas = ExtResource("4_ghu4o")
+region = Rect2(5124, 732, 732, 732)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_i8aoa"]
 animations = [{
 "frames": [{
@@ -126,7 +191,60 @@ animations = [{
 "texture": SubResource("AtlasTexture_wvyi0")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnnub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b512w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ntkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7oog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icihj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf1xo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfw8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y22pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s04pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqfs3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qnnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e75yx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2i68q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymy7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4q63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nvkc")
+}],
+"loop": true,
+"name": &"idle_box",
 "speed": 24.0
 }]
 
@@ -156,8 +274,9 @@ script = ExtResource("2_fiill")
 z_index = 3
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_i8aoa")
-autoplay = "default"
-frame_progress = 0.930292
+animation = &"idle_box"
+autoplay = "idle"
+frame_progress = 0.479287
 
 [node name="HoldingItem" type="TextureRect" parent="Smoothing2D/AnimatedSprite2D"]
 visible = false
