@@ -4,9 +4,9 @@ extends CharacterBody2D
 
 const ForgeEnum = preload("res://scripts/forge_enum.gd")
 
-@onready var holding_item: TextureRect = $AnimatedSprite2D/HoldingItem
+@onready var holding_item: TextureRect = $Smoothing2D/AnimatedSprite2D/HoldingItem
 @onready var area2d : Area2D = $Area2D
-@onready var player_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var player_sprite: AnimatedSprite2D = $Smoothing2D/AnimatedSprite2D
 
 const max_speed = 800
 const acceleration = 2000
