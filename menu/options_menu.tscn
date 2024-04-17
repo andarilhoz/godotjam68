@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c38htlq5xgrkj"]
+[gd_scene load_steps=4 format=3 uid="uid://c38htlq5xgrkj"]
 
 [ext_resource type="Script" path="res://menu/options_menu.gd" id="1_rdfi1"]
+[ext_resource type="Theme" uid="uid://5jdis1w6dpq2" path="res://menu/Default_Theme.tres" id="1_v04qp"]
 
 [sub_resource type="Theme" id="Theme_ramnw"]
 
@@ -13,6 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("1_v04qp")
 script = ExtResource("1_rdfi1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -33,6 +35,10 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(33, 32.6667)
 theme = SubResource("Theme_ramnw")
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -50,7 +56,7 @@ layout_mode = 2
 focus_neighbor_top = NodePath("../Volume")
 text = "back"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

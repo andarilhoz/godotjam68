@@ -1,27 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://do64tlqxvjbh7"]
+[gd_scene load_steps=4 format=3 uid="uid://do64tlqxvjbh7"]
 
-[ext_resource type="Theme" path="res://menu/Default_Theme.tres" id="1_6hama"]
+[ext_resource type="Theme" uid="uid://5jdis1w6dpq2" path="res://menu/Default_Theme.tres" id="1_6hama"]
 [ext_resource type="Script" path="res://menu/menu.gd" id="1_wgnd0"]
-[ext_resource type="Texture2D" path="res://menu/title.png" id="2_rcgrf"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y2mjb"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4sh5j"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yw8nq"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rgwl1"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ixsja"]
-
-[sub_resource type="Theme" id="Theme_2wtul"]
-Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_focus_color = Color(1, 0.529412, 0.227451, 1)
-Button/styles/disabled = SubResource("StyleBoxEmpty_y2mjb")
-Button/styles/focus = SubResource("StyleBoxEmpty_4sh5j")
-Button/styles/hover = SubResource("StyleBoxEmpty_yw8nq")
-Button/styles/normal = SubResource("StyleBoxEmpty_rgwl1")
-Button/styles/pressed = SubResource("StyleBoxEmpty_ixsja")
+[ext_resource type="Texture2D" uid="uid://nuwy4d5l636p" path="res://menu/title.png" id="2_rcgrf"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -68,7 +49,6 @@ stretch_mode = 5
 [node name="VBox_Botões" type="VBoxContainer" parent="MarginContainer/VBox_Menu"]
 layout_mode = 2
 size_flags_vertical = 10
-theme = SubResource("Theme_2wtul")
 
 [node name="Play" type="Button" parent="MarginContainer/VBox_Menu/VBox_Botões"]
 layout_mode = 2
