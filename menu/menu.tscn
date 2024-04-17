@@ -24,6 +24,33 @@ offset_bottom = 900.0
 texture = ExtResource("3_3rdut")
 expand_mode = 2
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 70.0
+offset_top = 40.0
+offset_right = 1550.0
+offset_bottom = 850.0
+
+[node name="Título_Img" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -559.0
+offset_top = -287.0
+offset_right = 541.0
+offset_bottom = 813.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(500, 500)
+size_flags_vertical = 3
+texture = ExtResource("2_rcgrf")
+expand_mode = 2
+stretch_mode = 4
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -89,28 +116,6 @@ theme_override_fonts/font = ExtResource("5_62eur")
 theme_override_font_sizes/font_size = 56
 text = "Quit"
 alignment = 0
-
-[node name="Control" type="Control" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="Título_Img" type="TextureRect" parent="MarginContainer/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -559.0
-offset_top = -287.0
-offset_right = 541.0
-offset_bottom = 813.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(500, 500)
-size_flags_vertical = 3
-texture = ExtResource("2_rcgrf")
-expand_mode = 2
-stretch_mode = 4
 
 [connection signal="pressed" from="MarginContainer/VBox_Botoes/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBox_Botoes/Options" to="." method="_on_options_pressed"]
