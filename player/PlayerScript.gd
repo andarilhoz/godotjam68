@@ -41,7 +41,8 @@ func player_movement(delta):
 	move_and_slide()
 	if velocity.x != 0:  # verifica se há movimento horizontal
 		player_sprite.flip_h = velocity.x < 0  # flipa horizontalmente se movendo para a esquerda
-
+		$LightOccluder2D.scale = Vector2(-1,1) if velocity.x < 0 else Vector2(1,1)
+		
 func reveice_material(material: Item):
 	if holding_material != null:
 		print("ERROR, already has material in hands")
