@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkhl4cyilme6l"]
+[gd_scene load_steps=12 format=3 uid="uid://bkhl4cyilme6l"]
 
 [ext_resource type="Script" path="res://ui/Elements/RequestCard/RequestCard.gd" id="1_1t6os"]
 [ext_resource type="Theme" uid="uid://cm7cf72i5gr6c" path="res://ui/Elements/RequestCard/forge_theme.tres" id="1_s1j6i"]
@@ -6,9 +6,21 @@
 [ext_resource type="Texture2D" uid="uid://dra8olsun02hx" path="res://ui/Images/UI_sketchy_spear.png" id="3_l7xce"]
 [ext_resource type="Texture2D" uid="uid://ct1kinwlxnbsk" path="res://ui/Images/UI_iron.png" id="4_ee66k"]
 [ext_resource type="Texture2D" uid="uid://bd6u2n0cfqra8" path="res://ui/Images/UI_wood.png" id="5_o3w0e"]
+[ext_resource type="Shader" uid="uid://huvfx2js783q" path="res://ui/Elements/RequestCard/RequestCard.tres" id="7_1rlm2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_taw43"]
 texture = ExtResource("2_2x5mu")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gap1h"]
+shader = ExtResource("7_1rlm2")
+shader_parameter/Percent = 99
+
+[sub_resource type="Gradient" id="Gradient_vh624"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w6a4i"]
+gradient = SubResource("Gradient_vh624")
+width = 32
 
 [node name="RequestCard" type="Control"]
 custom_minimum_size = Vector2(256, 128)
@@ -73,5 +85,15 @@ texture = ExtResource("4_ee66k")
 expand_mode = 2
 
 [node name="OrderTimeout" type="Timer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_gap1h")
+layout_mode = 0
+offset_left = -24.0
+offset_top = 40.0
+offset_right = -8.0
+offset_bottom = 316.0
+texture = SubResource("GradientTexture1D_w6a4i")
+expand_mode = 1
 
 [connection signal="timeout" from="OrderTimeout" to="." method="_on_order_timeout_timeout"]
