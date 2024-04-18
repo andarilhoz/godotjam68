@@ -29,14 +29,14 @@ func on_player_leave():
 		return
 	actionBtn.hide()
 	close_player = null
-	sprite.modulate = Color(1,1,1,1)
+	sprite.material.set_shader_parameter("should_apply", false)
 	active = false
 
 func on_player_close(player: Player):
 	if active:
 		return
 	actionBtn.show()
-	sprite.modulate = Color(1,1,1,0.5)
+	sprite.material.set_shader_parameter("should_apply", true)
 	close_player = player
 	active = true
 	

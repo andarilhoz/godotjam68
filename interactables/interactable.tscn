@@ -1,8 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://dklup3lo13qq4"]
+[gd_scene load_steps=11 format=3 uid="uid://dklup3lo13qq4"]
 
 [ext_resource type="Texture2D" uid="uid://cgqvcdsvwt07" path="res://tilemap2.png" id="1_d1uex"]
 [ext_resource type="Script" path="res://interactables/interactable.gd" id="1_w0aa2"]
+[ext_resource type="Shader" path="res://interactables/interactable.gdshader" id="2_c41sq"]
 [ext_resource type="Texture2D" uid="uid://b7dt4t0umxwx0" path="res://ui/tilemap_keys.png" id="3_vgg3t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6uwft"]
+resource_local_to_scene = true
+shader = ExtResource("2_c41sq")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 5.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/should_apply = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6su3"]
 atlas = ExtResource("1_d1uex")
@@ -38,6 +49,7 @@ scale = Vector2(0.88, 0.88)
 script = ExtResource("1_w0aa2")
 
 [node name="ItemSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_6uwft")
 texture = SubResource("AtlasTexture_m6su3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -48,6 +60,7 @@ collision_mask = 3
 shape = SubResource("CircleShape2D_gtkte")
 
 [node name="ActionBtn" type="AnimatedSprite2D" parent="."]
+visible = false
 light_mask = 0
 z_index = 5
 position = Vector2(-1.52588e-05, 3.8147e-06)

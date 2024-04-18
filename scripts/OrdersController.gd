@@ -3,10 +3,10 @@ const ForgeEnum = preload("res://scripts/forge_enum.gd")
 const request_card = preload("res://ui/Elements/RequestCard/RequestCard.tscn")
 
 @onready var timer: Timer = $OrderCountDown
-@export var time_between_orders: float = 9
+@export var time_between_orders: float = 13
 @export var min_time_between_orders: float = 4
 @export var decrease_time_between_orders: float = 0.5
-@export var max_orders = 6
+@export var max_orders = 4
 
 @export var item_list: Array[Order]
 

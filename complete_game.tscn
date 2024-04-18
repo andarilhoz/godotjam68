@@ -54,7 +54,6 @@ theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 200
 columns = 2
 script = ExtResource("6_u5e3h")
-max_orders = 4
 item_list = Array[Resource("res://scripts/order.gd")]([ExtResource("7_7srjl"), ExtResource("8_n4f6w"), ExtResource("9_woln8"), ExtResource("10_q8ln3")])
 
 [node name="OrderCountDown" type="Timer" parent="InGame_CanvasLayer/Orders"]
