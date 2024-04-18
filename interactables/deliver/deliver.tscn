@@ -1,15 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://drxlqqfv1yty1"]
+[gd_scene load_steps=7 format=3 uid="uid://drxlqqfv1yty1"]
 
 [ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="1_4lu2s"]
 [ext_resource type="Script" path="res://interactables/deliver/deliver.gd" id="2_7bnnb"]
+[ext_resource type="Shader" path="res://interactables/interactable.gdshader" id="3_diwsn"]
 [ext_resource type="Texture2D" uid="uid://tdn0o5np8mqr" path="res://Art/station_deliver.png" id="3_kx1mt"]
 [ext_resource type="Texture2D" uid="uid://bcc17ikw7s7at" path="res://ui/Images/UI_shield.png" id="4_qgbvk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6n7ic"]
+resource_local_to_scene = true
+shader = ExtResource("3_diwsn")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 5.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/should_apply = false
 
 [node name="Deliver" instance=ExtResource("1_4lu2s")]
 script = ExtResource("2_7bnnb")
 take_out_timer_in_seconds = 2.0
 
 [node name="ItemSprite" parent="." index="0"]
+material = SubResource("ShaderMaterial_6n7ic")
 texture = ExtResource("3_kx1mt")
 
 [node name="ItemImage" type="TextureRect" parent="ItemSprite" index="0"]

@@ -163,11 +163,11 @@ storage_material = ExtResource("15_i0au3")
 position = Vector2(276, -135)
 
 [node name="Forge" parent="." instance=ExtResource("12_ymthb")]
-position = Vector2(32, -304)
+position = Vector2(42, -304)
 processing_time = 4.0
 
 [node name="Forge2" parent="." instance=ExtResource("12_ymthb")]
-position = Vector2(508, -301)
+position = Vector2(518, -301)
 processing_time = 4.0
 
 [connection signal="timeout" from="InGame_CanvasLayer/Orders/OrderCountDown" to="InGame_CanvasLayer/Orders" method="_on_order_count_down_timeout"]

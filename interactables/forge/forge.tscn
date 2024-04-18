@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bfqpo5vryw575"]
+[gd_scene load_steps=24 format=3 uid="uid://bfqpo5vryw575"]
 
 [ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="1_m7ehu"]
 [ext_resource type="Script" path="res://interactables/forge/forge.gd" id="2_aw1k6"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://cwktcxkefau7h" path="res://recipes/sword.tres" id="6_aba0p"]
 [ext_resource type="Texture2D" uid="uid://cr6pb68orb4fc" path="res://Art/station_forge.png" id="7_33t76"]
 [ext_resource type="Texture2D" uid="uid://b7dt4t0umxwx0" path="res://ui/tilemap_keys.png" id="7_unaij"]
+[ext_resource type="Shader" path="res://interactables/interactable.gdshader" id="9_2a2lb"]
 [ext_resource type="Texture2D" uid="uid://dra8olsun02hx" path="res://ui/Images/UI_sketchy_spear.png" id="10_3nvse"]
 [ext_resource type="Texture2D" uid="uid://bd6u2n0cfqra8" path="res://ui/Images/UI_wood.png" id="10_qrilp"]
 [ext_resource type="Script" path="res://PointLight2D2.gd" id="12_ksim4"]
@@ -45,6 +46,16 @@ gradient = SubResource("Gradient_xu4d2")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.6, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wef7e"]
+resource_local_to_scene = true
+shader = ExtResource("9_2a2lb")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 5.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/should_apply = false
 
 [node name="Forge" instance=ExtResource("1_m7ehu")]
 script = ExtResource("2_aw1k6")
@@ -83,6 +94,7 @@ script = ExtResource("12_ksim4")
 [node name="FlickerForgeLightTimer" type="Timer" parent="PointLight2D2" index="0"]
 
 [node name="ItemSprite" parent="." index="2"]
+material = SubResource("ShaderMaterial_wef7e")
 texture = ExtResource("7_33t76")
 
 [node name="ProcessTimer" type="Timer" parent="." index="5"]
