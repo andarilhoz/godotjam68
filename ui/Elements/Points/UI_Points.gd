@@ -27,7 +27,14 @@ func increase_points(order):
 		if percentage >= item:
 			deliver_match = points_dict_percentage_over[item]
 			break
-	var receive_points = (order["order"] as Order).deliver_values[deliver_match]
+	var receive_points : int = (order["order"] as Order).deliver_values[deliver_match]
+	print("points for: ", (order["order"] as Order).item.get_item_name())
+	print("deliver match: ", deliver_match)
+	print("is masterpiece: ", (order["item"] as Item).is_masterpiece)
+	print("raw_points: ",receive_points )
+	if (order["item"] as Item).is_masterpiece:
+		receive_points += 1
+	print("receive points: ", receive_points)
 	points += receive_points
 	update_label()
 

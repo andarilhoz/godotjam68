@@ -1,5 +1,5 @@
 extends "res://interactables/interactable.gd"
-
+const ForgeEnum = preload("res://scripts/forge_enum.gd")
 @export var take_out_timer_in_seconds : float = 2
 
 
@@ -33,7 +33,7 @@ func on_player_close(player: Player):
 	super.on_player_close(player)
 
 func _should_interact(player: Player):
-	return player.holding_material != null
+	return player.holding_material != null and (player.holding_material.item_type != ForgeEnum.ForgeItem.WOOD and player.holding_material.item_type != ForgeEnum.ForgeItem.IRON) 
 		
 
 func _on_fade_timer_timeout():

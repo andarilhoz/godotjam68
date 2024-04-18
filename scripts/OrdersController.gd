@@ -65,7 +65,7 @@ func get_order_by_item(item: Item):
 	var order_match
 	for key in order_list:
 		if order_list[key]["order"].item.get_item_name() == item.get_item_name():
-			order_match = {"index": key, "order":order_list[key]["order"], "percent": order_list[key]["card"].get_percentage_time() }
+			order_match = {"index": key, "order":order_list[key]["order"], "percent": order_list[key]["card"].get_percentage_time(), "item": item }
 			break
 	return order_match
 			
