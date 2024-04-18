@@ -23,8 +23,11 @@ func initialize_card(order: Order):
 	timer.start(order.expire_time_in_seconds)
 
 func _process(delta):
-	var percent_of_time: float =  100 - ( (1 - timer.time_left / timer.wait_time) * 100)
+	var percent_of_time: float = get_percentage_time()
 	$TextureRect.material.set_shader_parameter("Percent", percent_of_time)
+
+func get_percentage_time():
+	return 100 - ( (1 - timer.time_left / timer.wait_time) * 100)
 
 func _on_order_timeout_timeout():
 	on_card_expire.emit(self)

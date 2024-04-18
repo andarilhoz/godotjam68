@@ -5,6 +5,12 @@ extends Control
 @export var points_loose_expire = 5
 @export var points_loose_wrong = 10
 
+@export var points_dict_percentage_over = {
+	50 : "Good",
+	20 : "Ok",
+	 0 : "Meh"
+}
+
 var points : int = 0;
 
 # Called when the node enters the scene tree for the first time.
@@ -14,8 +20,15 @@ func _ready():
 	SignalManager.on_order_misplaced.connect(wrong_order)
 	text_label.text = "[center]" + str(points) + "[/center]"
 
-func increase_points():
-	points += points_per_order
+func increase_points(order):
+	var percentage = order["percent"]
+	var deliver_match = "Meh"
+	for item in points_dict_percentage_over :
+		if percentage >= item:
+			deliver_match = points_dict_percentage_over[item]
+			break
+	var receive_points = (order["order"] as Order).deliver_values[deliver_match]
+	points += receive_points
 	update_label()
 
 func update_label():

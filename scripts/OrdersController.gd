@@ -48,8 +48,8 @@ func _on_order_received(item: Item):
 	if order == null:
 		SignalManager.on_order_misplaced.emit()
 		return
+	SignalManager.on_order_successful.emit(order)
 	remove_order(order["index"])
-	SignalManager.on_order_successful.emit()
 	pass
 
 func remove_order(index):
@@ -65,7 +65,7 @@ func get_order_by_item(item: Item):
 	var order_match
 	for key in order_list:
 		if order_list[key]["order"].item.get_item_name() == item.get_item_name():
-			order_match = {"index": key, "order":order_list[key]["order"]}
+			order_match = {"index": key, "order":order_list[key]["order"], "percent": order_list[key]["card"].get_percentage_time() }
 			break
 	return order_match
 			
