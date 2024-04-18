@@ -9,8 +9,8 @@ const ForgeEnum = preload("res://scripts/forge_enum.gd")
 @onready var player_sprite: AnimatedSprite2D = $Smoothing2D/AnimatedSprite2D
 @export var speed_reducer_carry = 0.17
 
-const max_speed = 700
-const acceleration = 5000
+const max_speed = 500
+const acceleration = 4000
 const friction = 1500
 
 var input = Vector2.ZERO

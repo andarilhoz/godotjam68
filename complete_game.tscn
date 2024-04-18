@@ -149,6 +149,7 @@ texture = ExtResource("13_ehdvk")
 [node name="Deliver" parent="." instance=ExtResource("19_qe31l")]
 position = Vector2(355, 336)
 rotation = -1.55956
+take_out_timer_in_seconds = 1.0
 
 [node name="IronStorage" parent="." instance=ExtResource("8_r4xfv")]
 position = Vector2(-200, 191)
