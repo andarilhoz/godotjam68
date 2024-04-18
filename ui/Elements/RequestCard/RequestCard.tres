@@ -27,11 +27,6 @@ output_port_for_preview = 0
 expanded_output_ports = [0]
 input_name = "uv"
 
-[sub_resource type="VisualShaderNodeIntParameter" id="VisualShaderNodeIntParameter_i2f70"]
-parameter_name = "Percent"
-default_value_enabled = true
-default_value = 89
-
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_lecqj"]
 default_input_values = [0, 0.0, 1, 2.0]
 operator = 5
@@ -52,6 +47,11 @@ constant = Color(0.776112, 0.236797, 0.250048, 1)
 [sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_0rc24"]
 default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, Vector3(0.5, 0.5, 0.5)]
 op_type = 3
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_dehk5"]
+parameter_name = "Percent"
+default_value_enabled = true
+default_value = 100.0
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_k6fmi"]
 default_input_values = [0, 0.0, 1, 100.0]
@@ -75,7 +75,7 @@ constant = Color(0.670588, 0.890196, 0.215686, 1)
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
-uniform int Percent = 89;
+uniform float Percent = 100;
 
 
 
@@ -92,13 +92,13 @@ void fragment() {
 	vec4 n_out7p0 = vec4(0.670588, 0.890196, 0.215686, 1.000000);
 
 
-// IntParameter:2
-	int n_out2p0 = Percent;
+// FloatParameter:29
+	float n_out29p0 = Percent;
 
 
 // FloatOp:3
 	float n_in3p1 = 100.00000;
-	float n_out3p0 = float(n_out2p0) / n_in3p1;
+	float n_out3p0 = n_out29p0 / n_in3p1;
 
 
 // Clamp:4
@@ -169,12 +169,10 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-1008.42, -814.703)
+graph_offset = Vector2(-2019.77, 148.056)
 mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2(1020, 60)
-nodes/fragment/2/node = SubResource("VisualShaderNodeIntParameter_i2f70")
-nodes/fragment/2/position = Vector2(-1806.92, 412.026)
 nodes/fragment/3/node = SubResource("VisualShaderNodeFloatOp_k6fmi")
 nodes/fragment/3/position = Vector2(-1374.92, 380.026)
 nodes/fragment/4/node = SubResource("VisualShaderNodeClamp_2pal4")
@@ -211,4 +209,6 @@ nodes/fragment/27/node = SubResource("VisualShaderNodeColorConstant_q6xev")
 nodes/fragment/27/position = Vector2(-1020, -980)
 nodes/fragment/28/node = SubResource("VisualShaderNodeMix_0rc24")
 nodes/fragment/28/position = Vector2(-640, -980)
-nodes/fragment/connections = PackedInt32Array(2, 0, 3, 0, 3, 0, 4, 0, 5, 0, 11, 1, 12, 0, 11, 0, 4, 0, 13, 1, 13, 0, 14, 0, 14, 0, 15, 0, 15, 0, 16, 0, 16, 0, 11, 2, 23, 0, 5, 2, 11, 0, 0, 0, 17, 2, 24, 0, 24, 0, 23, 0, 24, 0, 13, 0, 4, 0, 25, 2, 4, 0, 28, 2, 25, 0, 5, 0, 28, 0, 5, 1, 7, 0, 25, 1, 6, 0, 28, 1, 26, 0, 25, 0, 27, 0, 28, 0)
+nodes/fragment/29/node = SubResource("VisualShaderNodeFloatParameter_dehk5")
+nodes/fragment/29/position = Vector2(-1800, 320)
+nodes/fragment/connections = PackedInt32Array(3, 0, 4, 0, 5, 0, 11, 1, 12, 0, 11, 0, 4, 0, 13, 1, 13, 0, 14, 0, 14, 0, 15, 0, 15, 0, 16, 0, 16, 0, 11, 2, 23, 0, 5, 2, 11, 0, 0, 0, 17, 2, 24, 0, 24, 0, 23, 0, 24, 0, 13, 0, 4, 0, 25, 2, 4, 0, 28, 2, 25, 0, 5, 0, 28, 0, 5, 1, 7, 0, 25, 1, 6, 0, 28, 1, 26, 0, 25, 0, 27, 0, 28, 0, 29, 0, 3, 0)

@@ -8,6 +8,8 @@ extends Control
 
 @onready var timer: Timer = $OrderTimeout
 
+var current_percentage = 100;
+
 signal on_card_expire
 
 func initialize_card(order: Order):
@@ -20,6 +22,9 @@ func initialize_card(order: Order):
 	timer.one_shot = true
 	timer.start(order.expire_time_in_seconds)
 
+func _process(delta):
+	var percent_of_time: float =  100 - ( (1 - timer.time_left / timer.wait_time) * 100)
+	$TextureRect.material.set_shader_parameter("Percent", percent_of_time)
 
 func _on_order_timeout_timeout():
 	on_card_expire.emit(self)

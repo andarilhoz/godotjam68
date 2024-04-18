@@ -12,8 +12,9 @@
 texture = ExtResource("2_2x5mu")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gap1h"]
+resource_local_to_scene = true
 shader = ExtResource("7_1rlm2")
-shader_parameter/Percent = 99
+shader_parameter/Percent = 100.0
 
 [sub_resource type="Gradient" id="Gradient_vh624"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
