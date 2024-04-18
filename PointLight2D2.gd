@@ -19,5 +19,4 @@ func _on_flicker_forge_light_timer_timeout():
 	target_energy = randf_range(flicker_intensity_min, flicker_intensity_max)
 
 func _process(delta):
-	print("Log: ", get_parent().name)
 	energy = lerp(energy, target_energy, transition_speed * delta)

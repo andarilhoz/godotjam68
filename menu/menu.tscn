@@ -16,6 +16,7 @@ grow_vertical = 2
 theme = ExtResource("1_6hama")
 script = ExtResource("1_wgnd0")
 metadata/_edit_vertical_guides_ = [801.0]
+metadata/_edit_horizontal_guides_ = [450.0]
 
 [node name="MenuBg" type="TextureRect" parent="."]
 layout_mode = 0
