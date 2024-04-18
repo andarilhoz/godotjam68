@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bc0atg6yan2dr" path="res://animation/character_idle_sprite.png" id="3_ctw8w"]
 [ext_resource type="Texture2D" uid="uid://dra8olsun02hx" path="res://ui/Images/UI_sketchy_spear.png" id="3_rltq8"]
 [ext_resource type="Texture2D" uid="uid://ccuey2r8bigeu" path="res://animation/character_idle-box_sprite.png" id="4_ghu4o"]
-[ext_resource type="Shader" uid="uid://bwg3i3b3nh48k" path="res://player/Player.tres" id="5_rfuix"]
+[ext_resource type="Shader" uid="uid://dihpi3nksnn2v" path="res://player/Player.tres" id="5_rfuix"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6dcpi"]
 closed = false
@@ -253,7 +253,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o4g37"]
-radius = 294.613
+radius = 190.042
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kb4xy"]
 shader = ExtResource("5_rfuix")
@@ -299,6 +299,7 @@ stretch_mode = 5
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 63)
 shape = SubResource("CircleShape2D_o4g37")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

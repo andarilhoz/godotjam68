@@ -165,9 +165,11 @@ position = Vector2(276, -135)
 
 [node name="Forge" parent="." instance=ExtResource("12_ymthb")]
 position = Vector2(32, -304)
+processing_time = 4.0
 
 [node name="Forge2" parent="." instance=ExtResource("12_ymthb")]
 position = Vector2(508, -301)
+processing_time = 4.0
 
 [connection signal="timeout" from="InGame_CanvasLayer/Orders/OrderCountDown" to="InGame_CanvasLayer/Orders" method="_on_order_count_down_timeout"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
