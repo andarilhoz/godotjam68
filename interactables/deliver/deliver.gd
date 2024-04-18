@@ -1,6 +1,6 @@
 extends "res://interactables/interactable.gd"
 const ForgeEnum = preload("res://scripts/forge_enum.gd")
-@export var take_out_timer_in_seconds : float = 2
+@export var take_out_timer_in_seconds : float = 1
 
 
 @onready var holding_item: TextureRect = $ItemSprite/ItemImage

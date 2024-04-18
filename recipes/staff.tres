@@ -10,7 +10,7 @@ script = ExtResource("4_dpj2w")
 recipe_sprites = Array[Resource("res://scripts/item.gd")]([ExtResource("3_yecf3"), ExtResource("3_yecf3"), ExtResource("3_yecf3")])
 item = ExtResource("1_ft4yu")
 item_master_piece = ExtResource("2_gpyy2")
-expire_time_in_seconds = 15.0
+expire_time_in_seconds = 45.0
 deliver_values = {
 "Good": 3,
 "Meh": 1,

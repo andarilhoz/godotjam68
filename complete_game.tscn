@@ -149,6 +149,7 @@ texture = ExtResource("13_ehdvk")
 [node name="Deliver" parent="." instance=ExtResource("19_qe31l")]
 position = Vector2(355, 336)
 rotation = -1.55956
+take_out_timer_in_seconds = 1.0
 
 [node name="IronStorage" parent="." instance=ExtResource("8_r4xfv")]
 position = Vector2(-200, 191)
@@ -164,9 +165,11 @@ position = Vector2(276, -135)
 
 [node name="Forge" parent="." instance=ExtResource("12_ymthb")]
 position = Vector2(32, -304)
+processing_time = 4.0
 
 [node name="Forge2" parent="." instance=ExtResource("12_ymthb")]
 position = Vector2(508, -301)
+processing_time = 4.0
 
 [connection signal="timeout" from="InGame_CanvasLayer/Orders/OrderCountDown" to="InGame_CanvasLayer/Orders" method="_on_order_count_down_timeout"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
