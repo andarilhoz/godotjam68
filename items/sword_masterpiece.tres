@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d4bh0qdhrsx"]
+
+[ext_resource type="Script" path="res://scripts/item.gd" id="1_es05k"]
+[ext_resource type="Texture2D" uid="uid://b66qs4pfy4n1e" path="res://ui/Images/UI_sword.png" id="2_r3ofd"]
+
+[resource]
+script = ExtResource("1_es05k")
+item_type = 3
+sprite = ExtResource("2_r3ofd")
+is_masterpiece = true

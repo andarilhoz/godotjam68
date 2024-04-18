@@ -1,11 +1,18 @@
-[gd_resource type="Resource" script_class="Order" load_steps=4 format=3 uid="uid://bms6w2cjkng7"]
+[gd_resource type="Resource" script_class="Order" load_steps=5 format=3 uid="uid://bms6w2cjkng7"]
 
 [ext_resource type="Resource" uid="uid://bxprkkhwfok6" path="res://items/iron.tres" id="1_bluak"]
 [ext_resource type="Resource" uid="uid://jlhx3eia0jqx" path="res://items/shield.tres" id="1_crkku"]
+[ext_resource type="Resource" uid="uid://edl1jma3jays" path="res://items/shield_masterpiece.tres" id="2_bttgi"]
 [ext_resource type="Script" path="res://scripts/order.gd" id="3_yhy0w"]
 
 [resource]
 script = ExtResource("3_yhy0w")
 recipe_sprites = Array[Resource("res://scripts/item.gd")]([ExtResource("1_bluak"), ExtResource("1_bluak"), ExtResource("1_bluak")])
 item = ExtResource("1_crkku")
+item_master_piece = ExtResource("2_bttgi")
 expire_time_in_seconds = 45.0
+deliver_values = {
+"Good": 3,
+"Meh": 1,
+"Ok": 2
+}

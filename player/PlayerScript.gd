@@ -7,10 +7,10 @@ const ForgeEnum = preload("res://scripts/forge_enum.gd")
 @onready var holding_item: TextureRect = $Smoothing2D/AnimatedSprite2D/HoldingItem
 @onready var area2d : Area2D = $Area2D
 @onready var player_sprite: AnimatedSprite2D = $Smoothing2D/AnimatedSprite2D
-@export var speed_reducer_carry = 0.16
+@export var speed_reducer_carry = 0.15
 
-const max_speed = 500
-const acceleration = 4000
+const max_speed = 550
+const acceleration = 3500
 const friction = 1500
 
 var input = Vector2.ZERO

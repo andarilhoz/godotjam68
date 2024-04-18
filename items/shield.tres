@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://jlhx3eia0jqx"]
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://jlhx3eia0jqx"]
 
+[ext_resource type="Resource" uid="uid://edl1jma3jays" path="res://items/shield_masterpiece.tres" id="1_jn80l"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="1_k4yut"]
 [ext_resource type="Texture2D" uid="uid://bcc17ikw7s7at" path="res://ui/Images/UI_shield.png" id="2_4wyv3"]
 
@@ -7,3 +8,5 @@
 script = ExtResource("1_k4yut")
 item_type = 4
 sprite = ExtResource("2_4wyv3")
+is_masterpiece = false
+masterpiece_version = ExtResource("1_jn80l")

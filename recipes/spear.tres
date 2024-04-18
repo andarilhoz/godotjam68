@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="Order" load_steps=5 format=3 uid="uid://82jsikiecvkl"]
+[gd_resource type="Resource" script_class="Order" load_steps=6 format=3 uid="uid://82jsikiecvkl"]
 
 [ext_resource type="Resource" uid="uid://d3no5fq0v8ff" path="res://items/spear.tres" id="1_wa548"]
 [ext_resource type="Resource" uid="uid://bxprkkhwfok6" path="res://items/iron.tres" id="2_8nht6"]
+[ext_resource type="Resource" uid="uid://d1yio6ecb1sj6" path="res://items/spear_masterpiece.tres" id="2_sgtcq"]
 [ext_resource type="Resource" uid="uid://cuxyo3sqva6qp" path="res://items/wood.tres" id="3_usk5f"]
 [ext_resource type="Script" path="res://scripts/order.gd" id="4_tiskd"]
 
@@ -9,4 +10,10 @@
 script = ExtResource("4_tiskd")
 recipe_sprites = Array[Resource("res://scripts/item.gd")]([ExtResource("3_usk5f"), ExtResource("3_usk5f"), ExtResource("2_8nht6")])
 item = ExtResource("1_wa548")
+item_master_piece = ExtResource("2_sgtcq")
 expire_time_in_seconds = 45.0
+deliver_values = {
+"Good": 25,
+"Meh": 5,
+"Ok": 15
+}

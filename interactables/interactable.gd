@@ -27,7 +27,6 @@ func do_action(player_body: Player):
 func on_player_leave():
 	if not active:
 		return
-	print("disable: ", self.name)
 	actionBtn.hide()
 	close_player = null
 	sprite.modulate = Color(1,1,1,1)
@@ -36,7 +35,6 @@ func on_player_leave():
 func on_player_close(player: Player):
 	if active:
 		return
-	print("enable: ", self.name)
 	actionBtn.show()
 	sprite.modulate = Color(1,1,1,0.5)
 	close_player = player
