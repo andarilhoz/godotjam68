@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b4pqbp85pfaw5"]
+[gd_scene load_steps=20 format=3 uid="uid://b4pqbp85pfaw5"]
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://player/Player.tscn" id="1_5le0k"]
 [ext_resource type="Script" path="res://scripts/general_script.gd" id="1_8yawa"]
@@ -19,8 +19,17 @@
 [ext_resource type="PackedScene" uid="uid://drxlqqfv1yty1" path="res://interactables/deliver/deliver.tscn" id="19_qe31l"]
 [ext_resource type="Texture2D" uid="uid://cdh7p2q2aixxi" path="res://Art/stage_background.png" id="20_t2wt8"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fekae"]
+vertices = PackedVector2Array(367, -47, 367, -207, 655, -205, 657, 256, -106, 256, 184, -48, -107, -203, 182, -208)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(5, 4, 6, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-118, -213, 192, -219, 194, -58, 357, -57, 357, -218, 665, -215, 668, 266, -116, 267)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
 [node name="complete_game" type="Node2D"]
 script = ExtResource("1_8yawa")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_fekae")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(290, 53)
@@ -37,6 +46,8 @@ editor_draw_limits = true
 position = Vector2(282, 92)
 scale = Vector2(0.8, 0.8)
 collision_mask = 2
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player"]
 
 [node name="InGame_CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3

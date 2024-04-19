@@ -5,6 +5,7 @@ class_name Item
 const ForgeEnum = preload("res://scripts/forge_enum.gd")
 @export var item_type : ForgeEnum.ForgeItem
 @export var sprite : Texture
+@export var sketch_sprite: Texture
 @export var deposit_sprite : Texture
 @export var is_masterpiece: bool
 @export var masterpiece_version: Item
