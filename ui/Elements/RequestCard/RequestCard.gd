@@ -6,11 +6,18 @@ extends Control
 @onready var item_2: TextureRect = $Panel/HBoxContainer/Item2
 @onready var item_3: TextureRect = $Panel/HBoxContainer/Item3
 
-@onready var timer: Timer = $OrderTimeout
+@onready var timer: Timer = $Panel/OrderTimeout
+
+@onready var panel: Panel = $Panel
 
 var current_percentage = 100;
 
 signal on_card_expire
+
+func tween_card():
+	var card_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE)
+	#card_tween.tween_property(panel, "scale", )
+	
 
 func initialize_card(order: Order):
 	recipe_icon.texture = order.item.sketch_sprite
@@ -24,7 +31,7 @@ func initialize_card(order: Order):
 
 func _process(delta):
 	var percent_of_time: float = get_percentage_time()
-	$TextureRect.material.set_shader_parameter("Percent", percent_of_time)
+	$Panel/TextureRect.material.set_shader_parameter("Percent", percent_of_time)
 
 func get_percentage_time():
 	return 100 - ( (1 - timer.time_left / timer.wait_time) * 100)

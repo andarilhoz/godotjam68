@@ -6,7 +6,7 @@ const ForgeEnum = preload("res://scripts/forge_enum.gd")
 const breath_scene = preload("res://player/breath.tscn")
 
 @onready var holding_item: TextureRect = $Smoothing2D/AnimatedSprite2D/HoldingItem
-@onready var breath_time_cd: Timer = $breath_time_cd
+@onready var breath_time_start: Timer = $breath_time_start
 @onready var area2d : Area2D = $Area2D
 @onready var player_sprite: AnimatedSprite2D = $Smoothing2D/AnimatedSprite2D
 @export var speed_reducer_carry : float = 0.12
@@ -23,12 +23,18 @@ var closest_interactable : Interactable = null
 
 @onready var last_breath : AnimatedSprite2D = $"../breath"
 
+var bufando_state : bool = false
+
 func _ready():
 	last_breath.animation_looped.connect(_hide_breath)
 
+func stop_breah():
+	bufando_state = false
+
 func _hide_breath():
-	last_breath.stop()
-	last_breath.hide()
+	if not bufando_state:
+		last_breath.hide()
+		last_breath.stop()
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -40,16 +46,16 @@ func get_input():
 
 func process_animation():
 	if velocity == Vector2.ZERO:
-		if breath_time_cd.is_stopped():
-			print("inicia parado timer")
-			breath_time_cd.start()
+		if breath_time_start.is_stopped():
+			print("idle_time_start")
+			breath_time_start.start()
 			
 		if holding_material:
 			player_sprite.animation = "idle_box"
 		else:
 			player_sprite.animation = "idle"
 		return
-	breath_time_cd.stop()
+	stop_breah()
 	if holding_material:
 		player_sprite.animation = "walk_box"
 	else:
@@ -188,10 +194,12 @@ func _on_area_2d_body_exited(body):
 	closest_interactable = null
 
 
-func _on_breath_time_cd_timeout():
+func breath():
+	bufando_state = true
 	last_breath.scale = Vector2(-0.3, 0.3) if player_sprite.flip_h else Vector2(0.3, 0.3)
-	print(position)
 	last_breath.position = self.position + (Vector2(-100,36) if player_sprite.flip_h else Vector2(100,36))
 	last_breath.play()
 	last_breath.show()
 
+func _on_breath_time_start_timeout():
+	breath()

@@ -85,9 +85,9 @@ layout_mode = 2
 texture = ExtResource("4_ee66k")
 expand_mode = 2
 
-[node name="OrderTimeout" type="Timer" parent="."]
+[node name="OrderTimeout" type="Timer" parent="Panel"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="Panel"]
 material = SubResource("ShaderMaterial_gap1h")
 layout_mode = 0
 offset_left = -24.0
@@ -97,4 +97,4 @@ offset_bottom = 316.0
 texture = SubResource("GradientTexture1D_w6a4i")
 expand_mode = 1
 
-[connection signal="timeout" from="OrderTimeout" to="." method="_on_order_timeout_timeout"]
+[connection signal="timeout" from="Panel/OrderTimeout" to="." method="_on_order_timeout_timeout"]
