@@ -92,7 +92,8 @@ script = ExtResource("1_sme4g")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 626.0
+offset_left = 800.0
+offset_right = 1426.0
 offset_bottom = 877.0
 
 [node name="HSlider" type="HSlider" parent="Panel"]

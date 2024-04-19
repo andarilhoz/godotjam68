@@ -10,6 +10,7 @@ const breath_scene = preload("res://player/breath.tscn")
 @onready var area2d : Area2D = $Area2D
 @onready var player_sprite: AnimatedSprite2D = $Smoothing2D/AnimatedSprite2D
 @export var speed_reducer_carry : float = 0.12
+@onready var last_breath : AnimatedSprite2D = $"../breath"
 
 const max_speed = 550
 const acceleration = 3500
@@ -20,8 +21,6 @@ var input = Vector2.ZERO
 var holding_material: Item
 
 var closest_interactable : Interactable = null
-
-@onready var last_breath : AnimatedSprite2D = $"../breath"
 
 var bufando_state : bool = false
 
@@ -56,6 +55,7 @@ func process_animation():
 			player_sprite.animation = "idle"
 		return
 	stop_breah()
+	breath_time_start.stop()
 	if holding_material:
 		player_sprite.animation = "walk_box"
 	else:
@@ -107,7 +107,7 @@ func delete_material():
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_SPACE:
-			manual_process()
+			print("debug")
 
 func _process(delta):		
 	if not area2d.has_overlapping_bodies():

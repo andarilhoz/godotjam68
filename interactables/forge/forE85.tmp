@@ -1,0 +1,156 @@
+[gd_scene load_steps=24 format=3 uid="uid://bfqpo5vryw575"]
+
+[ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="1_m7ehu"]
+[ext_resource type="Script" path="res://interactables/forge/forge.gd" id="2_aw1k6"]
+[ext_resource type="Resource" uid="uid://bms6w2cjkng7" path="res://recipes/shield.tres" id="3_47mkm"]
+[ext_resource type="PackedScene" uid="uid://p7p4vf44b1m6" path="res://ui/Elements/ProgressBars/UI_ProgressBar.tscn" id="4_dxxqa"]
+[ext_resource type="Resource" uid="uid://82jsikiecvkl" path="res://recipes/spear.tres" id="4_tk8qk"]
+[ext_resource type="Texture2D" uid="uid://ct1kinwlxnbsk" path="res://ui/Images/UI_iron.png" id="5_cgdvt"]
+[ext_resource type="Resource" uid="uid://bd5k53oviw0wl" path="res://recipes/staff.tres" id="5_uxwen"]
+[ext_resource type="Resource" uid="uid://cwktcxkefau7h" path="res://recipes/sword.tres" id="6_aba0p"]
+[ext_resource type="Texture2D" uid="uid://cr6pb68orb4fc" path="res://Art/station_forge.png" id="7_33t76"]
+[ext_resource type="Texture2D" uid="uid://b7dt4t0umxwx0" path="res://ui/tilemap_keys.png" id="7_unaij"]
+[ext_resource type="Shader" path="res://interactables/interactable.gdshader" id="9_2a2lb"]
+[ext_resource type="Texture2D" uid="uid://dra8olsun02hx" path="res://ui/Images/UI_sketchy_spear.png" id="10_3nvse"]
+[ext_resource type="Texture2D" uid="uid://bd6u2n0cfqra8" path="res://ui/Images/UI_wood.png" id="10_qrilp"]
+[ext_resource type="Script" path="res://PointLight2D2.gd" id="12_ksim4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5dv0"]
+atlas = ExtResource("7_unaij")
+region = Rect2(17, 289, 16, 16)
+
+[sub_resource type="Gradient" id="Gradient_eiuik"]
+interpolation_mode = 1
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0.23125, 0.371875, 0.609375)
+colors = PackedColorArray(0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rn1u8"]
+gradient = SubResource("Gradient_eiuik")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xr7g8"]
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+texture = SubResource("GradientTexture1D_rn1u8")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_dai8g"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_x2fg0"]
+
+[sub_resource type="Gradient" id="Gradient_xu4d2"]
+offsets = PackedFloat32Array(0.265306, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vrndm"]
+gradient = SubResource("Gradient_xu4d2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.6, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wef7e"]
+resource_local_to_scene = true
+shader = ExtResource("9_2a2lb")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 5.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/should_apply = false
+
+[node name="Forge" instance=ExtResource("1_m7ehu")]
+script = ExtResource("2_aw1k6")
+processing_time = 2.0
+recipes = Array[Resource("res://scripts/order.gd")]([ExtResource("3_47mkm"), ExtResource("4_tk8qk"), ExtResource("5_uxwen"), ExtResource("6_aba0p")])
+
+[node name="HSlider" type="HSlider" parent="." index="0"]
+visible = false
+offset_left = -111.364
+offset_top = -142.045
+offset_right = 113.636
+offset_bottom = -126.045
+mouse_filter = 2
+theme_override_constants/grabber_offset = -10
+theme_override_icons/grabber_disabled = SubResource("AtlasTexture_g5dv0")
+theme_override_styles/slider = SubResource("StyleBoxTexture_xr7g8")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_dai8g")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_x2fg0")
+value = 50.0
+editable = false
+scrollable = false
+
+[node name="PointLight2D2" type="PointLight2D" parent="." index="1"]
+position = Vector2(-70, 40)
+scale = Vector2(8.86452, 9.54368)
+color = Color(1, 1, 0, 1)
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color(0.125911, 0.125911, 0.125911, 0)
+shadow_filter = 1
+shadow_filter_smooth = 15.0
+shadow_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_vrndm")
+script = ExtResource("12_ksim4")
+
+[node name="FlickerForgeLightTimer" type="Timer" parent="PointLight2D2" index="0"]
+
+[node name="ItemSprite" parent="." index="2"]
+material = SubResource("ShaderMaterial_wef7e")
+texture = ExtResource("7_33t76")
+
+[node name="ProcessTimer" type="Timer" parent="." index="5"]
+
+[node name="UI_ProgressBar" parent="." index="6" instance=ExtResource("4_dxxqa")]
+visible = false
+offset_left = -30.0
+offset_top = -250.0
+offset_right = 70.0
+offset_bottom = -150.0
+
+[node name="Items" type="GridContainer" parent="." index="7"]
+offset_left = -152.273
+offset_top = -180.682
+offset_right = 1097.73
+offset_bottom = 619.318
+scale = Vector2(0.25, 0.083)
+theme_override_constants/h_separation = 100
+columns = 3
+
+[node name="Item1" type="TextureRect" parent="Items" index="0"]
+visible = false
+custom_minimum_size = Vector2(280, 800)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("5_cgdvt")
+expand_mode = 5
+
+[node name="Item2" type="TextureRect" parent="Items" index="1"]
+visible = false
+custom_minimum_size = Vector2(280, 800)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("10_qrilp")
+expand_mode = 5
+
+[node name="Item3" type="TextureRect" parent="Items" index="2"]
+visible = false
+custom_minimum_size = Vector2(280, 800)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("5_cgdvt")
+expand_mode = 4
+
+[node name="ForgedItem" type="TextureRect" parent="." index="8"]
+visible = false
+offset_left = -43.1818
+offset_top = -242.045
+offset_right = 46.8182
+offset_bottom = -160.045
+texture = ExtResource("10_3nvse")
+expand_mode = 2
+stretch_mode = 5
+
+[connection signal="timeout" from="PointLight2D2/FlickerForgeLightTimer" to="PointLight2D2" method="_on_flicker_forge_light_timer_timeout"]
+[connection signal="timeout" from="ProcessTimer" to="." method="_on_process_timer_timeout"]

@@ -3,7 +3,7 @@ extends Node2D
 
 @onready var sprite : Sprite2D = $ItemSprite
 
-var actionBtn : AnimatedSprite2D
+@onready var actionBtn : AnimatedSprite2D = $ActionBtn
 var active: bool = false
 
 var close_player: Player
@@ -14,7 +14,6 @@ func _should_interact(player: Player):
 	return false
 
 func _ready():
-	actionBtn = $ActionBtn
 	actionBtn.hide()
 
 func _input(event):

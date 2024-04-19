@@ -10,14 +10,45 @@ const ForgeEnum = preload("res://scripts/forge_enum.gd")
 @onready var item_3: TextureRect = $Items/Item3
 
 @onready var forged_item: TextureRect = $ForgedItem
+@onready var slider_minigame : SliderMinigame = $"../InGame_CanvasLayer/SliderMiniGame"
+
+@onready var player: Player = $"../Player"
 
 const raw_materials = [ForgeEnum.ForgeItem.IRON, ForgeEnum.ForgeItem.WOOD]
 
 var holding_itens : Array[Item]
 var processing : bool = false
 var processed_item: Item
+var minigame_enabled: bool = false;
+
+func _ready():
+	super._ready()
+	slider_minigame.on_minigame_end.connect(give_item)
+
+
+func on_player_leave():
+	super.on_player_leave()
+	if processed_item:
+		actionBtn.show()
+		
+
+func give_item(perfect, forge_id):
+	print("received id", forge_id)
+	print("myid", self.get_instance_id())
+	if forge_id != self.get_instance_id():
+		return
+		
+	var final_item = processed_item.masterpiece_version if perfect else processed_item
+	player.reveice_material(final_item)
+	processed_item = null
+	minigame_enabled = false
+	forged_item.hide()
 
 func do_action(player_body):
+	print("try action")
+	if minigame_enabled:
+		print("on minigame")
+		return
 	if processing :
 		print("Forge busy")
 		return
@@ -36,22 +67,9 @@ func do_action(player_body):
 		return
 	
 	if processed_item != null and player_body.holding_material == null:
-		print("Giving player material")
-		
-		
-		#if retrieve_slider.value > 37 and retrieve_slider.value < 63 :
-			#print("processed_item: ", processed_item.get_item_name())
-			#print("Item perfeito: ", retrieve_slider.value)
-			#
-			#processed_item = processed_item.masterpiece_version
-		#else:
-			#print("Item comum: ", retrieve_slider.value)
-			
-		player_body.reveice_material(processed_item)
-		processed_item = null
-		
-		#retrieve_slider.hide()
-		forged_item.hide()
+		print("Start minigame")
+		minigame_enabled = true;
+		slider_minigame.show_minigame(self.get_instance_id())
 		return
 	
 	reveice_material(player_body)
@@ -62,7 +80,7 @@ func on_player_close(player: Player):
 	super.on_player_close(player)
 
 func _should_interact(player: Player):
-	return (player.holding_material != null and processed_item == null) or (player.holding_material == null and processed_item != null)
+	return (player.holding_material != null and processed_item == null) or (player.holding_material == null and processed_item != null) or not processing
 
 func reveice_material(player_body: Node2D):
 	print("Received material: ", player_body.holding_material.get_item_name())
@@ -93,6 +111,7 @@ func set_content_sprite():
 
 func start_processing():
 	processing = true
+	actionBtn.hide()
 	timer.one_shot = true
 	timer.start(processing_time)
 	print("start forge")
@@ -100,12 +119,9 @@ func start_processing():
 
 func _process(delta):
 	super._process(delta)
-	#if processed_item != null:
-		#//slide(delta)
 	if processing != true:
 		return
 
-		
 	if timer.time_left > 0:
 		$UI_ProgressBar.visible = true
 		var percent_of_time = ( (1 - timer.time_left / timer.wait_time) * 100)
@@ -139,8 +155,7 @@ func get_right_recipe():
 func _on_process_timer_timeout():
 	print("Timer end")
 	get_right_recipe()
-	#retrieve_slider.show()
-	#retrieve_slider.value = randf() * 100
+	actionBtn.show()
 	$UI_ProgressBar.visible = false
 	processing = false
 	holding_itens.clear()
