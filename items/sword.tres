@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://cm6tth7ayjght"]
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://cm6tth7ayjght"]
 
 [ext_resource type="Resource" uid="uid://d4bh0qdhrsx" path="res://items/sword_masterpiece.tres" id="1_hwcm6"]
 [ext_resource type="Script" path="res://scripts/item.gd" id="1_n5qr1"]
 [ext_resource type="Texture2D" uid="uid://b66qs4pfy4n1e" path="res://ui/Images/UI_sword.png" id="2_mpgph"]
+[ext_resource type="Texture2D" uid="uid://dmylgliood7t6" path="res://ui/Images/UI_sketchy_sword.png" id="3_pvfsg"]
 
 [resource]
 script = ExtResource("1_n5qr1")
 item_type = 3
 sprite = ExtResource("2_mpgph")
+sketch_sprite = ExtResource("3_pvfsg")
 is_masterpiece = false
 masterpiece_version = ExtResource("1_hwcm6")
