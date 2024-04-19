@@ -1,10 +1,16 @@
 extends Control
 
 @onready var text_label : RichTextLabel = $CoinIcon/Contador_Estrelas
+@onready var coin_icon : TextureRect = $CoinIcon
+@onready var hourglass_icon : TextureRect = $TimerIcon
 @export var points_per_order = 25
 @export var points_loose_expire = 5
 @export var points_loose_wrong = 10
 
+@export var level_timer_in_seconds: float = 100
+@onready var timer : Timer = $LevelTimer
+@onready var timer_label : RichTextLabel = $TimerIcon/Contador_Timer
+	
 @export var points_dict_percentage_over = {
 	50 : "Good",
 	20 : "Ok",
@@ -12,13 +18,38 @@ extends Control
 }
 
 var points : int = 0;
-
+var hourglass_wobbling : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SignalManager.on_order_successful.connect(increase_points)
 	SignalManager.on_order_expired.connect(expired_order)
 	SignalManager.on_order_misplaced.connect(wrong_order)
 	text_label.text = "[center]" + str(points) + "[/center]"
+	timer.start(level_timer_in_seconds)
+	
+func coin_wobble():
+	var coin_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
+	coin_tween.tween_property(coin_icon, "scale", Vector2(1.25,1.25), .25)
+	coin_tween.tween_property(coin_icon, "scale", Vector2(1,1), .25)
+	
+func hourglass_wobble():
+	if hourglass_wobbling:
+		return
+	hourglass_wobbling = true
+	var hourglass_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK).set_loops()
+	var hourglass_color_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK).set_loops()
+	hourglass_tween.tween_property(hourglass_icon, "rotation_degrees", 5.0, .5)
+	hourglass_tween.tween_property(hourglass_icon, "rotation_degrees", -5.0, .5)
+	hourglass_color_tween.tween_property(timer_label, "theme_override_colors/default_color", Color.RED, .5)
+	hourglass_color_tween.tween_property(timer_label, "theme_override_colors/default_color", Color.WHITE, .5)
+func _process(delta):
+	if timer.time_left < 95:
+		hourglass_wobble()
+		
+	timer_label.text = "[center]" + str(roundf(timer.time_left)) + "[/center]"
+
+func _on_level_timer_timeout():
+	print("End game...")
 
 func increase_points(order):
 	var percentage = order["percent"]
@@ -36,6 +67,7 @@ func increase_points(order):
 		receive_points += 1
 	print("receive points: ", receive_points)
 	points += receive_points
+	coin_wobble()
 	update_label()
 
 func update_label():
