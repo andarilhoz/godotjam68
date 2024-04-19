@@ -84,6 +84,15 @@ anchors_preset = 12
 anchor_top = 1.0
 offset_top = -190.0
 grow_vertical = 0
+points_per_order = 25
+points_loose_expire = 5
+points_loose_wrong = 10
+level_timer_in_seconds = 100.0
+points_dict_percentage_over = {
+0: "Meh",
+20: "Ok",
+50: "Good"
+}
 metadata/_edit_vertical_guides_ = [65.0]
 metadata/_edit_horizontal_guides_ = [840.0]
 
@@ -114,6 +123,10 @@ grow_vertical = 1
 scale = Vector2(0.5, 0.5)
 size_flags_horizontal = 8
 size_flags_vertical = 0
+right_zone_length = 0.3
+right_zone_length_masterpiece = 0.1
+min_distance = 0.2
+masterpiece_chance = 50.0
 
 [node name="LevelTimer" type="Timer" parent="."]
 

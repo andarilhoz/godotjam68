@@ -4,6 +4,7 @@ extends Control
 
 @onready var retrieve_slider: HSlider = $Panel/HSlider
 @onready var slider_speed: float = 1.0
+@onready var slider_speed_masterpiece: float = 2.0
 
 @onready var bg_animation: AnimatedTextureRect = $Panel/TextureRect
 @onready var actionBtn_animation : AnimatedTextureRect = $Panel/ActionBtn
@@ -11,11 +12,12 @@ extends Control
 @onready var panel : Panel = $Panel
 
 @export var right_zone_length = 0.3
+@export var right_zone_length_masterpiece = 0.1
 @export var min_distance = 0.2 
 
 @export var empty_marker : Texture
 @export var filled_marker : Texture
-
+@export var masterpiece_chance: float = 50.0
 @export var markers : Array[TextureRect]
 
 signal on_minigame_end
@@ -49,10 +51,12 @@ func _ready():
 	
 
 func show_minigame(forge_id):
-	change_slider_pos()
 	current_forge = forge_id
 	is_hidden = false
 	enabled = true
+	is_masterpiece = chance_true(masterpiece_chance)
+	change_slider_pos()
+	update_slider_colors()
 	can_press = true
 	correct_hits = 0
 	update_markers()
@@ -99,6 +103,16 @@ func _process(delta):
 	slide(delta)
 	if Input.is_action_just_pressed("ui_action"):
 		press()
+
+func update_slider_colors():
+	if is_masterpiece :
+		gradient.set_color(0, Color.WEB_PURPLE)
+		gradient.set_color(1, Color.GOLD)
+		gradient.set_color(2, Color.WEB_PURPLE)
+		return
+	gradient.set_color(0, Color.DARK_RED)
+	gradient.set_color(1, Color.LIME_GREEN)
+	gradient.set_color(2, Color.DARK_RED)
 	
 func press():
 	if can_press == false:
@@ -111,7 +125,7 @@ func press():
 	
 	if precise:
 		print("precise: ", retrieve_slider.value )
-		correct_hits += 1 
+		correct_hits += 3 if is_masterpiece else 1 
 	else:
 		print("not precise: ",retrieve_slider.value )
 		correct_hits = 0
@@ -124,6 +138,7 @@ func press():
 		press_cd_timer.start()
 	
 	update_markers()
+	is_masterpiece = chance_true(masterpiece_chance)
 
 func update_markers():
 	for i in range(3):
@@ -132,6 +147,10 @@ func update_markers():
 			continue
 		markers[i].texture = empty_marker
 	
+func chance_true(percentage):
+	percentage = clamp(percentage, 0.0, 100.0)
+	var rand_num = randf_range(0.0, 100.0)
+	return rand_num < percentage
 
 func check_hit_precision() -> bool:
 	return retrieve_slider.value /100 > slider_min_value and retrieve_slider.value/100 < slider_max_value
@@ -139,25 +158,27 @@ func check_hit_precision() -> bool:
 func slide(delta):
 	if not can_press:
 		return
+	var target_speed = slider_speed_masterpiece if is_masterpiece else slider_speed
 	# Define o alvo com base na direção do slider
 	var target: float = 0 if slider_left else 100
 	elapsed_time += delta
-	var new_position = (sin(elapsed_time * slider_speed * 2.0 * PI / period) + 1.0) * 0.5 * 100.0
+	var new_position = (sin(elapsed_time * target_speed * 2.0 * PI / period) + 1.0) * 0.5 * 100.0
 	# Atualiza o valor do slider na UI
 	retrieve_slider.value = new_position
-
-func change_slider_pos():
-	var start_min_range = 0.0
 	
+
+func change_slider_pos():	
+	var start_min_range = 0.0
+	var right_zone_target = right_zone_length_masterpiece if is_masterpiece else right_zone_length
 	# Calculando o máximo alcance inicial
-	var start_max_range = 1 - right_zone_length
+	var start_max_range = 1 - right_zone_target
 
 	# Determinando a faixa válida para start_range baseada na última posição
 	var new_start_min = start_min_range
 	var new_start_max = start_max_range
 
 	if last_start_range != -1.0:
-		if last_start_range + min_distance + right_zone_length <= 1:
+		if last_start_range + min_distance + right_zone_target <= 1:
 			# A nova posição inicial pode começar após a última posição mais a distância mínima
 			new_start_min = last_start_range + min_distance
 		else:
@@ -168,7 +189,7 @@ func change_slider_pos():
 
 	# Escolhendo um valor aleatório dentro dos novos limites
 	slider_min_value = randf_range(new_start_min, new_start_max)
-	slider_max_value = slider_min_value + right_zone_length
+	slider_max_value = slider_min_value + right_zone_target
 	
 	print("Min range: ", slider_min_value)
 	print("Max range: ", slider_max_value)
@@ -183,6 +204,7 @@ func _on_press_cd_timeout():
 	if not enabled:
 		return
 	change_slider_pos()
+	update_slider_colors()
 	bg_animation.set_next_frame()
 	actionBtn_animation.set_next_frame()
 	can_press = true
