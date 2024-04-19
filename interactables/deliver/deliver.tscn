@@ -24,16 +24,32 @@ take_out_timer_in_seconds = 2.0
 material = SubResource("ShaderMaterial_6n7ic")
 texture = ExtResource("3_kx1mt")
 
-[node name="ItemImage" type="TextureRect" parent="ItemSprite" index="0"]
-visible = false
-offset_left = 73.0
-offset_top = -93.0
-offset_right = 248.0
-offset_bottom = 65.0
+[node name="Control" type="Control" parent="ItemSprite" index="0"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 56.8182
+offset_top = -136.364
+offset_right = 96.8182
+offset_bottom = -96.3636
 rotation = 1.5708
+
+[node name="ItemImage" type="TextureRect" parent="ItemSprite/Control" index="0"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.1818
+offset_top = -62.0455
+offset_right = 491.818
+offset_bottom = 363.955
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_qgbvk")
-expand_mode = 2
-stretch_mode = 5
+stretch_mode = 3
 
 [node name="ActionBtn" parent="." index="2"]
 position = Vector2(-1.90735e-06, -1.13637)

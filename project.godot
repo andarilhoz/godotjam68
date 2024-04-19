@@ -15,9 +15,14 @@ run/main_scene="res://menu/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://Audio/default_bus_layout.tres"
+
 [autoload]
 
 SignalManager="*res://scripts/SignalManager.gd"
+BgAudio="*res://Audio/bg_audio.tscn"
 
 [display]
 
