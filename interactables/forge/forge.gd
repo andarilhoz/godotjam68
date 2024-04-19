@@ -11,19 +11,11 @@ const ForgeEnum = preload("res://scripts/forge_enum.gd")
 
 @onready var forged_item: TextureRect = $ForgedItem
 
-@onready var retrieve_slider: HSlider = $HSlider
-@onready var slider_speed: float = 1.0
-
 const raw_materials = [ForgeEnum.ForgeItem.IRON, ForgeEnum.ForgeItem.WOOD]
 
 var holding_itens : Array[Item]
 var processing : bool = false
 var processed_item: Item
-
-var current_slider_percent : float = 50.0
-var slider_left : bool = true
-var elapsed_time = 0.0 
-var period = 2.0 
 
 func do_action(player_body):
 	if processing :
@@ -47,18 +39,18 @@ func do_action(player_body):
 		print("Giving player material")
 		
 		
-		if retrieve_slider.value > 37 and retrieve_slider.value < 63 :
-			print("processed_item: ", processed_item.get_item_name())
-			print("Item perfeito: ", retrieve_slider.value)
-			
-			processed_item = processed_item.masterpiece_version
-		else:
-			print("Item comum: ", retrieve_slider.value)
+		#if retrieve_slider.value > 37 and retrieve_slider.value < 63 :
+			#print("processed_item: ", processed_item.get_item_name())
+			#print("Item perfeito: ", retrieve_slider.value)
+			#
+			#processed_item = processed_item.masterpiece_version
+		#else:
+			#print("Item comum: ", retrieve_slider.value)
 			
 		player_body.reveice_material(processed_item)
 		processed_item = null
 		
-		retrieve_slider.hide()
+		#retrieve_slider.hide()
 		forged_item.hide()
 		return
 	
@@ -105,19 +97,11 @@ func start_processing():
 	timer.start(processing_time)
 	print("start forge")
 
-func slide(delta):
-	# Define o alvo com base na direção do slider
-	var target: float = 0 if slider_left else 100
-	elapsed_time += delta
-	var new_position = (sin(elapsed_time * slider_speed * 2.0 * PI / period) + 1.0) * 0.5 * 100.0
-	# Atualiza o valor do slider na UI
-	retrieve_slider.value = new_position
-
 
 func _process(delta):
 	super._process(delta)
-	if processed_item != null:
-		slide(delta)
+	#if processed_item != null:
+		#//slide(delta)
 	if processing != true:
 		return
 
@@ -155,8 +139,8 @@ func get_right_recipe():
 func _on_process_timer_timeout():
 	print("Timer end")
 	get_right_recipe()
-	retrieve_slider.show()
-	retrieve_slider.value = randf() * 100
+	#retrieve_slider.show()
+	#retrieve_slider.value = randf() * 100
 	$UI_ProgressBar.visible = false
 	processing = false
 	holding_itens.clear()

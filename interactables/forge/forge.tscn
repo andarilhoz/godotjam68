@@ -25,13 +25,13 @@ interpolation_color_space = 1
 offsets = PackedFloat32Array(0.23125, 0.371875, 0.609375)
 colors = PackedColorArray(0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_37s4r"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rn1u8"]
 gradient = SubResource("Gradient_eiuik")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xr7g8"]
 content_margin_top = 10.0
 content_margin_bottom = 10.0
-texture = SubResource("GradientTexture1D_37s4r")
+texture = SubResource("GradientTexture1D_rn1u8")
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_dai8g"]
 

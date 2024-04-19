@@ -1,0 +1,142 @@
+[gd_scene load_steps=19 format=3 uid="uid://ddyetxupeiaq7"]
+
+[ext_resource type="Script" path="res://ui/Elements/SliderMiniGame/AnimatedTextureRect.gd" id="1_4geq0"]
+[ext_resource type="Script" path="res://ui/Elements/SliderMiniGame/SliderMiniGame.gd" id="1_sme4g"]
+[ext_resource type="Texture2D" uid="uid://dmhaahis1lepm" path="res://ui/Elements/SliderMiniGame/pointer_slider_minigame.png" id="2_qhsy2"]
+[ext_resource type="Texture2D" uid="uid://byojmelc7vtlv" path="res://ui/Elements/SliderMiniGame/frame_1.png" id="2_vvbkt"]
+[ext_resource type="Texture2D" uid="uid://dllninqumllaw" path="res://ui/Elements/SliderMiniGame/frame_2.png" id="3_ac81o"]
+[ext_resource type="Texture2D" uid="uid://bqa8a7posq2to" path="res://ui/btn_A_sprite.png" id="5_komsu"]
+[ext_resource type="Texture2D" uid="uid://dyp3d16xuu1x7" path="res://ui/btn_E_sprite.png" id="6_2o1wi"]
+
+[sub_resource type="Gradient" id="Gradient_67jkp"]
+interpolation_mode = 1
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.404908, 0.883436)
+colors = PackedColorArray(0.406139, 0.0142236, 9.62615e-08, 1, 0, 1, 0, 1, 0.407843, 0.0156863, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_37s4r"]
+gradient = SubResource("Gradient_67jkp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cgxoh"]
+content_margin_top = 25.0
+content_margin_bottom = 10.0
+texture = SubResource("GradientTexture1D_37s4r")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_4ga66"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_wvnn7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_klp4c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vvbkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ac81o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2uy3"]
+atlas = ExtResource("6_2o1wi")
+region = Rect2(0, 0, 74, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxr3l"]
+atlas = ExtResource("5_komsu")
+region = Rect2(0, 0, 75, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8cfd"]
+atlas = ExtResource("5_komsu")
+region = Rect2(75, 0, 75, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pfr2"]
+atlas = ExtResource("6_2o1wi")
+region = Rect2(74, 0, 74, 74)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_308ff"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxr3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8cfd")
+}],
+"loop": true,
+"name": &"controller",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2uy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pfr2")
+}],
+"loop": true,
+"name": &"keyboard",
+"speed": 2.0
+}]
+
+[node name="SliderMiniGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sme4g")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 626.0
+offset_bottom = 877.0
+
+[node name="HSlider" type="HSlider" parent="Panel"]
+z_index = 1
+offset_left = 19.0
+offset_top = 750.0
+offset_right = 594.0
+offset_bottom = 839.0
+mouse_filter = 2
+theme_override_icons/grabber_disabled = ExtResource("2_qhsy2")
+theme_override_styles/slider = SubResource("StyleBoxTexture_cgxoh")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_4ga66")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_wvnn7")
+value = 50.0
+editable = false
+scrollable = false
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 11.0
+offset_right = 620.0
+offset_bottom = 873.0
+texture = ExtResource("3_ac81o")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("1_4geq0")
+sprites = SubResource("SpriteFrames_klp4c")
+frame_index = 1
+
+[node name="ActionBtn" type="TextureRect" parent="Panel"]
+offset_left = 254.0
+offset_top = 623.0
+offset_right = 353.0
+offset_bottom = 718.0
+texture = SubResource("AtlasTexture_u2uy3")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("1_4geq0")
+sprites = SubResource("SpriteFrames_308ff")
+current_animation = "keyboard"
+
+[node name="PressCD" type="Timer" parent="Panel"]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Panel/PressCD" to="." method="_on_press_cd_timeout"]

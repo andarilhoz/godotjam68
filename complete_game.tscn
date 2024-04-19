@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b4pqbp85pfaw5"]
+[gd_scene load_steps=24 format=3 uid="uid://b4pqbp85pfaw5"]
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://player/Player.tscn" id="1_5le0k"]
 [ext_resource type="Script" path="res://scripts/general_script.gd" id="1_8yawa"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://Audio/SoundControl.gd" id="12_47o84"]
 [ext_resource type="PackedScene" uid="uid://bfqpo5vryw575" path="res://interactables/forge/forge.tscn" id="12_ymthb"]
 [ext_resource type="Texture2D" uid="uid://cec3jcphmc7n6" path="res://Art/station_down-face.png" id="13_ehdvk"]
+[ext_resource type="PackedScene" uid="uid://ddyetxupeiaq7" path="res://ui/Elements/SliderMiniGame/SliderMiniGame.tscn" id="13_uv7vf"]
 [ext_resource type="Resource" uid="uid://bxprkkhwfok6" path="res://items/iron.tres" id="14_iefvc"]
 [ext_resource type="Resource" uid="uid://cuxyo3sqva6qp" path="res://items/wood.tres" id="15_i0au3"]
 [ext_resource type="PackedScene" uid="uid://drxlqqfv1yty1" path="res://interactables/deliver/deliver.tscn" id="19_qe31l"]
@@ -114,6 +115,20 @@ toggle_mode = true
 texture_normal = ExtResource("10_fuyfu")
 texture_pressed = ExtResource("11_h56dj")
 script = ExtResource("12_47o84")
+
+[node name="SliderMiniGame" parent="InGame_CanvasLayer" instance=ExtResource("13_uv7vf")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_bottom = 0.0
+offset_left = -350.0
+offset_top = 50.0
+offset_right = -350.0
+offset_bottom = 50.0
+grow_horizontal = 0
+grow_vertical = 1
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 8
+size_flags_vertical = 0
 
 [node name="LevelTimer" type="Timer" parent="."]
 
