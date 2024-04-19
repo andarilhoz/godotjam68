@@ -3,8 +3,10 @@ class_name Player
 extends CharacterBody2D
 
 const ForgeEnum = preload("res://scripts/forge_enum.gd")
+const breath_scene = preload("res://player/breath.tscn")
 
 @onready var holding_item: TextureRect = $Smoothing2D/AnimatedSprite2D/HoldingItem
+@onready var breath_time_cd: Timer = $breath_time_cd
 @onready var area2d : Area2D = $Area2D
 @onready var player_sprite: AnimatedSprite2D = $Smoothing2D/AnimatedSprite2D
 @export var speed_reducer_carry : float = 0.12
@@ -19,9 +21,17 @@ var holding_material: Item
 
 var closest_interactable : Interactable = null
 
+@onready var last_breath : AnimatedSprite2D = $"../breath"
+
+func _ready():
+	last_breath.animation_looped.connect(_hide_breath)
+
+func _hide_breath():
+	last_breath.stop()
+	last_breath.hide()
+
 func _physics_process(delta):
 	player_movement(delta)
-
 
 func get_input():
 	input.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
@@ -30,12 +40,16 @@ func get_input():
 
 func process_animation():
 	if velocity == Vector2.ZERO:
+		if breath_time_cd.is_stopped():
+			print("inicia parado timer")
+			breath_time_cd.start()
+			
 		if holding_material:
 			player_sprite.animation = "idle_box"
 		else:
 			player_sprite.animation = "idle"
 		return
-	
+	breath_time_cd.stop()
 	if holding_material:
 		player_sprite.animation = "walk_box"
 	else:
@@ -64,6 +78,7 @@ func player_movement(delta):
 	if velocity.x != 0:  # verifica se há movimento horizontal
 		player_sprite.flip_h = velocity.x < 0  # flipa horizontalmente se movendo para a esquerda
 		$LightOccluder2D.scale = Vector2(-1,1) if velocity.x < 0 else Vector2(1,1)
+		
 	process_animation()
 
 func reveice_material(material: Item):
@@ -171,3 +186,12 @@ func _on_area_2d_body_exited(body):
 		
 	parent.on_player_leave()
 	closest_interactable = null
+
+
+func _on_breath_time_cd_timeout():
+	last_breath.scale = Vector2(-0.3, 0.3) if player_sprite.flip_h else Vector2(0.3, 0.3)
+	print(position)
+	last_breath.position = self.position + (Vector2(-100,36) if player_sprite.flip_h else Vector2(100,36))
+	last_breath.play()
+	last_breath.show()
+

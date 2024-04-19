@@ -9,6 +9,8 @@ extends Control
 @onready var press_cd_timer : Timer = $Panel/PressCD
 
 @export var right_zone_lenght = 0.3
+@export var min_distance = 0.2 
+var last_start_range = -1.0  # Inicializando com um valor fora do alcance possível
 
 var current_slider_percent : float = 50.0
 var slider_left : bool = true
@@ -39,7 +41,7 @@ func configure_style_texture():
 	gradient.set_color(0, Color.DARK_RED)
 	gradient.add_point(1, Color.LIME_GREEN)
 	gradient.add_point(2, Color.DARK_RED)
-		
+	gradient.set_offset(0, 0)
 	texture.set_gradient(gradient)
 	texture.width = 256;
 
@@ -49,7 +51,7 @@ func _process(delta):
 	slide(delta)
 	if Input.is_action_just_pressed("ui_action"):
 		press()
-
+	
 func press():
 	if can_press == false:
 		return
@@ -69,20 +71,38 @@ func slide(delta):
 	retrieve_slider.value = new_position
 
 func change_slider_pos():
-	gradient.set_offset(0, 0)
 	var start_min_range = 0.0
-	var start_max_range = 1 - right_zone_lenght
-	
-	var start_range = randf_range(start_min_range, start_max_range)
-	
+	var right_zone_length = 0.3  # Exemplo de comprimento fixo para right_zone_length
+
+	# Calculando o máximo alcance inicial
+	var start_max_range = 1 - right_zone_length
+
+	# Determinando a faixa válida para start_range baseada na última posição
+	var new_start_min = start_min_range
+	var new_start_max = start_max_range
+
+	if last_start_range != -1.0:
+		if last_start_range + min_distance + right_zone_length <= 1:
+			# A nova posição inicial pode começar após a última posição mais a distância mínima
+			new_start_min = last_start_range + min_distance
+		else:
+			# A nova posição inicial deve começar em algum lugar antes da última posição menos a distância mínima
+			new_start_max = last_start_range - min_distance
+			if new_start_max < new_start_min:
+				new_start_min = start_min_range  # Reset para evitar intervalo negativo
+
+	# Escolhendo um valor aleatório dentro dos novos limites
+	var start_range = randf_range(new_start_min, new_start_max)
+
 	print("Min range: ", start_range)
-	print("Max range: ", start_range + right_zone_lenght)
+	print("Max range: ", start_range + right_zone_length)
+
+	var offsets : PackedFloat32Array = PackedFloat32Array([0, start_range, start_range + right_zone_length])
+	gradient.offsets = offsets
+
+	# Atualizando a última posição usada
+	last_start_range = start_range
 	
-	gradient.set_offset(1, start_range)
-	gradient.set_offset(2, start_range + right_zone_lenght)
-
-
-
 func _on_press_cd_timeout():
 	bg_animation.set_next_frame()
 	actionBtn_animation.set_next_frame()

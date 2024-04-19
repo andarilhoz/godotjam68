@@ -11,7 +11,7 @@
 [sub_resource type="Gradient" id="Gradient_67jkp"]
 interpolation_mode = 1
 interpolation_color_space = 1
-offsets = PackedFloat32Array(0, 0.404908, 0.883436)
+offsets = PackedFloat32Array(0, 0.49, 0.79)
 colors = PackedColorArray(0.406139, 0.0142236, 9.62615e-08, 1, 0, 1, 0, 1, 0.407843, 0.0156863, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_37s4r"]
@@ -97,6 +97,7 @@ offset_bottom = 877.0
 
 [node name="HSlider" type="HSlider" parent="Panel"]
 z_index = 1
+layout_mode = 0
 offset_left = 19.0
 offset_top = 750.0
 offset_right = 594.0
@@ -124,6 +125,7 @@ sprites = SubResource("SpriteFrames_klp4c")
 frame_index = 1
 
 [node name="ActionBtn" type="TextureRect" parent="Panel"]
+layout_mode = 0
 offset_left = 254.0
 offset_top = 623.0
 offset_right = 353.0
