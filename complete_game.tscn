@@ -123,10 +123,6 @@ grow_vertical = 1
 scale = Vector2(0.5, 0.5)
 size_flags_horizontal = 8
 size_flags_vertical = 0
-right_zone_length = 0.3
-right_zone_length_masterpiece = 0.1
-min_distance = 0.2
-masterpiece_chance = 50.0
 
 [node name="LevelTimer" type="Timer" parent="."]
 

@@ -24,6 +24,8 @@ var closest_interactable : Interactable = null
 
 var bufando_state : bool = false
 
+var is_forging : bool = false
+
 func _ready():
 	last_breath.animation_looped.connect(_hide_breath)
 
@@ -64,6 +66,8 @@ func process_animation():
 	
 
 func player_movement(delta):
+	if is_forging :
+		return
 	input = get_input()
 	
 	if input == Vector2.ZERO:

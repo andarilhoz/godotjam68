@@ -10,6 +10,7 @@ extends Control
 @onready var actionBtn_animation : AnimatedTextureRect = $Panel/ActionBtn
 @onready var press_cd_timer : Timer = $Panel/PressCD
 @onready var panel : Panel = $Panel
+@onready var player: Player = $"../../Player"
 
 @export var right_zone_length = 0.3
 @export var right_zone_length_masterpiece = 0.1
@@ -53,6 +54,7 @@ func _ready():
 func show_minigame(forge_id):
 	current_forge = forge_id
 	is_hidden = false
+	player.is_forging = true
 	enabled = true
 	is_masterpiece = chance_true(masterpiece_chance)
 	change_slider_pos()
@@ -66,7 +68,7 @@ func show_minigame(forge_id):
 func hide_minigame():
 	is_hidden = true
 	press_cd_timer.stop()
-	
+	player.is_forging = false
 	bg_animation.set_next_frame()
 	actionBtn_animation.set_next_frame()
 	
