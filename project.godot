@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SignalManager="*res://scripts/SignalManager.gd"
+BgAudio="*res://Audio/bg_audio.tscn"
 
 [display]
 

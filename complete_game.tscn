@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b4pqbp85pfaw5"]
+[gd_scene load_steps=22 format=3 uid="uid://b4pqbp85pfaw5"]
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://player/Player.tscn" id="1_5le0k"]
 [ext_resource type="Script" path="res://scripts/general_script.gd" id="1_8yawa"]
@@ -10,8 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://bode7lhib546p" path="res://interactables/storage/storage.tscn" id="8_r4xfv"]
 [ext_resource type="PackedScene" uid="uid://ds13jc88emg6b" path="res://interactables/trash/trash.tscn" id="9_4l3rv"]
 [ext_resource type="Resource" uid="uid://bd5k53oviw0wl" path="res://recipes/staff.tres" id="9_woln8"]
+[ext_resource type="Script" path="res://SoundControl.gd" id="10_dt630"]
 [ext_resource type="PackedScene" uid="uid://bfw5bfequ0g0x" path="res://interactables/table/table.tscn" id="10_naw8p"]
+[ext_resource type="Texture2D" uid="uid://cj4yi4kq1bess" path="res://Audio/Vol.png" id="10_q5h2x"]
 [ext_resource type="Resource" uid="uid://cwktcxkefau7h" path="res://recipes/sword.tres" id="10_q8ln3"]
+[ext_resource type="Texture2D" uid="uid://bfcrhx6j6ke0d" path="res://Audio/Mute.png" id="11_5b840"]
 [ext_resource type="PackedScene" uid="uid://bfqpo5vryw575" path="res://interactables/forge/forge.tscn" id="12_ymthb"]
 [ext_resource type="Texture2D" uid="uid://cec3jcphmc7n6" path="res://Art/station_down-face.png" id="13_ehdvk"]
 [ext_resource type="Resource" uid="uid://bxprkkhwfok6" path="res://items/iron.tres" id="14_iefvc"]
@@ -86,6 +89,22 @@ grow_vertical = 0
 
 [node name="UiPoints" parent="InGame_CanvasLayer/Points" instance=ExtResource("8_drioi")]
 layout_mode = 2
+
+[node name="ToggleSound" type="TextureButton" parent="InGame_CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -512.0
+offset_bottom = 512.0
+grow_horizontal = 0
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(514, 0)
+size_flags_horizontal = 8
+toggle_mode = true
+texture_normal = ExtResource("10_q5h2x")
+texture_pressed = ExtResource("11_5b840")
+script = ExtResource("10_dt630")
+metadata/_edit_use_anchors_ = true
 
 [node name="LevelTimer" type="Timer" parent="."]
 
@@ -171,4 +190,5 @@ position = Vector2(518, -301)
 processing_time = 4.0
 
 [connection signal="timeout" from="InGame_CanvasLayer/Orders/OrderCountDown" to="InGame_CanvasLayer/Orders" method="_on_order_count_down_timeout"]
+[connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="InGame_CanvasLayer/ToggleSound" method="_on_ToggleSound_pressed"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]

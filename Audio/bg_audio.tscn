@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dywmvtntyki1l"]
+
+[ext_resource type="AudioStream" uid="uid://ocqqflpwivfg" path="res://Audio/forge-194549.mp3" id="1_24fpk"]
+
+[node name="AudioControler" type="AudioStreamPlayer"]
+stream = ExtResource("1_24fpk")
+volume_db = -12.0
+autoplay = true
+bus = &"Music"
