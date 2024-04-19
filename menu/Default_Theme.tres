@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://5jdis1w6dpq2"]
 
-[ext_resource type="FontFile" uid="uid://nyrhi47wskq7" path="res://menu/DragonHunter-9Ynxj.otf" id="1_npx24"]
+[ext_resource type="FontFile" uid="uid://2pj81tysaxwc" path="res://menu/PirataOne-Regular.ttf" id="1_rm56y"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r7x5v"]
 
@@ -13,7 +13,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpvlo"]
 
 [resource]
-default_font = ExtResource("1_npx24")
+default_font = ExtResource("1_rm56y")
 Button/colors/font_color = Color(0.898039, 0.419608, 0, 1)
 Button/colors/font_focus_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(1, 1, 1, 1)

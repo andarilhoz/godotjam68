@@ -2,8 +2,8 @@ extends Node2D
 
 @export var level_timer_in_seconds: float = 100
 @onready var timer : Timer = $LevelTimer
-@onready var timer_label : RichTextLabel = $InGame_CanvasLayer/Timer/UiTimer/Panel/MarginContainer/RichTextLabel
-
+@onready var timer_label : RichTextLabel = $InGame_CanvasLayer/Contadores/Ui_Contadores/MarginContainer/HBoxContainer/TimerIcon/Contador_Timer
+	
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
@@ -11,7 +11,6 @@ func _input(event):
 
 func _ready():
 	$InGame_CanvasLayer.visible = true
-	timer.one_shot
 	timer.start(level_timer_in_seconds)
 
 func _process(delta):
