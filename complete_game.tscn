@@ -49,7 +49,6 @@ editor_draw_limits = true
 position = Vector2(282, 92)
 scale = Vector2(0.8, 0.8)
 collision_mask = 2
-speed_reducer_carry = null
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player"]
 
@@ -201,6 +200,6 @@ processing_time = 4.0
 
 [connection signal="timeout" from="InGame_CanvasLayer/Orders/OrderCountDown" to="InGame_CanvasLayer/Orders" method="_on_order_count_down_timeout"]
 [connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="." method="_on_toggle_sound_pressed"]
-[connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="InGame_CanvasLayer/ToggleSound" method="_on_ToggleSound_pressed"]
 [connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="InGame_CanvasLayer/ToggleSound" method="_on_pressed"]
+[connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="InGame_CanvasLayer/ToggleSound" method="_on_ToggleSound_pressed"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]

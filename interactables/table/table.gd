@@ -2,7 +2,7 @@ extends "res://interactables/interactable.gd"
 const ForgeEnum = preload("res://scripts/forge_enum.gd")
 
 var holding_material : Item = null
-@onready var holding_item: TextureRect = $ItemSprite/ItemImage
+@onready var holding_item: TextureRect = $ItemSprite/Control/ItemImage
 
 func do_action(player_body):
 	if player_body.holding_material == null:
