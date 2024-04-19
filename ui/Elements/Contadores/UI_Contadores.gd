@@ -1,6 +1,6 @@
 extends Control
 
-@onready var text_label : RichTextLabel = $Panel/RichTextLabel
+@onready var text_label : RichTextLabel = $MarginContainer/HBoxContainer/CoinIcon/Contador_Estrelas
 @export var points_per_order = 25
 @export var points_loose_expire = 5
 @export var points_loose_wrong = 10

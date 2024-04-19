@@ -19,8 +19,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_6hama")
 script = ExtResource("1_wgnd0")
-metadata/_edit_vertical_guides_ = [801.0]
-metadata/_edit_horizontal_guides_ = [450.0]
 
 [node name="MenuBg" type="TextureRect" parent="."]
 layout_mode = 0
@@ -72,7 +70,7 @@ theme_override_constants/margin_bottom = 50
 [node name="VBox_Botoes" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 10
+size_flags_vertical = 8
 
 [node name="Play" type="Button" parent="MarginContainer/VBox_Botoes"]
 layout_mode = 2
