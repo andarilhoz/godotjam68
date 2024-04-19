@@ -7,7 +7,7 @@ const ForgeEnum = preload("res://scripts/forge_enum.gd")
 @onready var holding_item: TextureRect = $Smoothing2D/AnimatedSprite2D/HoldingItem
 @onready var area2d : Area2D = $Area2D
 @onready var player_sprite: AnimatedSprite2D = $Smoothing2D/AnimatedSprite2D
-@export var speed_reducer_carry = 0.15
+@export var speed_reducer_carry = 0.12
 
 const max_speed = 550
 const acceleration = 3500
@@ -21,6 +21,7 @@ var closest_interactable : Interactable = null
 
 func _physics_process(delta):
 	player_movement(delta)
+
 
 func get_input():
 	input.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
