@@ -1,12 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://ddyetxupeiaq7"]
+[gd_scene load_steps=21 format=3 uid="uid://ddyetxupeiaq7"]
 
 [ext_resource type="Script" path="res://ui/Elements/SliderMiniGame/AnimatedTextureRect.gd" id="1_4geq0"]
 [ext_resource type="Script" path="res://ui/Elements/SliderMiniGame/SliderMiniGame.gd" id="1_sme4g"]
 [ext_resource type="Texture2D" uid="uid://dmhaahis1lepm" path="res://ui/Elements/SliderMiniGame/pointer_slider_minigame.png" id="2_qhsy2"]
 [ext_resource type="Texture2D" uid="uid://byojmelc7vtlv" path="res://ui/Elements/SliderMiniGame/frame_1.png" id="2_vvbkt"]
 [ext_resource type="Texture2D" uid="uid://dllninqumllaw" path="res://ui/Elements/SliderMiniGame/frame_2.png" id="3_ac81o"]
+[ext_resource type="Texture2D" uid="uid://dsk7j0bnf0dxx" path="res://ui/Elements/SliderMiniGame/hit_full_forge_feedback.png" id="3_jtimx"]
 [ext_resource type="Texture2D" uid="uid://bqa8a7posq2to" path="res://ui/Images/btn_A_sprite.png" id="5_komsu"]
 [ext_resource type="Texture2D" uid="uid://dyp3d16xuu1x7" path="res://ui/Images/btn_E_sprite.png" id="6_2o1wi"]
+[ext_resource type="Texture2D" uid="uid://c0qovqc15y1m0" path="res://ui/Elements/SliderMiniGame/frame_forge_feedback.png" id="8_5fqvp"]
 
 [sub_resource type="Gradient" id="Gradient_67jkp"]
 interpolation_mode = 1
@@ -81,7 +83,7 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="SliderMiniGame" type="Control"]
+[node name="SliderMiniGame" type="Control" node_paths=PackedStringArray("markers")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -89,6 +91,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sme4g")
+empty_marker = ExtResource("8_5fqvp")
+filled_marker = ExtResource("3_jtimx")
+markers = [NodePath("Panel/Items/Item1"), NodePath("Panel/Items/Item2"), NodePath("Panel/Items/Item3")]
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -99,10 +104,10 @@ offset_bottom = 877.0
 [node name="HSlider" type="HSlider" parent="Panel"]
 z_index = 1
 layout_mode = 0
-offset_left = 19.0
-offset_top = 750.0
-offset_right = 594.0
-offset_bottom = 839.0
+offset_left = 28.0
+offset_top = 650.0
+offset_right = 603.0
+offset_bottom = 739.0
 mouse_filter = 2
 theme_override_icons/grabber_disabled = ExtResource("2_qhsy2")
 theme_override_styles/slider = SubResource("StyleBoxTexture_cgxoh")
@@ -127,10 +132,10 @@ frame_index = 1
 
 [node name="ActionBtn" type="TextureRect" parent="Panel"]
 layout_mode = 0
-offset_left = 254.0
-offset_top = 623.0
-offset_right = 353.0
-offset_bottom = 718.0
+offset_left = 263.0
+offset_top = 523.0
+offset_right = 362.0
+offset_bottom = 618.0
 texture = SubResource("AtlasTexture_u2uy3")
 expand_mode = 1
 stretch_mode = 6
@@ -141,5 +146,46 @@ current_animation = "keyboard"
 [node name="PressCD" type="Timer" parent="Panel"]
 wait_time = 0.5
 one_shot = true
+
+[node name="Items" type="GridContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -247.0
+offset_top = -106.0
+offset_right = 1741.0
+offset_bottom = 694.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.25, 0.083)
+theme_override_constants/h_separation = 500
+columns = 3
+
+[node name="Item1" type="TextureRect" parent="Panel/Items"]
+custom_minimum_size = Vector2(280, 800)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("8_5fqvp")
+expand_mode = 5
+
+[node name="Item2" type="TextureRect" parent="Panel/Items"]
+custom_minimum_size = Vector2(280, 800)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("8_5fqvp")
+expand_mode = 5
+
+[node name="Item3" type="TextureRect" parent="Panel/Items"]
+custom_minimum_size = Vector2(280, 800)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("8_5fqvp")
+expand_mode = 5
 
 [connection signal="timeout" from="Panel/PressCD" to="." method="_on_press_cd_timeout"]

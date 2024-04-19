@@ -80,7 +80,7 @@ func on_player_close(player: Player):
 	super.on_player_close(player)
 
 func _should_interact(player: Player):
-	return (player.holding_material != null and processed_item == null) or (player.holding_material == null and processed_item != null) or not processing
+	return ((player.holding_material != null and processed_item == null) or (player.holding_material == null and processed_item != null) )and not processing
 
 func reveice_material(player_body: Node2D):
 	print("Received material: ", player_body.holding_material.get_item_name())

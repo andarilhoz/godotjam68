@@ -13,6 +13,11 @@ extends Control
 @export var right_zone_length = 0.3
 @export var min_distance = 0.2 
 
+@export var empty_marker : Texture
+@export var filled_marker : Texture
+
+@export var markers : Array[TextureRect]
+
 signal on_minigame_end
 
 var last_start_range = -1.0  # Inicializando com um valor fora do alcance possível
@@ -49,9 +54,8 @@ func show_minigame(forge_id):
 	is_hidden = false
 	enabled = true
 	can_press = true
-	
-	
 	correct_hits = 0
+	update_markers()
 	var minigame_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
 	minigame_tween.tween_property(panel, "position", Vector2.ZERO, .5)
 
@@ -111,20 +115,30 @@ func press():
 	else:
 		print("not precise: ",retrieve_slider.value )
 		correct_hits = 0
-		
+	
 	if correct_hits >= 3:
 		on_minigame_end.emit(is_masterpiece, current_forge)
 		hide_minigame()
 		
 	else:
 		press_cd_timer.start()
-		change_slider_pos()
+	
+	update_markers()
+
+func update_markers():
+	for i in range(3):
+		if correct_hits >= i + 1 :
+			markers[i].texture = filled_marker
+			continue
+		markers[i].texture = empty_marker
 	
 
 func check_hit_precision() -> bool:
 	return retrieve_slider.value /100 > slider_min_value and retrieve_slider.value/100 < slider_max_value
 
 func slide(delta):
+	if not can_press:
+		return
 	# Define o alvo com base na direção do slider
 	var target: float = 0 if slider_left else 100
 	elapsed_time += delta
@@ -168,6 +182,7 @@ func change_slider_pos():
 func _on_press_cd_timeout():
 	if not enabled:
 		return
+	change_slider_pos()
 	bg_animation.set_next_frame()
 	actionBtn_animation.set_next_frame()
 	can_press = true
