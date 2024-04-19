@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://d1yio6ecb1sj6"]
 
 [ext_resource type="Script" path="res://scripts/item.gd" id="1_n0ulj"]
-[ext_resource type="Texture2D" uid="uid://cu14ipv4qfj46" path="res://ui/Images/UI_spear.png" id="2_hhgli"]
+[ext_resource type="Texture2D" uid="uid://cbtliquu5d0h5" path="res://ui/Images/UI_spear_masterpiece.png" id="2_o8hc5"]
 
 [resource]
 script = ExtResource("1_n0ulj")
 item_type = 5
-sprite = ExtResource("2_hhgli")
+sprite = ExtResource("2_o8hc5")
 is_masterpiece = true

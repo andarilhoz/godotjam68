@@ -13,7 +13,7 @@ var current_percentage = 100;
 signal on_card_expire
 
 func initialize_card(order: Order):
-	recipe_icon.texture = order.item.sprite
+	recipe_icon.texture = order.item.sketch_sprite
 	
 	item_1.texture = order.recipe_sprites[0].sprite
 	item_2.texture = order.recipe_sprites[1].sprite

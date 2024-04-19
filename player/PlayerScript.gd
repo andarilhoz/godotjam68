@@ -27,6 +27,21 @@ func get_input():
 	input.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 	return input.normalized()
 
+func process_animation():
+	if velocity == Vector2.ZERO:
+		if holding_material:
+			player_sprite.animation = "idle_box"
+		else:
+			player_sprite.animation = "idle"
+		return
+	
+	if holding_material:
+		player_sprite.animation = "walk_box"
+	else:
+		player_sprite.animation = "walk"
+		
+	
+
 func player_movement(delta):
 	input = get_input()
 	
@@ -36,6 +51,7 @@ func player_movement(delta):
 
 		else:
 			velocity = Vector2.ZERO
+
 	else:
 		velocity += (input * acceleration * delta)
 		velocity = velocity.limit_length(max_speed)
@@ -47,14 +63,14 @@ func player_movement(delta):
 	if velocity.x != 0:  # verifica se há movimento horizontal
 		player_sprite.flip_h = velocity.x < 0  # flipa horizontalmente se movendo para a esquerda
 		$LightOccluder2D.scale = Vector2(-1,1) if velocity.x < 0 else Vector2(1,1)
-		
+	process_animation()
+
 func reveice_material(material: Item):
 	if holding_material != null:
 		print("ERROR, already has material in hands")
 		return
 	print("Received material: ", material.get_item_name())
 	holding_material = material
-	player_sprite.animation = "idle_box"
 	holding_item.texture = material.sprite
 	holding_item.show()
 	
@@ -63,7 +79,6 @@ func delete_material():
 		print("ERROR, no material in hand")
 		return
 	print("Removing material: ",  holding_material.get_item_name())
-	player_sprite.animation = "idle"
 	holding_material = null
 	holding_item.hide()
 	
