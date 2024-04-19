@@ -79,17 +79,11 @@ item_list = Array[Resource("res://scripts/order.gd")]([ExtResource("7_7srjl"), E
 
 [node name="OrderCountDown" type="Timer" parent="InGame_CanvasLayer/Orders"]
 
-[node name="Contadores" type="MarginContainer" parent="InGame_CanvasLayer"]
+[node name="Ui_Contadores" parent="InGame_CanvasLayer" instance=ExtResource("8_drioi")]
 anchors_preset = 12
 anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -80.0
-grow_horizontal = 2
+offset_top = -190.0
 grow_vertical = 0
-
-[node name="Ui_Contadores" parent="InGame_CanvasLayer/Contadores" instance=ExtResource("8_drioi")]
-layout_mode = 2
 metadata/_edit_vertical_guides_ = [65.0]
 metadata/_edit_horizontal_guides_ = [840.0]
 
@@ -206,6 +200,6 @@ processing_time = 4.0
 
 [connection signal="timeout" from="InGame_CanvasLayer/Orders/OrderCountDown" to="InGame_CanvasLayer/Orders" method="_on_order_count_down_timeout"]
 [connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="." method="_on_toggle_sound_pressed"]
-[connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="InGame_CanvasLayer/ToggleSound" method="_on_pressed"]
 [connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="InGame_CanvasLayer/ToggleSound" method="_on_ToggleSound_pressed"]
+[connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="InGame_CanvasLayer/ToggleSound" method="_on_pressed"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
