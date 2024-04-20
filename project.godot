@@ -22,6 +22,8 @@ buses/default_bus_layout="res://Audio/default_bus_layout.tres"
 [autoload]
 
 SignalManager="*res://scripts/SignalManager.gd"
+ConfigFileHandler="*res://scripts/ConfigFileHandler.gd"
+SoundControl="*res://Audio/SoundControl.gd"
 BgAudio="*res://Audio/bg_audio.tscn"
 
 [display]
@@ -88,5 +90,6 @@ ui_action={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/default_filters/anisotropic_filtering_level=4
 anti_aliasing/quality/msaa_2d=1
 anti_aliasing/quality/use_taa=true

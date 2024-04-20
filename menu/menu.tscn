@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://5jdis1w6dpq2" path="res://menu/Default_Theme.tres" id="1_6hama"]
 [ext_resource type="Script" path="res://menu/menu.gd" id="1_wgnd0"]
 [ext_resource type="Texture2D" uid="uid://df633ylq7dj7q" path="res://menu/Menu_Bg.png" id="3_3rdut"]
-[ext_resource type="Shader" uid="uid://be6otkfg6pgiu" path="res://menu/menu.tres" id="4_g6yy8"]
+[ext_resource type="Shader" uid="uid://bp1l3p0gjcyox" path="res://menu/menu.tres" id="4_g6yy8"]
 [ext_resource type="FontFile" uid="uid://2pj81tysaxwc" path="res://menu/PirataOne-Regular.ttf" id="5_62eur"]
 [ext_resource type="Texture2D" uid="uid://b50556c4a5rcl" path="res://menu/title_shader.png" id="5_qwh7n"]
 
