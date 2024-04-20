@@ -13,11 +13,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kmpsw")
-points_per_order = null
-points_loose_expire = null
-points_loose_wrong = null
-level_timer_in_seconds = null
-points_dict_percentage_over = null
 
 [node name="TimerIcon" type="TextureRect" parent="."]
 layout_mode = 1

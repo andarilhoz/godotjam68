@@ -7,7 +7,7 @@ extends Control
 @export var points_loose_expire = 5
 @export var points_loose_wrong = 10
 
-@export var level_timer_in_seconds: float = 100
+@export var level_timer_in_seconds: float = 180
 @onready var timer : Timer = $LevelTimer
 @onready var timer_label : RichTextLabel = $TimerIcon/Contador_Timer
 	

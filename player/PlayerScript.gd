@@ -7,6 +7,7 @@ const breath_scene = preload("res://player/breath.tscn")
 
 @onready var holding_item: TextureRect = $Smoothing2D/AnimatedSprite2D/HoldingItem
 @onready var breath_time_start: Timer = $breath_time_start
+@onready var walk_timer: Timer = $walk_timer
 @onready var area2d : Area2D = $Area2D
 @onready var player_sprite: AnimatedSprite2D = $Smoothing2D/AnimatedSprite2D
 @export var speed_reducer_carry : float = 0.12
@@ -58,6 +59,9 @@ func process_animation():
 		return
 	stop_breah()
 	breath_time_start.stop()
+	if walk_timer.time_left <= 0:
+		SoundControl.play_footstep()
+		walk_timer.start(0.3)
 	if holding_material:
 		player_sprite.animation = "walk_box"
 	else:

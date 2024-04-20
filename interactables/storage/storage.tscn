@@ -1,12 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bode7lhib546p"]
+[gd_scene load_steps=6 format=3 uid="uid://bode7lhib546p"]
 
 [ext_resource type="PackedScene" uid="uid://dklup3lo13qq4" path="res://interactables/interactable.tscn" id="1_0fuk1"]
 [ext_resource type="Script" path="res://interactables/storage/Storage.gd" id="2_j786f"]
+[ext_resource type="Shader" path="res://interactables/interactable.gdshader" id="3_bc31x"]
 [ext_resource type="Texture2D" uid="uid://d258lid4e7710" path="res://Art/station_iron-pile.png" id="3_qwx33"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hgwmx"]
+resource_local_to_scene = true
+shader = ExtResource("3_bc31x")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 5.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/should_apply = false
 
 [node name="Storage" instance=ExtResource("1_0fuk1")]
 script = ExtResource("2_j786f")
 storage_material = null
 
 [node name="ItemSprite" parent="." index="0"]
+material = SubResource("ShaderMaterial_hgwmx")
 texture = ExtResource("3_qwx33")

@@ -39,6 +39,7 @@ layout_mode = 0
 offset_right = 256.0
 offset_bottom = 324.0
 scale = Vector2(2, 2)
+pivot_offset = Vector2(128, 162)
 theme = ExtResource("1_s1j6i")
 theme_override_styles/panel = SubResource("StyleBoxTexture_taw43")
 

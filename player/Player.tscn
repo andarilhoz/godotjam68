@@ -498,5 +498,8 @@ texture = SubResource("GradientTexture1D_eyeyo")
 wait_time = 2.0
 one_shot = true
 
+[node name="walk_timer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="breath_time_start" to="." method="_on_breath_time_start_timeout"]

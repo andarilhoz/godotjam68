@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://f20npurtnipa"
+path="res://.godot/imported/take iron.wav-bca95137ef65264cd766923b18bcd528.sample"
+
+[deps]
+
+source_file="res://Audio/sfx/take iron.wav"
+dest_files=["res://.godot/imported/take iron.wav-bca95137ef65264cd766923b18bcd528.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

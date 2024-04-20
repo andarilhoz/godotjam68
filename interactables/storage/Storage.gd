@@ -9,6 +9,11 @@ func _ready():
 
 func do_action(player_body: Node2D):
 	player_body.reveice_material(storage_material)
+	if storage_material.item_type == ForgeEnum.ForgeItem.IRON:
+		SoundControl.play_take_iron()
+		return
+	SoundControl.play_take_wood()
+		
 
 func on_player_close(player: Player):
 	if not _should_interact(player):

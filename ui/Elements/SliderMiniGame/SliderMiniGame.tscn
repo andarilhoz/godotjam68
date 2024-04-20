@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://ui/Elements/SliderMiniGame/AnimatedTextureRect.gd" id="1_4geq0"]
 [ext_resource type="Script" path="res://ui/Elements/SliderMiniGame/SliderMiniGame.gd" id="1_sme4g"]
 [ext_resource type="Texture2D" uid="uid://dmhaahis1lepm" path="res://ui/Elements/SliderMiniGame/pointer_slider_minigame.png" id="2_qhsy2"]
-[ext_resource type="Texture2D" uid="uid://byojmelc7vtlv" path="res://ui/Elements/SliderMiniGame/frame_1.png" id="2_vvbkt"]
-[ext_resource type="Texture2D" uid="uid://dllninqumllaw" path="res://ui/Elements/SliderMiniGame/frame_2.png" id="3_ac81o"]
 [ext_resource type="Texture2D" uid="uid://dsk7j0bnf0dxx" path="res://ui/Elements/SliderMiniGame/hit_full_forge_feedback.png" id="3_jtimx"]
 [ext_resource type="Texture2D" uid="uid://bqa8a7posq2to" path="res://ui/Images/btn_A_sprite.png" id="5_komsu"]
 [ext_resource type="Texture2D" uid="uid://dyp3d16xuu1x7" path="res://ui/Images/btn_E_sprite.png" id="6_2o1wi"]
+[ext_resource type="Texture2D" uid="uid://cnqxblroivaex" path="res://ui/Elements/SliderMiniGame/Forging_2.png" id="7_atq5m"]
 [ext_resource type="Texture2D" uid="uid://c0qovqc15y1m0" path="res://ui/Elements/SliderMiniGame/frame_forge_feedback.png" id="8_5fqvp"]
+[ext_resource type="Texture2D" uid="uid://odwrutk6fm4p" path="res://ui/Elements/SliderMiniGame/Forging_1.png" id="8_xy438"]
 
 [sub_resource type="Gradient" id="Gradient_67jkp"]
 interpolation_mode = 1
@@ -32,10 +32,10 @@ texture = SubResource("GradientTexture1D_37s4r")
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_vvbkt")
+"texture": ExtResource("7_atq5m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ac81o")
+"texture": ExtResource("8_xy438")
 }],
 "loop": true,
 "name": &"default",
@@ -123,7 +123,7 @@ offset_left = 6.0
 offset_top = 11.0
 offset_right = 620.0
 offset_bottom = 873.0
-texture = ExtResource("3_ac81o")
+texture = ExtResource("8_xy438")
 expand_mode = 1
 stretch_mode = 6
 script = ExtResource("1_4geq0")

@@ -13,7 +13,9 @@ config_version=5
 config/name="GODOT WILD JAM 68"
 run/main_scene="res://menu/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/image="res://ui/Elements/SliderMiniGame/Forging_1.png"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=2000
 
 [audio]
 
@@ -24,7 +26,6 @@ buses/default_bus_layout="res://Audio/default_bus_layout.tres"
 SignalManager="*res://scripts/SignalManager.gd"
 ConfigFileHandler="*res://scripts/ConfigFileHandler.gd"
 SoundControl="*res://Audio/SoundControl.gd"
-BgAudio="*res://Audio/bg_audio.tscn"
 
 [display]
 

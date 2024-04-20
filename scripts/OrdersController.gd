@@ -50,16 +50,16 @@ func _on_order_received(item: Item):
 		return
 	SignalManager.on_order_successful.emit(order)
 	remove_order(order["index"])
-	pass
 
 func remove_order(index):
-	order_list[index]["card"].queue_free()	
+	if not order_list[index]:
+		return
+	order_list[index]["card"].expire()
 	order_list.erase(index)
 
 func _on_card_expire(card: Node):
 	SignalManager.on_order_expired.emit()
 	remove_order(card.get_instance_id())
-	pass
 
 func get_order_by_item(item: Item):
 	var order_match

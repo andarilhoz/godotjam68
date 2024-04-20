@@ -16,6 +16,8 @@ extends Control
 @export var right_zone_length_masterpiece = 0.1
 @export var min_distance = 0.2 
 
+@export var safe_threshold = 0.05
+
 @export var empty_marker : Texture
 @export var filled_marker : Texture
 @export var masterpiece_chance: float = 50.0
@@ -132,15 +134,8 @@ func press():
 		print("not precise: ",retrieve_slider.value )
 		correct_hits = 0
 	
-	if correct_hits >= 3:
-		on_minigame_end.emit(is_masterpiece, current_forge)
-		hide_minigame()
-		
-	else:
-		press_cd_timer.start()
-	
+	press_cd_timer.start()
 	update_markers()
-	is_masterpiece = chance_true(masterpiece_chance)
 
 func update_markers():
 	for i in range(3):
@@ -155,7 +150,7 @@ func chance_true(percentage):
 	return rand_num < percentage
 
 func check_hit_precision() -> bool:
-	return retrieve_slider.value /100 > slider_min_value and retrieve_slider.value/100 < slider_max_value
+	return retrieve_slider.value /100 > slider_min_value - safe_threshold and retrieve_slider.value/100 < slider_max_value + safe_threshold
 
 func slide(delta):
 	if not can_press:
@@ -205,6 +200,12 @@ func change_slider_pos():
 func _on_press_cd_timeout():
 	if not enabled:
 		return
+		
+	if correct_hits >= 3:
+		on_minigame_end.emit(is_masterpiece, current_forge)
+		hide_minigame()
+		return
+	is_masterpiece = chance_true(masterpiece_chance)
 	change_slider_pos()
 	update_slider_colors()
 	bg_animation.set_next_frame()

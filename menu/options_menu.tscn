@@ -18,6 +18,7 @@ theme = ExtResource("1_v04qp")
 script = ExtResource("1_rdfi1")
 
 [node name="MenuBg" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 1600.0
 offset_bottom = 900.0
 texture = ExtResource("3_mh8my")

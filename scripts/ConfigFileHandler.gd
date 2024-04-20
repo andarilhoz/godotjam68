@@ -14,6 +14,9 @@ func _ready():
 		config.set_value("audio", "master_volume", 1.0)
 		config.set_value("audio", "master_volume_mute", false)
 		
+		config.set_value("audio", "music_volume", 1.0)
+		config.set_value("audio", "music_volume_mute", false)
+		
 		config.set_value("audio", "sfx_volume", 1.0)
 		config.set_value("audio", "sfx_volume_mute", false)
 		
@@ -32,7 +35,7 @@ func load_video_settings():
 	return video_settings
 	
 	
-func save_audio_seeting(key: String, value):
+func save_audio_settings(key: String, value):
 	config.set_value("audio", key, value)
 	config.save(SETTINGS_FILE_PATH)
 

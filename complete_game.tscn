@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bfw5bfequ0g0x" path="res://interactables/table/table.tscn" id="10_naw8p"]
 [ext_resource type="Resource" uid="uid://cwktcxkefau7h" path="res://recipes/sword.tres" id="10_q8ln3"]
 [ext_resource type="Texture2D" uid="uid://bfcrhx6j6ke0d" path="res://Audio/Mute.png" id="11_h56dj"]
-[ext_resource type="Script" path="res://Audio/SoundControl.gd" id="12_47o84"]
+[ext_resource type="Script" path="res://ToggleSound.gd" id="12_kvtyr"]
 [ext_resource type="PackedScene" uid="uid://bfqpo5vryw575" path="res://interactables/forge/forge.tscn" id="12_ymthb"]
 [ext_resource type="Texture2D" uid="uid://cec3jcphmc7n6" path="res://Art/station_down-face.png" id="13_ehdvk"]
 [ext_resource type="PackedScene" uid="uid://ddyetxupeiaq7" path="res://ui/Elements/SliderMiniGame/SliderMiniGame.tscn" id="13_uv7vf"]
@@ -85,15 +85,6 @@ anchor_top = 1.0
 offset_top = -220.0
 offset_bottom = -30.0
 grow_vertical = 0
-points_per_order = 25
-points_loose_expire = 5
-points_loose_wrong = 10
-level_timer_in_seconds = 100.0
-points_dict_percentage_over = {
-0: "Meh",
-20: "Ok",
-50: "Good"
-}
 metadata/_edit_vertical_guides_ = [65.0]
 metadata/_edit_horizontal_guides_ = [840.0]
 
@@ -109,7 +100,7 @@ pivot_offset = Vector2(489, 0)
 toggle_mode = true
 texture_normal = ExtResource("10_fuyfu")
 texture_pressed = ExtResource("11_h56dj")
-script = ExtResource("12_47o84")
+script = ExtResource("12_kvtyr")
 
 [node name="SliderMiniGame" parent="InGame_CanvasLayer" instance=ExtResource("13_uv7vf")]
 anchors_preset = 1
@@ -210,6 +201,6 @@ processing_time = 4.0
 
 [connection signal="timeout" from="InGame_CanvasLayer/Orders/OrderCountDown" to="InGame_CanvasLayer/Orders" method="_on_order_count_down_timeout"]
 [connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="." method="_on_toggle_sound_pressed"]
-[connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="InGame_CanvasLayer/ToggleSound" method="_on_pressed"]
 [connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="InGame_CanvasLayer/ToggleSound" method="_on_ToggleSound_pressed"]
+[connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="InGame_CanvasLayer/ToggleSound" method="_on_pressed"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]

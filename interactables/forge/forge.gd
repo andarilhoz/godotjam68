@@ -39,6 +39,7 @@ func give_item(perfect, forge_id):
 		return
 		
 	var final_item = processed_item.masterpiece_version if perfect else processed_item
+	SoundControl.play_take_weapon()
 	player.reveice_material(final_item)
 	processed_item = null
 	minigame_enabled = false
@@ -113,6 +114,7 @@ func start_processing():
 	processing = true
 	actionBtn.hide()
 	timer.one_shot = true
+	SoundControl.play_forge_machine()
 	timer.start(processing_time)
 	print("start forge")
 
