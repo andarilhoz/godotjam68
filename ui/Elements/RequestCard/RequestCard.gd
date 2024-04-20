@@ -15,11 +15,12 @@ var current_percentage = 100;
 signal on_card_expire
 
 func tween_card():
-	var card_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE)
-	#card_tween.tween_property(panel, "scale", )
+	var card_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
+	card_tween.tween_property(panel, "scale", Vector2(1,1), .5)
 	
 
 func initialize_card(order: Order):
+	tween_card()
 	recipe_icon.texture = order.item.sketch_sprite
 	
 	item_1.texture = order.recipe_sprites[0].sprite

@@ -31,7 +31,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.25, 0.25)
 script = ExtResource("1_1t6os")
 
 [node name="Panel" type="Panel" parent="."]
@@ -39,6 +38,7 @@ custom_minimum_size = Vector2(256, 128)
 layout_mode = 0
 offset_right = 256.0
 offset_bottom = 324.0
+scale = Vector2(2, 2)
 theme = ExtResource("1_s1j6i")
 theme_override_styles/panel = SubResource("StyleBoxTexture_taw43")
 

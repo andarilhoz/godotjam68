@@ -67,7 +67,10 @@ func process_animation():
 
 func player_movement(delta):
 	if is_forging :
+		velocity = Vector2.ZERO
+		process_animation()
 		return
+		
 	input = get_input()
 	
 	if input == Vector2.ZERO:
