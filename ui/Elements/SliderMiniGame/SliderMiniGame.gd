@@ -16,7 +16,7 @@ extends Control
 @export var right_zone_length_masterpiece = 0.1
 @export var min_distance = 0.2 
 
-@export var safe_threshold = 0.05
+@export var safe_threshold = 0.025
 
 @export var empty_marker : Texture
 @export var filled_marker : Texture
@@ -205,6 +205,7 @@ func _on_press_cd_timeout():
 		on_minigame_end.emit(is_masterpiece, current_forge)
 		hide_minigame()
 		return
+		
 	is_masterpiece = chance_true(masterpiece_chance)
 	change_slider_pos()
 	update_slider_colors()
