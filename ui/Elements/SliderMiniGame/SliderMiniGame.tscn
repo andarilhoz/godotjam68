@@ -1,14 +1,24 @@
-[gd_scene load_steps=21 format=3 uid="uid://ddyetxupeiaq7"]
+[gd_scene load_steps=23 format=3 uid="uid://ddyetxupeiaq7"]
 
 [ext_resource type="Script" path="res://ui/Elements/SliderMiniGame/AnimatedTextureRect.gd" id="1_4geq0"]
 [ext_resource type="Script" path="res://ui/Elements/SliderMiniGame/SliderMiniGame.gd" id="1_sme4g"]
 [ext_resource type="Texture2D" uid="uid://dmhaahis1lepm" path="res://ui/Elements/SliderMiniGame/pointer_slider_minigame.png" id="2_qhsy2"]
 [ext_resource type="Texture2D" uid="uid://dsk7j0bnf0dxx" path="res://ui/Elements/SliderMiniGame/hit_full_forge_feedback.png" id="3_jtimx"]
+[ext_resource type="Shader" path="res://ui/Elements/SliderMiniGame/SliderMiniGame.gdshader" id="4_cd3la"]
 [ext_resource type="Texture2D" uid="uid://bqa8a7posq2to" path="res://ui/Images/btn_A_sprite.png" id="5_komsu"]
 [ext_resource type="Texture2D" uid="uid://dyp3d16xuu1x7" path="res://ui/Images/btn_E_sprite.png" id="6_2o1wi"]
 [ext_resource type="Texture2D" uid="uid://cnqxblroivaex" path="res://ui/Elements/SliderMiniGame/Forging_2.png" id="7_atq5m"]
 [ext_resource type="Texture2D" uid="uid://c0qovqc15y1m0" path="res://ui/Elements/SliderMiniGame/frame_forge_feedback.png" id="8_5fqvp"]
 [ext_resource type="Texture2D" uid="uid://odwrutk6fm4p" path="res://ui/Elements/SliderMiniGame/Forging_1.png" id="8_xy438"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ntiyy"]
+shader = ExtResource("4_cd3la")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 20.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/should_apply = true
 
 [sub_resource type="Gradient" id="Gradient_67jkp"]
 interpolation_mode = 1
@@ -96,6 +106,7 @@ filled_marker = ExtResource("3_jtimx")
 markers = [NodePath("Panel/Items/Item1"), NodePath("Panel/Items/Item2"), NodePath("Panel/Items/Item3")]
 
 [node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_ntiyy")
 layout_mode = 0
 offset_left = 800.0
 offset_right = 1426.0
