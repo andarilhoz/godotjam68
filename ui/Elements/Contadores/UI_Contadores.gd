@@ -9,7 +9,7 @@ extends Control
 
 @onready var endgame_panel = $"../EndgamePanel"
 
-@export var level_timer_in_seconds: float = 5
+@export var level_timer_in_seconds: float = 2
 @onready var timer : Timer = $LevelTimer
 @onready var timer_label : RichTextLabel = $TimerIcon/Contador_Timer
 	
@@ -20,7 +20,7 @@ extends Control
 }
 
 static var phase_target_points : int = 25
-var points : int = 15;
+var points : int = 40;
 var hourglass_wobbling : bool = false
 var hourglass_critical_time: float = 10.0
 var hourglass_color_tween : Tween

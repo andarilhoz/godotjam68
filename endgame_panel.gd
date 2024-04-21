@@ -4,7 +4,6 @@ extends Panel
 @onready var points_label : RichTextLabel = $"Paper/TextureRect/TextureRect/Label - Video"
 @onready var label_panel = $"Paper/TextureRect/Label - Video"
 @onready var restart = $Paper/TextureRect/Restart
-@onready var high_score_panel = $"../HighScorePanel"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,11 +13,6 @@ func show_end_game(points: int, target_points: int):
 	show()
 	restart.grab_focus()
 	print("Ending")
-	var highscore = ConfigFileHandler.get_highscore()
-	
-	if points > highscore:
-		high_score_panel.open_panel(points)
-	
 	if points >= target_points:
 		SoundControl.play_victory()
 	else:

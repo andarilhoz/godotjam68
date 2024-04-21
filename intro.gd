@@ -6,6 +6,7 @@ extends Control
 func _ready():
 	explosion.restart()
 	SoundControl.play_forge_hit()
+	SoundControl.play_menu_music()
 	explosion.finished.connect(transition_menu)
 
 func transition_menu():
