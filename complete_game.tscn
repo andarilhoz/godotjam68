@@ -233,6 +233,6 @@ processing_time = 4.0
 [connection signal="timeout" from="InGame_CanvasLayer/Orders/OrderCountDown" to="InGame_CanvasLayer/Orders" method="_on_order_count_down_timeout"]
 [connection signal="timeout" from="InGame_CanvasLayer/Orders/InitialOrderCD" to="InGame_CanvasLayer/Orders" method="_on_initial_order_cd_timeout"]
 [connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="." method="_on_toggle_sound_pressed"]
-[connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="InGame_CanvasLayer/ToggleSound" method="_on_pressed"]
 [connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="InGame_CanvasLayer/ToggleSound" method="_on_ToggleSound_pressed"]
+[connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="InGame_CanvasLayer/ToggleSound" method="_on_pressed"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
