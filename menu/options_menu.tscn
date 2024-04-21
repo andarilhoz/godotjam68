@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://c38htlq5xgrkj"]
+[gd_scene load_steps=6 format=3 uid="uid://c38htlq5xgrkj"]
 
 [ext_resource type="Script" path="res://menu/options_menu.gd" id="1_rdfi1"]
 [ext_resource type="Theme" uid="uid://5jdis1w6dpq2" path="res://menu/Default_Theme.tres" id="1_v04qp"]
 [ext_resource type="Texture2D" uid="uid://df633ylq7dj7q" path="res://menu/Menu_Bg.png" id="3_mh8my"]
 [ext_resource type="FontFile" uid="uid://2pj81tysaxwc" path="res://menu/PirataOne-Regular.ttf" id="4_us2p4"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gik0m"]
+bg_color = Color(0.533333, 0.533333, 0.533333, 0.6)
+
 [node name="Options_menu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -25,90 +27,148 @@ texture = ExtResource("3_mh8my")
 expand_mode = 2
 
 [node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 70.0
-offset_top = 40.0
-offset_right = 1550.0
-offset_bottom = 850.0
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 70
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 500.0
+offset_top = 80.0
+offset_right = -500.0
+offset_bottom = 636.0
+grow_horizontal = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
 theme_override_font_sizes/normal_font_size = 72
 bbcode_enabled = true
 text = "[center]Settings[/center]"
 fit_content = true
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+[node name="Panel - Video" type="Panel" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gik0m")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/GridContainer"]
+[node name="Label - Video" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Video"]
 custom_minimum_size = Vector2(200, 100)
-layout_mode = 2
+layout_mode = 1
+offset_left = 40.0
+offset_top = 9.0
+offset_right = 340.0
+offset_bottom = 109.0
+size_flags_vertical = 2
 theme_override_font_sizes/normal_font_size = 51
 text = "Video"
 
-[node name="FullScreenBtn" type="CheckButton" parent="MarginContainer/GridContainer"]
+[node name="FullScreenBtn" type="CheckButton" parent="Control/VBoxContainer/Panel - Video"]
 layout_mode = 2
+offset_left = 150.0
+offset_top = 75.0
+offset_right = 450.0
+offset_bottom = 117.0
+size_flags_vertical = 3
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
 text = "FULLSCREEN"
 
-[node name="CameraShakeBtn" type="CheckButton" parent="MarginContainer/GridContainer"]
+[node name="CameraShakeBtn" type="CheckButton" parent="Control/VBoxContainer/Panel - Video"]
 layout_mode = 2
+offset_left = 150.0
+offset_top = 125.0
+offset_right = 450.0
+offset_bottom = 167.0
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
 text = "CAMERA SHAKE"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/GridContainer"]
+[node name="Panel - Audio" type="Panel" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 320)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gik0m")
+
+[node name="Label - Audio" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Audio"]
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
+offset_left = 40.0
+offset_top = 10.0
+offset_right = 240.0
+offset_bottom = 110.0
 theme_override_font_sizes/normal_font_size = 51
-text = "AUDIO"
+text = "Audio"
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="MarginContainer/GridContainer"]
+[node name="Label - Master Volume" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Audio"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+offset_left = 150.0
+offset_top = 75.0
+offset_right = 450.0
+offset_bottom = 125.0
 theme_override_font_sizes/normal_font_size = 32
 text = "MASTER VOLUME"
 
-[node name="CheckBox" type="CheckBox" parent="MarginContainer/GridContainer/RichTextLabel3"]
-layout_mode = 0
-offset_left = 220.0
-offset_top = 8.0
-offset_right = 250.0
-offset_bottom = 38.0
-
-[node name="HSlider" type="HSlider" parent="MarginContainer/GridContainer"]
+[node name="Slider - Master Volume" type="HSlider" parent="Control/VBoxContainer/Panel - Audio"]
 layout_mode = 2
+offset_left = 150.0
+offset_top = 122.0
+offset_right = 450.0
+offset_bottom = 138.0
+value = 100.0
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="MarginContainer/GridContainer"]
+[node name="Label - SFX Volume" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Audio"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+offset_left = 150.0
+offset_top = 152.0
+offset_right = 450.0
+offset_bottom = 202.0
 theme_override_font_sizes/normal_font_size = 32
 text = "SFX VOLUME"
 
-[node name="HSlider2" type="HSlider" parent="MarginContainer/GridContainer"]
+[node name="Slider - SFX Volume" type="HSlider" parent="Control/VBoxContainer/Panel - Audio"]
 layout_mode = 2
+offset_left = 150.0
+offset_top = 198.0
+offset_right = 450.0
+offset_bottom = 214.0
+value = 70.0
 
-[node name="VBox_Botoes" type="VBoxContainer" parent="MarginContainer"]
+[node name="Label - Music Volume" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Audio"]
+custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+offset_left = 150.0
+offset_top = 232.0
+offset_right = 450.0
+offset_bottom = 282.0
+theme_override_font_sizes/normal_font_size = 32
+text = "MUSIC VOLUME"
+
+[node name="Slider - Music Volume" type="HSlider" parent="Control/VBoxContainer/Panel - Audio"]
+layout_mode = 2
+offset_left = 150.0
+offset_top = 278.0
+offset_right = 450.0
+offset_bottom = 294.0
+value = 70.0
+
+[node name="VBox_Botoes" type="VBoxContainer" parent="Control"]
+layout_mode = 2
+offset_left = 70.0
+offset_top = 777.0
+offset_right = 164.0
+offset_bottom = 850.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 
-[node name="Back" type="Button" parent="MarginContainer/VBox_Botoes"]
+[node name="Back" type="Button" parent="Control/VBox_Botoes"]
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_colors/font_color = Color(1, 1, 1, 1)
