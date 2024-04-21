@@ -8,10 +8,14 @@ extends Control
 	$"Control/VBoxContainer/Panel - Scores/VBoxContainer/RichTextLabel5"
 ]
 
+@onready var back = $Control/VBox_Botoes/Back
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for label in rich_text_labels:
 		label.hide()
+	
+	back.grab_focus()
 	# Aqui assumimos que você obtém os resultados dos scores de forma assíncrona
 	var sw_result: Dictionary = await SilentWolf.Scores.get_scores().sw_get_scores_complete
 	update_scores(sw_result)
