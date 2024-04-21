@@ -14,7 +14,7 @@ config/name="GODOT WILD JAM 68"
 run/main_scene="res://menu/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/image="res://ui/Elements/SliderMiniGame/Forging_1.png"
-config/icon="res://icon/game_icon_v2.png"
+config/icon="res://icon/Game_Icon_anvil.png"
 
 [audio]
 
