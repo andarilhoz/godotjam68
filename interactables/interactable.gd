@@ -27,7 +27,7 @@ func _process(delta):
 		return
 	if Input.is_action_just_pressed("ui_action"):
 		do_action(close_player)
-		Input.start_joy_vibration(0,.75,.75,.25)
+		Input.start_joy_vibration(0,.75,0,.15)
 
 func do_action(player_body: Player):
 	print("Action called")
