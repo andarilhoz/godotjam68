@@ -1,0 +1,196 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds4au2306h4sp"]
+
+[ext_resource type="Texture2D" uid="uid://df633ylq7dj7q" path="res://menu/Menu_Bg.png" id="1_3p0v4"]
+[ext_resource type="Texture2D" uid="uid://ptvuj4bdgogn" path="res://ui/Images/UI_paper_menu.png" id="2_a0pa4"]
+[ext_resource type="FontFile" uid="uid://2pj81tysaxwc" path="res://menu/PirataOne-Regular.ttf" id="2_un4p0"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1600.0
+offset_bottom = 900.0
+texture = ExtResource("1_3p0v4")
+expand_mode = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 250.0
+offset_top = 100.0
+offset_right = -250.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_a0pa4")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Panel1" type="Panel" parent="Control/Panel/TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 138.0
+offset_top = 100.0
+offset_right = -185.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label - Video" type="RichTextLabel" parent="Control/Panel/TextureRect/Panel1"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_font_sizes/normal_font_size = 51
+text = "Lorem ipsum dolor sit amet. Ut tenetur sapiente ut dolores aspernatur et molestiae distinctio est enim consequatur et voluptates laudantium et ipsam quae vel tempora placeat. Aut voluptatem blanditiis in earum error et optio officiis sed omnis omnis ut quae quia in voluptas architecto!
+
+Et debitis possimus et nihil quod sit rerum ipsum non quam similique qui dolor voluptatum At sunt ratione ad repellat explicabo. Qui possimus facere et nostrum veniam et quod rerum in quia suscipit vel modi itaque. Eum eveniet voluptas est dolor officiis sed molestiae accusantium est labore voluptates ab fugiat pariatur qui voluptatibus deleniti ex fugit deserunt.
+
+33 facilis cupiditate et nulla doloremque et asperiores excepturi ut exercitationem ullam a voluptatum laborum et voluptate minima cum dolores harum. In internos voluptas in quam omnis qui dolorem vero ut enim explicabo? Cum nulla ipsa ab quia veniam qui unde tenetur?"
+visible_characters = 349
+visible_ratio = 0.378
+
+[node name="Panel2" type="Panel" parent="Control/Panel/TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 138.0
+offset_top = 100.0
+offset_right = -185.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label - Video" type="RichTextLabel" parent="Control/Panel/TextureRect/Panel2"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_font_sizes/normal_font_size = 51
+text = "Lorem ipsum dolor sit amet. Ut tenetur sapiente ut dolores aspernatur et molestiae distinctio est enim consequatur et voluptates laudantium et ipsam quae vel tempora placeat. Aut voluptatem blanditiis in earum error et optio officiis sed omnis omnis ut quae quia in voluptas architecto!
+
+Et debitis possimus et nihil quod sit rerum ipsum non quam similique qui dolor voluptatum At sunt ratione ad repellat explicabo. Qui possimus facere et nostrum veniam et quod rerum in quia suscipit vel modi itaque. Eum eveniet voluptas est dolor officiis sed molestiae accusantium est labore voluptates ab fugiat pariatur qui voluptatibus deleniti ex fugit deserunt.
+
+33 facilis cupiditate et nulla doloremque et asperiores excepturi ut exercitationem ullam a voluptatum laborum et voluptate minima cum dolores harum. In internos voluptas in quam omnis qui dolorem vero ut enim explicabo? Cum nulla ipsa ab quia veniam qui unde tenetur?"
+visible_characters = 349
+visible_ratio = 0.378
+
+[node name="Panel3" type="Panel" parent="Control/Panel/TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 138.0
+offset_top = 100.0
+offset_right = -185.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label - Video" type="RichTextLabel" parent="Control/Panel/TextureRect/Panel3"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_font_sizes/normal_font_size = 51
+text = "Lorem ipsum dolor sit amet. Ut tenetur sapiente ut dolores aspernatur et molestiae distinctio est enim consequatur et voluptates laudantium et ipsam quae vel tempora placeat. Aut voluptatem blanditiis in earum error et optio officiis sed omnis omnis ut quae quia in voluptas architecto!
+
+Et debitis possimus et nihil quod sit rerum ipsum non quam similique qui dolor voluptatum At sunt ratione ad repellat explicabo. Qui possimus facere et nostrum veniam et quod rerum in quia suscipit vel modi itaque. Eum eveniet voluptas est dolor officiis sed molestiae accusantium est labore voluptates ab fugiat pariatur qui voluptatibus deleniti ex fugit deserunt.
+
+33 facilis cupiditate et nulla doloremque et asperiores excepturi ut exercitationem ullam a voluptatum laborum et voluptate minima cum dolores harum. In internos voluptas in quam omnis qui dolorem vero ut enim explicabo? Cum nulla ipsa ab quia veniam qui unde tenetur?"
+visible_characters = 349
+visible_ratio = 0.378
+
+[node name="Panel4" type="Panel" parent="Control/Panel/TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 138.0
+offset_top = 100.0
+offset_right = -185.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label - Video" type="RichTextLabel" parent="Control/Panel/TextureRect/Panel4"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_font_sizes/normal_font_size = 51
+text = "Lorem ipsum dolor sit amet. Ut tenetur sapiente ut dolores aspernatur et molestiae distinctio est enim consequatur et voluptates laudantium et ipsam quae vel tempora placeat. Aut voluptatem blanditiis in earum error et optio officiis sed omnis omnis ut quae quia in voluptas architecto!
+
+Et debitis possimus et nihil quod sit rerum ipsum non quam similique qui dolor voluptatum At sunt ratione ad repellat explicabo. Qui possimus facere et nostrum veniam et quod rerum in quia suscipit vel modi itaque. Eum eveniet voluptas est dolor officiis sed molestiae accusantium est labore voluptates ab fugiat pariatur qui voluptatibus deleniti ex fugit deserunt.
+
+33 facilis cupiditate et nulla doloremque et asperiores excepturi ut exercitationem ullam a voluptatum laborum et voluptate minima cum dolores harum. In internos voluptas in quam omnis qui dolorem vero ut enim explicabo? Cum nulla ipsa ab quia veniam qui unde tenetur?"
+visible_characters = 349
+visible_ratio = 0.378
+
+[node name="VBox_Botoes" type="VBoxContainer" parent="Control"]
+layout_mode = 2
+offset_left = 70.0
+offset_top = 777.0
+offset_right = 164.0
+offset_bottom = 850.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="Back" type="Button" parent="Control/VBox_Botoes"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.964706, 0.392157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.964706, 0.392157, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.0235294, 0, 1)
+theme_override_fonts/font = ExtResource("2_un4p0")
+theme_override_font_sizes/font_size = 56
+text = "Back"
+alignment = 0

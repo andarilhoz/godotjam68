@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b4pqbp85pfaw5"]
+[gd_scene load_steps=26 format=3 uid="uid://b4pqbp85pfaw5"]
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://player/Player.tscn" id="1_5le0k"]
 [ext_resource type="Script" path="res://scripts/general_script.gd" id="1_8yawa"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://ddyetxupeiaq7" path="res://ui/Elements/SliderMiniGame/SliderMiniGame.tscn" id="13_uv7vf"]
 [ext_resource type="Resource" uid="uid://bxprkkhwfok6" path="res://items/iron.tres" id="14_iefvc"]
 [ext_resource type="Resource" uid="uid://cuxyo3sqva6qp" path="res://items/wood.tres" id="15_i0au3"]
+[ext_resource type="PackedScene" uid="uid://yhn4s8jmud6m" path="res://endgame_panel.tscn" id="16_ym271"]
 [ext_resource type="PackedScene" uid="uid://drxlqqfv1yty1" path="res://interactables/deliver/deliver.tscn" id="19_qe31l"]
 [ext_resource type="Texture2D" uid="uid://cdh7p2q2aixxi" path="res://Art/stage_background.png" id="20_t2wt8"]
 
@@ -63,7 +64,6 @@ collision_mask = 2
 
 [node name="InGame_CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
-visible = false
 
 [node name="TextureRect" type="TextureRect" parent="InGame_CanvasLayer"]
 offset_left = -170.0
@@ -127,6 +127,9 @@ grow_vertical = 1
 scale = Vector2(0.5, 0.5)
 size_flags_horizontal = 8
 size_flags_vertical = 0
+
+[node name="EndgamePanel" parent="InGame_CanvasLayer" instance=ExtResource("16_ym271")]
+visible = false
 
 [node name="LevelTimer" type="Timer" parent="."]
 

@@ -47,6 +47,7 @@ var is_masterpiece : bool = false
 var enabled: bool = false
 
 var current_forge
+var last_input_device: String
 
 func _ready():
 	configure_style_texture()
@@ -54,6 +55,9 @@ func _ready():
 	
 
 func show_minigame(forge_id):
+	actionBtn_animation.current_animation = last_input_device
+	actionBtn_animation.set_next_frame()
+	actionBtn_animation.set_next_frame()
 	current_forge = forge_id
 	is_hidden = false
 	player.is_forging = true
@@ -107,6 +111,15 @@ func _process(delta):
 	slide(delta)
 	if Input.is_action_just_pressed("ui_action"):
 		press()
+		
+		
+func _input(event):
+	if event is InputEventKey or event is InputEventMouse:
+		last_input_device = "keyboard"
+		return
+	last_input_device = "controller"
+	actionBtn_animation.current_animation = last_input_device
+
 
 func update_slider_colors():
 	if is_masterpiece :
@@ -139,7 +152,6 @@ func press():
 		correct_hits = 0
 	
 	explosion_particle.restart() 
-	
 	press_cd_timer.start()
 	update_markers()
 

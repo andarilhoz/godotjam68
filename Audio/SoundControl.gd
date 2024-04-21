@@ -112,6 +112,11 @@ func linear_to_decibels(linear_volume: float) -> float:
 func _on_ToggleSound_pressed():
 	AudioServer.set_bus_volume_db(0, linear_to_decibels(0))
 
+func stop_all_sfx():
+	for child in get_children():
+		if child is AudioStreamPlayer:
+			child.stop()  # ou child.pause() dependendo da versão da sua engine
+
 # Functions to play various sounds using dedicated players
 func play_discard():
 	sfx_discard_player.stream = discard_sound

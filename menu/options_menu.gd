@@ -14,10 +14,14 @@ func _ready():
 	master_slide.value = audio_settings["master_volume"] * 100
 	music_slide.value = audio_settings["music_volume"] * 100
 	sfx_slide.value = audio_settings["sfx_volume"] * 100
-	
+	full_screen.grab_focus()
 	print("fullscreen value: ", video_settings["fullscreen"])
 	full_screen.button_pressed = video_settings["fullscreen"]
 	camera_shake.button_pressed = video_settings["screen_shake"]
+
+func _process(delta):
+	if Input.is_action_just_pressed("ui_go_back"):
+		_on_back_pressed()
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://menu/menu.tscn")
