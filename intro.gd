@@ -9,4 +9,4 @@ func _ready():
 	explosion.finished.connect(transition_menu)
 
 func transition_menu():
-	SceneTransition.change_scene_to_file("res://menu/menu.tscn")
+	SceneTransition.change_scene_to_file("res://control_requirement.tscn")

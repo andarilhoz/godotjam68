@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://w6tieamd1151"]
+
+[ext_resource type="Texture2D" uid="uid://cgshackwj7ulh" path="res://ui/game-controller.png" id="1_ei75f"]
+[ext_resource type="Script" path="res://control_requirement.gd" id="1_rsnh4"]
+[ext_resource type="FontFile" uid="uid://2pj81tysaxwc" path="res://menu/PirataOne-Regular.ttf" id="2_5u2cx"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rsnh4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -89.0
+offset_right = 124.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ei75f")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -470.0
+offset_top = -340.0
+offset_right = 445.0
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("2_5u2cx")
+theme_override_font_sizes/normal_font_size = 72
+bbcode_enabled = true
+text = "[center]We recommend using a controller for a better gaming experience[/center]"
+fit_content = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

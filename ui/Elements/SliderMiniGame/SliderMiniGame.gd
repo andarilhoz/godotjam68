@@ -70,6 +70,27 @@ func show_minigame(forge_id):
 	update_markers()
 	var minigame_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
 	minigame_tween.tween_property(panel, "position", Vector2.ZERO, .5)
+	
+func shake_panel(x_intensity: float, y_intensity: float, duration: float):
+	var minigame_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_LINEAR)
+	var original_position = panel.position  # Armazena a posição original do painel.
+	
+	# Define os parâmetros do tremor.
+	var shake_steps = 10  # Quantidade de tremidas.
+	var shake_duration = duration / shake_steps  # Duração de cada tremida.
+	
+	for i in range(shake_steps):
+		# Cada tremida é uma interpolação para uma nova posição aleatória baseada na intensidade.
+		var random_x = original_position.x + randf_range(-x_intensity, x_intensity)
+		var random_y = original_position.y + randf_range(-y_intensity, y_intensity)
+		minigame_tween.tween_property(panel, "position", Vector2(random_x, random_y), shake_duration)
+	
+	# No final, adiciona uma interpolação para retornar à posição original.
+	minigame_tween.tween_property( panel, "rect_position", original_position, shake_duration)
+
+	
+
+
 
 func hide_minigame():
 	is_hidden = true
@@ -151,7 +172,11 @@ func press():
 		SoundControl.play_forge_miss()
 		print("not precise: ",retrieve_slider.value )
 		correct_hits = 0
+	var video_settings = ConfigFileHandler.load_video_settings()
 	
+	if video_settings["screen_shake"]:
+		shake_panel(10, 10, 0.5)
+		
 	explosion_particle.restart() 
 	press_cd_timer.start()
 	update_markers()
