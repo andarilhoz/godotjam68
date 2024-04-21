@@ -9,15 +9,11 @@
 [ext_resource type="Resource" uid="uid://bd5k53oviw0wl" path="res://recipes/staff.tres" id="5_uxwen"]
 [ext_resource type="Resource" uid="uid://cwktcxkefau7h" path="res://recipes/sword.tres" id="6_aba0p"]
 [ext_resource type="Texture2D" uid="uid://cr6pb68orb4fc" path="res://Art/station_forge.png" id="7_33t76"]
-[ext_resource type="Texture2D" uid="uid://b7dt4t0umxwx0" path="res://ui/tilemap_keys.png" id="7_unaij"]
 [ext_resource type="Shader" path="res://interactables/interactable.gdshader" id="9_2a2lb"]
 [ext_resource type="Texture2D" uid="uid://dra8olsun02hx" path="res://ui/Images/UI_sketchy_spear.png" id="10_3nvse"]
 [ext_resource type="Texture2D" uid="uid://bd6u2n0cfqra8" path="res://ui/Images/UI_wood.png" id="10_qrilp"]
 [ext_resource type="Script" path="res://PointLight2D2.gd" id="12_ksim4"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g5dv0"]
-atlas = ExtResource("7_unaij")
-region = Rect2(17, 289, 16, 16)
 
 [sub_resource type="Gradient" id="Gradient_eiuik"]
 interpolation_mode = 1
@@ -70,7 +66,6 @@ offset_right = 113.636
 offset_bottom = -126.045
 mouse_filter = 2
 theme_override_constants/grabber_offset = -10
-theme_override_icons/grabber_disabled = SubResource("AtlasTexture_g5dv0")
 theme_override_styles/slider = SubResource("StyleBoxTexture_xr7g8")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_dai8g")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_x2fg0")
