@@ -3,6 +3,7 @@ const ForgeEnum = preload("res://scripts/forge_enum.gd")
 const request_card = preload("res://ui/Elements/RequestCard/RequestCard.tscn")
 
 @onready var timer: Timer = $OrderCountDown
+@onready var initial_order_cd = $InitialOrderCD
 @export var time_between_orders: float = 13
 @export var min_time_between_orders: float = 4
 @export var decrease_time_between_orders: float = 0.5
@@ -15,7 +16,6 @@ const request_card = preload("res://ui/Elements/RequestCard/RequestCard.tscn")
 func _ready():
 	SignalManager.on_order_deliver.connect(_on_order_received)
 	timer.one_shot = true
-	generate_order()
 	
 
 func generate_order():
@@ -73,3 +73,8 @@ func get_order_by_item(item: Item):
 			break
 	return order_match
 			
+
+
+func _on_initial_order_cd_timeout():
+	print("create order")
+	generate_order()

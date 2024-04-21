@@ -1,3 +1,4 @@
+class_name UIContadores
 extends Control
 
 @onready var text_label : RichTextLabel = $CoinIcon/Contador_Estrelas
@@ -18,7 +19,7 @@ extends Control
 	 0 : "Meh"
 }
 
-@export var phase_target_points : int = 20
+static var phase_target_points : int = 20
 var points : int = 0;
 var hourglass_wobbling : bool = false
 var hourglass_critical_time: float = 10.0

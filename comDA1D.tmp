@@ -93,9 +93,7 @@ item_list = Array[Resource("res://scripts/order.gd")]([ExtResource("7_7srjl"), E
 [node name="OrderCountDown" type="Timer" parent="InGame_CanvasLayer/Orders"]
 
 [node name="InitialOrderCD" type="Timer" parent="InGame_CanvasLayer/Orders"]
-wait_time = 0.5
 one_shot = true
-autostart = true
 
 [node name="Ui_Contadores" parent="InGame_CanvasLayer" instance=ExtResource("8_drioi")]
 anchors_preset = 12
