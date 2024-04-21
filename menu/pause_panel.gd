@@ -5,6 +5,8 @@ extends Panel
 @onready var label_panel = $"Paper/TextureRect/Label - Video"
 @onready var resume = $Paper/TextureRect/Resume
 
+var paused = true;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	panel.scale = Vector2.ZERO
@@ -23,10 +25,12 @@ func pause_game():
 	endgame_tween.tween_property(self, "modulate:a", 1, .5)
 	endgame_tween.tween_property(panel, "scale", Vector2.ONE, .5)
 	resume.grab_focus()
+	paused = true
 
 func _on_close():
 	hide()
 	get_tree().set_deferred("paused", false)
+	paused = false
 	
 func _on_restart_pressed():
 	print("restarting")

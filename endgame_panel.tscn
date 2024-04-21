@@ -92,7 +92,7 @@ bbcode_enabled = true
 text = "[center]13/30[/center]"
 autowrap_mode = 2
 
-[node name="Start" type="Button" parent="Paper/TextureRect"]
+[node name="Restart" type="Button" parent="Paper/TextureRect"]
 process_mode = 3
 layout_mode = 1
 anchors_preset = 7
@@ -148,5 +148,5 @@ text = "Quit"
 flat = true
 alignment = 0
 
-[connection signal="pressed" from="Paper/TextureRect/Start" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Paper/TextureRect/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Paper/TextureRect/Menu" to="." method="_on_menu_pressed"]

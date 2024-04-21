@@ -12,7 +12,6 @@ func _ready():
 
 func show_end_game(points: int, target_points: int):
 	show()
-	$Paper/TextureRect/Restart.grab_focus()
 	restart.grab_focus()
 	print("Ending")
 	var endgame_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)

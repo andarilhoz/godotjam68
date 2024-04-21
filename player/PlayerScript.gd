@@ -13,7 +13,6 @@ const breath_scene = preload("res://player/breath.tscn")
 @onready var player_sprite: AnimatedSprite2D = $Smoothing2D/AnimatedSprite2D
 @export var speed_reducer_carry : float = 0.12
 @onready var last_breath : AnimatedSprite2D = $"../breath"
-@onready var pause_panel = $"../InGame_CanvasLayer/PausePanel"
 
 const max_speed = 550
 const acceleration = 7000
