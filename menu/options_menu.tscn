@@ -10,6 +10,7 @@ bg_color = Color(0.533333, 0.533333, 0.533333, 0.6)
 
 [node name="Options_menu" type="Control"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -28,6 +29,7 @@ expand_mode = 2
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -187,3 +189,10 @@ theme_override_fonts/font = ExtResource("4_us2p4")
 theme_override_font_sizes/font_size = 56
 text = "Back"
 alignment = 0
+
+[connection signal="toggled" from="Control/VBoxContainer/Panel - Video/FullScreenBtn" to="." method="_on_full_screen_btn_toggled"]
+[connection signal="toggled" from="Control/VBoxContainer/Panel - Video/CameraShakeBtn" to="." method="_on_camera_shake_btn_toggled"]
+[connection signal="value_changed" from="Control/VBoxContainer/Panel - Audio/Slider - Master Volume" to="." method="_on_slider__master_volume_value_changed"]
+[connection signal="value_changed" from="Control/VBoxContainer/Panel - Audio/Slider - SFX Volume" to="." method="_on_slider__sfx_volume_value_changed"]
+[connection signal="value_changed" from="Control/VBoxContainer/Panel - Audio/Slider - Music Volume" to="." method="_on_slider__music_volume_value_changed"]
+[connection signal="pressed" from="Control/VBox_Botoes/Back" to="." method="_on_back_pressed"]

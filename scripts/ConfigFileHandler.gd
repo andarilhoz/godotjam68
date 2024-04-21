@@ -12,19 +12,19 @@ func _ready():
 		config.set_value("video", "screen_shake", true)
 		
 		config.set_value("audio", "master_volume", 1.0)
-		config.set_value("audio", "master_volume_mute", false)
-		
 		config.set_value("audio", "music_volume", 1.0)
-		config.set_value("audio", "music_volume_mute", false)
-		
 		config.set_value("audio", "sfx_volume", 1.0)
-		config.set_value("audio", "sfx_volume_mute", false)
 		
 		config.save(SETTINGS_FILE_PATH)
 	else:
 		config.load(SETTINGS_FILE_PATH)
+	
+	if config.get_value("video", "fullscreen"):
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+		return
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
-func save_video_seeting(key: String, value):
+func save_video_settings(key: String, value):
 	config.set_value("video", key, value)
 	config.save(SETTINGS_FILE_PATH)
 
@@ -38,6 +38,7 @@ func load_video_settings():
 func save_audio_settings(key: String, value):
 	config.set_value("audio", key, value)
 	config.save(SETTINGS_FILE_PATH)
+	SoundControl.load_and_apply_audio_settings()
 
 func load_audio_settings():
 	var audio_settings = {}

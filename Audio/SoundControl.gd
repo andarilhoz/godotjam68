@@ -98,13 +98,6 @@ func setup_audio_buses():
 # Helper function to load and apply audio settings
 func load_and_apply_audio_settings():
 	var audio_settings = ConfigFileHandler.load_audio_settings()
-	muted = audio_settings["master_volume_mute"]
-	AudioServer.set_bus_mute(0, audio_settings["master_volume_mute"])
-	AudioServer.set_bus_mute(1, audio_settings["music_volume_mute"])
-	AudioServer.set_bus_mute(2, audio_settings["sfx_volume_mute"])
-	
-	print("config: ", audio_settings["music_volume_mute"])
-	
 	AudioServer.set_bus_volume_db(0, linear_to_decibels(audio_settings["master_volume"]))
 	AudioServer.set_bus_volume_db(1, linear_to_decibels(audio_settings["music_volume"]))
 	AudioServer.set_bus_volume_db(2, linear_to_decibels(audio_settings["sfx_volume"]))
@@ -116,8 +109,7 @@ func linear_to_decibels(linear_volume: float) -> float:
 		return 20 * log(linear_volume) / log(10)
 
 func _on_ToggleSound_pressed():
-	AudioServer.set_bus_mute(0, not AudioServer.is_bus_mute(0))
-	ConfigFileHandler.save_audio_settings("master_volume_mute", AudioServer.is_bus_mute(0))
+	AudioServer.set_bus_volume_db(0, linear_to_decibels(0))
 
 # Functions to play various sounds using dedicated players
 func play_discard():
