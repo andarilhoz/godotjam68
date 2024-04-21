@@ -1,6 +1,5 @@
 extends Control
 
-@onready var volume_btn : Button = $MarginContainer/VBoxContainer/Volume
 @onready var master_slide: HSlider = $"Control/VBoxContainer/Panel - Audio/Slider - Master Volume"
 @onready var music_slide: HSlider = $"Control/VBoxContainer/Panel - Audio/Slider - Music Volume"
 @onready var sfx_slide: HSlider = $"Control/VBoxContainer/Panel - Audio/Slider - SFX Volume"
