@@ -53,7 +53,7 @@ func _on_next_pressed():
 	update_button_state()
 
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://menu/menu.tscn")
+	SceneTransition.change_scene_to_file("res://menu/menu.tscn")
 
 func update_button_state():
 	if current_panel_index == 0:

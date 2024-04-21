@@ -8,4 +8,4 @@ func _ready():
 
 
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://menu/menu.tscn")
+	SceneTransition.change_scene_to_file("res://menu/menu.tscn")

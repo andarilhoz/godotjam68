@@ -24,7 +24,7 @@ func _process(delta):
 		_on_back_pressed()
 
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://menu/menu.tscn")
+	SceneTransition.change_scene_to_file("res://menu/menu.tscn")
 
 func _on_slider__master_volume_value_changed(value):
 	ConfigFileHandler.save_audio_settings("master_volume",value/100)

@@ -144,3 +144,4 @@ alignment = 0
 [connection signal="pressed" from="MarginContainer/VBox_Botoes/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBox_Botoes/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="MarginContainer/VBox_Botoes/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBox_Botoes_2/Credits" to="." method="_on_credits_pressed"]

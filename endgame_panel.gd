@@ -14,6 +14,12 @@ func show_end_game(points: int, target_points: int):
 	show()
 	restart.grab_focus()
 	print("Ending")
+	var highscore = ConfigFileHandler.get_highscore()
+	
+	if points > highscore:
+		SilentWolf.Scores.save_score("Magno", points)
+		ConfigFileHandler.save_highscore(points)
+		
 	var endgame_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	endgame_tween.tween_property(panel, "scale", Vector2.ONE, .5)
 	points_label.text = "[center]" + str(points) + "/" + str(target_points) + "[/center]"
@@ -29,4 +35,4 @@ func _on_restart_pressed():
 func _on_menu_pressed():
 	SoundControl.stop_all_sfx()
 	get_tree().set_deferred("paused", false)
-	get_tree().change_scene_to_file("res://menu/menu.tscn")
+	SceneTransition.change_scene_to_file("res://menu/menu.tscn")

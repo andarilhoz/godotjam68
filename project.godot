@@ -27,6 +27,8 @@ buses/default_bus_layout="res://Audio/default_bus_layout.tres"
 SignalManager="*res://scripts/SignalManager.gd"
 ConfigFileHandler="*res://scripts/ConfigFileHandler.gd"
 SoundControl="*res://Audio/SoundControl.gd"
+SceneTransition="*res://scene_transition.tscn"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 

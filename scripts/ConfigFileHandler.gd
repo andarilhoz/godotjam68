@@ -18,11 +18,22 @@ func _ready():
 		config.save(SETTINGS_FILE_PATH)
 	else:
 		config.load(SETTINGS_FILE_PATH)
-	
+	silent_wolf()
 	if config.get_value("video", "fullscreen"):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 		return
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+
+func silent_wolf():
+	SilentWolf.configure({
+		"api_key": "L5Ws5mBksmFPFmys9N0T4FiXuwa6Jmw69IApRQDb",
+		"game_id": "ThroughtheForgeandtheFlame",
+		"log_level": 1
+	})
+	SilentWolf.configure_scores({
+		"open_scene_on_close": "res://scenes/MainPage.tscn"
+	})
 
 func save_video_settings(key: String, value):
 	config.set_value("video", key, value)
@@ -45,5 +56,12 @@ func load_audio_settings():
 	for key in config.get_section_keys("audio"):
 		audio_settings[key] = config.get_value("audio", key)
 	return audio_settings
-	
+
+func save_highscore(points: int):
+	config.set_value("score", "high", points)
+	config.save(SETTINGS_FILE_PATH)
+
+func get_highscore() -> int:
+	var score = config.get_value("score", "high", 0)
+	return int(score)
 

@@ -28,4 +28,4 @@ func _on_close():
 func _on_menu_pressed():
 	SoundControl.stop_all_sfx()
 	get_tree().set_deferred("paused", false)
-	get_tree().change_scene_to_file("res://menu/menu.tscn")
+	SceneTransition.change_scene_to_file("res://menu/menu.tscn")
