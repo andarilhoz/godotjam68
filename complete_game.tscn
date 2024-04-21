@@ -65,9 +65,9 @@ layer = 3
 
 [node name="TextureRect" type="TextureRect" parent="InGame_CanvasLayer"]
 offset_left = -170.0
-offset_top = -13.0
-offset_right = 629.0
-offset_bottom = 904.0
+offset_top = -2.0
+offset_right = 622.0
+offset_bottom = 901.0
 texture = ExtResource("9_4058q")
 expand_mode = 3
 stretch_mode = 4
@@ -211,6 +211,6 @@ processing_time = 4.0
 
 [connection signal="timeout" from="InGame_CanvasLayer/Orders/OrderCountDown" to="InGame_CanvasLayer/Orders" method="_on_order_count_down_timeout"]
 [connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="." method="_on_toggle_sound_pressed"]
-[connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="InGame_CanvasLayer/ToggleSound" method="_on_pressed"]
 [connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="InGame_CanvasLayer/ToggleSound" method="_on_ToggleSound_pressed"]
+[connection signal="pressed" from="InGame_CanvasLayer/ToggleSound" to="InGame_CanvasLayer/ToggleSound" method="_on_pressed"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
