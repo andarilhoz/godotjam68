@@ -3,6 +3,7 @@ extends "res://interactables/interactable.gd"
 
 func do_action(player_body: Node2D):
 	SoundControl.play_discard()
+	super.do_action(player_body)
 	player_body.delete_material()
 
 func on_player_close(player: Player):

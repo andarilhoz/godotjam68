@@ -70,9 +70,10 @@ func do_action(player_body):
 	if processed_item != null and player_body.holding_material == null:
 		print("Start minigame")
 		minigame_enabled = true;
+		super.do_action(player_body)
 		slider_minigame.show_minigame(self.get_instance_id())
 		return
-	
+	super.do_action(player_body)
 	reveice_material(player_body)
 
 func on_player_close(player: Player):

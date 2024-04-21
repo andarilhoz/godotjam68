@@ -8,6 +8,7 @@ func _ready():
 	sprite.texture = storage_material.deposit_sprite
 
 func do_action(player_body: Node2D):
+	super.do_action(player_body)
 	player_body.reveice_material(storage_material)
 	if storage_material.item_type == ForgeEnum.ForgeItem.IRON:
 		SoundControl.play_take_iron()

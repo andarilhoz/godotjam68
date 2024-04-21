@@ -5,6 +5,7 @@ var holding_material : Item = null
 @onready var holding_item: TextureRect = $ItemSprite/Control/ItemImage
 
 func do_action(player_body):
+	super.do_action(player_body)
 	if player_body.holding_material == null:
 		send_item(player_body)
 		return

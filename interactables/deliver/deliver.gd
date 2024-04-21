@@ -11,7 +11,7 @@ func do_action(player_body: Player):
 	if player_body.holding_material == null:
 		print("No item in hand")
 		return
-	
+	super.do_action(player_body)
 	print("Delivering order: ", player_body.holding_material.get_item_name() )
 	reveice_material(player_body.holding_material)
 	SignalManager.on_order_deliver.emit(player_body.holding_material)
