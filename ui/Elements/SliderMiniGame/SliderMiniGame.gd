@@ -136,6 +136,7 @@ func press():
 		return
 	print("pressed")
 	can_press = false
+	Input.start_joy_vibration(0,1,1,.15)
 	bg_animation.set_next_frame()
 	actionBtn_animation.set_next_frame()
 	var precise = check_hit_precision()
