@@ -67,9 +67,9 @@ visible = false
 
 [node name="TextureRect" type="TextureRect" parent="InGame_CanvasLayer"]
 offset_left = -170.0
-offset_top = -13.0
-offset_right = 629.0
-offset_bottom = 904.0
+offset_top = -2.0
+offset_right = 622.0
+offset_bottom = 901.0
 texture = ExtResource("9_4058q")
 expand_mode = 3
 stretch_mode = 4
