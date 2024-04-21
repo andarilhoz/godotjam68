@@ -16,6 +16,10 @@ func send_item(player_body: Node2D):
 		print("No material to give")
 		return
 	player_body.reveice_material(holding_material)
+	if holding_material.item_type == ForgeEnum.ForgeItem.WOOD:
+		SoundControl.play_take_wood()
+	else :
+		SoundControl.play_take_iron()
 	holding_material = null
 	holding_item.hide()
 
@@ -33,6 +37,10 @@ func reveice_material(player_body: Node2D):
 		return
 	print("Received material: ", player_body.holding_material.get_item_name())
 	holding_material = player_body.holding_material
+	if holding_material.item_type == ForgeEnum.ForgeItem.WOOD:
+		SoundControl.play_take_wood()
+	else :
+		SoundControl.play_take_iron()
 	holding_item.texture = holding_material.sprite
 	holding_item.show()
 	player_body.delete_material()

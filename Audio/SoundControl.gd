@@ -56,6 +56,7 @@ func _ready():
 	# Initialize and configure audio players for different sound effects
 	music_player = create_audio_player("MusicPlayer", true)
 	music_player.stream = music
+	music_player.volume_db = linear_to_decibels(1)
 	music_player.autoplay = true
 	music_player.play()
 	
@@ -114,14 +115,17 @@ func _on_ToggleSound_pressed():
 # Functions to play various sounds using dedicated players
 func play_discard():
 	sfx_discard_player.stream = discard_sound
+	sfx_discard_player.volume_db = linear_to_decibels(0.5)
 	sfx_discard_player.play()
 
 func play_forge_machine():
 	sfx_forge_machine_player.stream = forge_machine
+	sfx_forge_machine_player.volume_db = linear_to_decibels(.5)
 	sfx_forge_machine_player.play()
 
 func play_take_iron():
 	sfx_take_iron_player.stream = take_iron
+	sfx_take_iron_player.volume_db = linear_to_decibels(.6)
 	sfx_take_iron_player.pitch_scale = randf_range(0.8, 1.2)
 	sfx_take_iron_player.play()
 
@@ -132,6 +136,7 @@ func play_take_weapon():
 
 func play_take_wood():
 	sfx_take_wood_player.stream = take_wood
+	sfx_take_iron_player.volume_db = linear_to_decibels(.7)
 	sfx_take_wood_player.pitch_scale = randf_range(0.8, 1.2)
 	sfx_take_wood_player.play()
 
@@ -141,6 +146,7 @@ func play_deliver_weapon():
 
 func play_footstep():
 	sfx_footstep_player.stream = footstep_sound
+	sfx_footstep_player.volume_db = linear_to_decibels(.4)
 	sfx_footstep_player.pitch_scale = randf_range(0.8, 1.2)
 	sfx_footstep_player.play()
 
@@ -150,6 +156,7 @@ func play_forge_hit():
 
 func play_forge_miss():
 	sfx_forge_miss_player.stream = forge_miss_sound
+	sfx_forge_miss_player.volume_db = linear_to_decibels(.5)
 	sfx_forge_miss_player.play()
 
 func play_game_over():
@@ -158,6 +165,7 @@ func play_game_over():
 
 func play_hurry_loop():
 	sfx_hurry_loop_player.stream = hurry_loop_sound
+	sfx_hurry_loop_player.volume_db = linear_to_decibels(.3)
 	sfx_hurry_loop_player.play()
 
 func play_masterpiece():
@@ -174,6 +182,7 @@ func play_order_received():
 
 func play_snort():
 	sfx_snort_player.stream = snort_sound
+	sfx_snort_player.volume_db = linear_to_decibels(.2)
 	sfx_snort_player.play()
 
 func play_victory():
@@ -182,5 +191,6 @@ func play_victory():
 
 func play_wrong_order():
 	sfx_wrong_order_player.stream = wrong_order_sound
+	sfx_wrong_order_player.volume_db = linear_to_decibels(.7)
 	sfx_wrong_order_player.play()
 
