@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://ds4au2306h4sp"]
+[gd_scene load_steps=14 format=3 uid="uid://dkse36pv5fii5"]
 
 [ext_resource type="Texture2D" uid="uid://df633ylq7dj7q" path="res://menu/Menu_Bg.png" id="1_3p0v4"]
-[ext_resource type="Script" path="res://intro.gd" id="1_p8pr8"]
 [ext_resource type="FontFile" uid="uid://2pj81tysaxwc" path="res://menu/PirataOne-Regular.ttf" id="2_un4p0"]
 [ext_resource type="Texture2D" uid="uid://cyrt0c0vhnuy8" path="res://menu/tutorial/tutorial_01.png" id="2_x8tcr"]
 [ext_resource type="Texture2D" uid="uid://ditws8hwvf6ko" path="res://menu/tutorial/tutorial_02.png" id="3_52jd7"]
@@ -22,7 +21,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_p8pr8")
 
 [node name="MenuBg" type="TextureRect" parent="."]
 layout_mode = 0
@@ -404,6 +402,7 @@ Keep an eye on the [color=aqua][i][b][font_size=28]expiration time[/font_size][/
 You'll also lose [color=yellow][i][b][font_size=28]satisfaction star[/font_size][/b][/i][/color]. if you deliver an item that isn't among the [color=magenta][i][b][font_size=28]active orders[/font_size][/b][/i][/color]. So, if an [color=magenta][i][b][font_size=28]order[/font_size][/b][/i][/color]. expires and you're in the middle of its production, use the [color=red][i][b][font_size=28]workbenches[/font_size][/b][/i][/color]. to store that item for a future customer who requests an item of that type."
 
 [node name="Previous" type="Button" parent="Control/Panel"]
+layout_mode = 0
 offset_left = 118.0
 offset_top = 581.0
 offset_right = 302.0
@@ -421,7 +420,7 @@ text = "Previous"
 flat = true
 alignment = 0
 
-[node name="Back" type="Button" parent="Control/Panel"]
+[node name="Next" type="Button" parent="Control/Panel"]
 visible = false
 layout_mode = 1
 anchors_preset = 3
@@ -468,3 +467,7 @@ theme_override_fonts/font = ExtResource("2_un4p0")
 theme_override_font_sizes/font_size = 56
 text = "Back"
 alignment = 0
+
+[connection signal="pressed" from="Control/Panel/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="Control/Panel/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Control/VBox_Botoes/Back" to="." method="_on_back_pressed"]

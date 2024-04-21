@@ -1,3 +1,486 @@
-[gd_scene format=3 uid="uid://cqxbq8if38n2"]
+[gd_scene load_steps=18 format=3 uid="uid://bclrs5b45c26g"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://tutorial.gd" id="1_f0mjg"]
+[ext_resource type="Texture2D" uid="uid://df633ylq7dj7q" path="res://menu/Menu_Bg.png" id="2_qrdxt"]
+[ext_resource type="Texture2D" uid="uid://cyrt0c0vhnuy8" path="res://menu/tutorial/tutorial_01.png" id="3_fjc3r"]
+[ext_resource type="FontFile" uid="uid://2pj81tysaxwc" path="res://menu/PirataOne-Regular.ttf" id="4_p57w3"]
+[ext_resource type="FontFile" uid="uid://d3g1ova3n7vx4" path="res://font/LinLibertine_R.ttf" id="5_g50ih"]
+[ext_resource type="Texture2D" uid="uid://ditws8hwvf6ko" path="res://menu/tutorial/tutorial_02.png" id="6_cknl0"]
+[ext_resource type="Texture2D" uid="uid://cqdwvawkq3i30" path="res://menu/tutorial/tutorial_03.png" id="7_r72u1"]
+[ext_resource type="FontFile" uid="uid://cxhwkygtkwg5a" path="res://font/LinLibertine_RBI.ttf" id="8_fgy5g"]
+[ext_resource type="Texture2D" uid="uid://yiqbijueqwnp" path="res://menu/tutorial/tutorial_04.png" id="9_26vfw"]
+[ext_resource type="Texture2D" uid="uid://bveysjuc6yqgf" path="res://menu/tutorial/tutorial_05.png" id="10_5jfiy"]
+[ext_resource type="Texture2D" uid="uid://cuvxfnngf1cdr" path="res://menu/tutorial/tutorial_06.png" id="11_pgfxb"]
+[ext_resource type="Texture2D" uid="uid://dw4py8vqjxoep" path="res://menu/tutorial/tutorial_07.png" id="12_7oaln"]
+[ext_resource type="Texture2D" uid="uid://c1twebv6m7bbr" path="res://menu/tutorial/tutorial_08.png" id="13_0osk6"]
+[ext_resource type="Texture2D" uid="uid://i3aqml6713v4" path="res://menu/tutorial/tutorial_09.png" id="14_2ylqb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iluut"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_grb1x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vh68m"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f0mjg")
+
+[node name="MenuBg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1600.0
+offset_bottom = 900.0
+texture = ExtResource("2_qrdxt")
+expand_mode = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 250.0
+offset_top = 100.0
+offset_right = -250.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_iluut")
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_fjc3r")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Title" type="RichTextLabel" parent="Control/Panel/TextureRect"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 113.0
+offset_top = 77.0
+offset_right = -436.0
+offset_bottom = -502.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("4_p57w3")
+theme_override_font_sizes/normal_font_size = 44
+text = "Through the forge and the flame, you must carry on!"
+
+[node name="Text" type="RichTextLabel" parent="Control/Panel/TextureRect"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 139.0
+offset_top = 207.0
+offset_right = -477.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
+theme_override_fonts/normal_font = ExtResource("5_g50ih")
+theme_override_font_sizes/normal_font_size = 32
+text = "Bert, the bull blacksmith, is a legendary figure in the lands from whence he hails. With his imposing presence and unparalleled skills at the forge, Bert is known for crafting items of exceptional quality. Whether a simple sword or shield, each piece that leaves his hands is wrought with precision and care, reflecting not only his prowess as a blacksmith but also his profound reverence for the craft."
+
+[node name="TextureRect2" type="TextureRect" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_cknl0")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Title" type="RichTextLabel" parent="Control/Panel/TextureRect2"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 113.0
+offset_top = 77.0
+offset_right = -436.0
+offset_bottom = -502.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("4_p57w3")
+theme_override_font_sizes/normal_font_size = 44
+text = "Through the forge and the flame, you must carry on!"
+
+[node name="Text" type="RichTextLabel" parent="Control/Panel/TextureRect2"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 139.0
+offset_top = 207.0
+offset_right = -477.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
+theme_override_fonts/normal_font = ExtResource("5_g50ih")
+theme_override_font_sizes/normal_font_size = 32
+text = "What truly sets Bert apart from other blacksmiths is his unique ability to produce masterpieces. From time to time, when inspiration strikes, he creates something truly extraordinary - a weapon so sharp it seems to cut through the very air itself or a shield so resilient it appears to defy the very laws of nature."
+
+[node name="TextureRect3" type="TextureRect" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_r72u1")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Text" type="RichTextLabel" parent="Control/Panel/TextureRect3"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 136.0
+offset_top = 106.0
+offset_right = -533.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
+theme_override_fonts/normal_font = ExtResource("5_g50ih")
+theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "When the [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color] opens, you'll need to complete as many [color=purple][i][b][font_size=28]orders[/font_size][/b][/i][/color] as possible within the specified [color=blue][i][b][font_size=28]time[/font_size][/b][/i][/color]. To end the day well, make sure to meet the [color=yellow][i][b][font_size=28]satisfaction star[/font_size][/b][/i][/color] goal before time runs out."
+
+[node name="TextureRect4" type="TextureRect" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_26vfw")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Text" type="RichTextLabel" parent="Control/Panel/TextureRect4"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 136.0
+offset_top = 106.0
+offset_right = -533.0
+offset_bottom = -365.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
+theme_override_fonts/normal_font = ExtResource("5_g50ih")
+theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "To  [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color]  an item, follow its  [color=white][i][b][font_size=28]recipe[/font_size][/b][/i][/color]  and place the corresponding  [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color]  in the  [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color] ."
+
+[node name="TextureRect5" type="TextureRect" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_5jfiy")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Text" type="RichTextLabel" parent="Control/Panel/TextureRect5"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 136.0
+offset_top = 106.0
+offset_right = -501.0
+offset_bottom = -328.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
+theme_override_fonts/normal_font = ExtResource("5_g50ih")
+theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Pick up  [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color] from their respective stacks and bring them to the  [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color]. If you pick up the wrong  [color=black][i][b][font_size=28]material[/font_size][/b][/i][/color], you can leave it on an empty  [color=red][i][b][font_size=28]workbench[/font_size][/b][/i][/color] to use later or toss it in the  [color=blue][i][b][font_size=28]forge[/font_size][/b][/i][/color] to keep your workshop organized.
+"
+
+[node name="TextureRect6" type="TextureRect" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_pgfxb")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Text" type="RichTextLabel" parent="Control/Panel/TextureRect6"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 131.0
+offset_top = 69.0
+offset_right = -506.0
+offset_bottom = -302.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
+theme_override_fonts/normal_font = ExtResource("5_g50ih")
+theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Once you've completed the [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color] requirements of the [color=white][i][b][font_size=28]recipe[/font_size][/b][/i][/color], the [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color] will take some time to prepare the [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color]. After this material preparation time, you'll need to pick up your [color=brown][i][b][font_size=28]hammer[/font_size][/b][/i][/color] and make precise strikes on the glowing metal to produce an item of impeccable quality."
+
+[node name="TextureRect7" type="TextureRect" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_7oaln")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Text" type="RichTextLabel" parent="Control/Panel/TextureRect7"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 147.0
+offset_top = 85.0
+offset_right = -490.0
+offset_bottom = -286.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
+theme_override_fonts/normal_font = ExtResource("5_g50ih")
+theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Occasionally, Bert may be inspired, giving you the chance to produce a [color=aqua][i][b][font_size=28]masterpiece[/font_size][/b][/i][/color]. But be warned that this type of item is much more difficult to produce than normal items.
+
+"
+
+[node name="TextureRect8" type="TextureRect" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_0osk6")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Text" type="RichTextLabel" parent="Control/Panel/TextureRect8"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 147.0
+offset_top = 85.0
+offset_right = -534.0
+offset_bottom = -189.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
+theme_override_fonts/normal_font = ExtResource("5_g50ih")
+theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Deliver the produced items to the [color=red][i][b][font_size=28]delivery counter[/font_size][/b][/i][/color] to ensure customer [color=yellow][i][b][font_size=28]satisfaction star[/font_size][/b][/i][/color]. Depending on how long it takes you to deliver an item, you'll receive more or fewer[color=yellow][i][b][font_size=28]satisfaction stars[/font_size][/b][/i][/color].
+
+Producing a [color=aqua][i][b][font_size=28]masterpiece[/font_size][/b][/i][/color] also ensures the gain of one [color=yellow][i][b][font_size=28]satisfaction star[/font_size][/b][/i][/color].
+"
+
+[node name="TextureRect9" type="TextureRect" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_2ylqb")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Text" type="RichTextLabel" parent="Control/Panel/TextureRect9"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 144.0
+offset_top = 72.0
+offset_right = -468.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
+theme_override_fonts/normal_font = ExtResource("5_g50ih")
+theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Master Tip:
+
+Keep an eye on the [color=aqua][i][b][font_size=28]expiration time[/font_size][/b][/i][/color]. of [color=magenta][i][b][font_size=28]orders[/font_size][/b][/i][/color].. If they expire, you'll lose [color=yellow][i][b][font_size=28]satistaction stars[/font_size][/b][/i][/color].
+
+You'll also lose [color=yellow][i][b][font_size=28]satisfaction star[/font_size][/b][/i][/color]. if you deliver an item that isn't among the [color=magenta][i][b][font_size=28]active orders[/font_size][/b][/i][/color]. So, if an [color=magenta][i][b][font_size=28]order[/font_size][/b][/i][/color]. expires and you're in the middle of its production, use the [color=red][i][b][font_size=28]workbenches[/font_size][/b][/i][/color]. to store that item for a future customer who requests an item of that type."
+
+[node name="Previous" type="Button" parent="Control/Panel"]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 581.0
+offset_right = 302.0
+offset_bottom = 662.0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.964706, 0.392157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.964706, 0.392157, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.0235294, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("4_p57w3")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/focus = SubResource("StyleBoxEmpty_grb1x")
+text = "Previous"
+flat = true
+alignment = 0
+
+[node name="Next" type="Button" parent="Control/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -69.0
+offset_right = -130.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.964706, 0.392157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.964706, 0.392157, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.0235294, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("4_p57w3")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/focus = SubResource("StyleBoxEmpty_grb1x")
+text = "Next"
+flat = true
+alignment = 0
+
+[node name="VBox_Botoes" type="VBoxContainer" parent="Control"]
+layout_mode = 2
+offset_left = 70.0
+offset_top = 777.0
+offset_right = 164.0
+offset_bottom = 850.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="Back" type="Button" parent="Control/VBox_Botoes"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.964706, 0.392157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.964706, 0.392157, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.0235294, 0, 1)
+theme_override_fonts/font = ExtResource("4_p57w3")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vh68m")
+text = "Back"
+flat = true
+alignment = 0
+
+[connection signal="pressed" from="Control/Panel/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="Control/Panel/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Control/VBox_Botoes/Back" to="." method="_on_back_pressed"]
