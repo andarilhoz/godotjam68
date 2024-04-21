@@ -34,7 +34,6 @@ offset_bottom = -96.3636
 rotation = 1.5708
 
 [node name="ItemImage" type="TextureRect" parent="ItemSprite/Control" index="0"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

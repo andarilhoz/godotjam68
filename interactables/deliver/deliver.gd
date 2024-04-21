@@ -25,7 +25,14 @@ func reveice_material(holding_material: Item):
 	
 
 func item_take_out():
+	var item_tweener =get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
+	item_tweener.tween_property(holding_item, "modulate", Vector2.ZERO, .5)
+	item_tweener.finished.connect(restore_item)
+	
+
+func restore_item():
 	holding_item.hide()
+	holding_item.scale = Vector2.ONE
 
 func on_player_close(player: Player):
 	if not _should_interact(player):
