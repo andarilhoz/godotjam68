@@ -23,8 +23,7 @@ func update_scores(sw_result: Dictionary):
 		for i in range(min(sw_result["scores"].size(), rich_text_labels.size())):
 			var score = sw_result["scores"][i]
 			rich_text_labels[i].show()
-			rich_text_labels[i].bbcode_text = str(score.score) + " - " + str(score.player_name)
-
+			rich_text_labels[i].bbcode_text = "[center]" + str(score.score) + " - " + str(score.player_name) + "[/center]"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
