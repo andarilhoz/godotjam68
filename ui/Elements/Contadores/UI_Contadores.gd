@@ -19,7 +19,7 @@ extends Control
 	 0 : "Meh"
 }
 
-static var phase_target_points : int = 20
+static var phase_target_points : int = 25
 var points : int = 0;
 var hourglass_wobbling : bool = false
 var hourglass_critical_time: float = 10.0
