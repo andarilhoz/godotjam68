@@ -83,10 +83,18 @@ text = "[center]Enter your name[/center]"
 
 [node name="TextEdit" type="TextEdit" parent="Paper/TextureRect"]
 layout_mode = 0
-offset_left = 132.774
-offset_top = 312.0
-offset_right = 889.774
-offset_bottom = 405.0
+offset_left = 162.774
+offset_top = 314.0
+offset_right = 919.774
+offset_bottom = 407.0
+theme_override_colors/background_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.447059, 0.447059, 0.447059, 1)
+theme_override_fonts/font = ExtResource("2_2a1ut")
+theme_override_font_sizes/font_size = 56
+placeholder_text = "Type something here"
 
 [node name="Send" type="Button" parent="Paper/TextureRect"]
 process_mode = 3
