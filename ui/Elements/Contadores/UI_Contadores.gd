@@ -9,7 +9,7 @@ extends Control
 
 @onready var endgame_panel = $"../EndgamePanel"
 
-@export var level_timer_in_seconds: float = 5
+@export var level_timer_in_seconds: float = 180
 @onready var timer : Timer = $LevelTimer
 @onready var timer_label : RichTextLabel = $TimerIcon/Contador_Timer
 	
