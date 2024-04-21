@@ -1,10 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://dklup3lo13qq4"]
 
-[ext_resource type="Texture2D" uid="uid://cgqvcdsvwt07" path="res://tilemap2.png" id="1_d1uex"]
 [ext_resource type="Script" path="res://interactables/interactable.gd" id="1_w0aa2"]
 [ext_resource type="Shader" path="res://interactables/interactable.gdshader" id="2_c41sq"]
-[ext_resource type="Texture2D" uid="uid://bqa8a7posq2to" path="res://ui/btn_A_sprite.png" id="4_88pk1"]
-[ext_resource type="Texture2D" uid="uid://dyp3d16xuu1x7" path="res://ui/btn_E_sprite.png" id="4_tui2f"]
+[ext_resource type="Texture2D" uid="uid://bqa8a7posq2to" path="res://ui/Images/btn_A_sprite.png" id="4_88pk1"]
+[ext_resource type="Texture2D" uid="uid://dyp3d16xuu1x7" path="res://ui/Images/btn_E_sprite.png" id="4_tui2f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6uwft"]
 resource_local_to_scene = true
@@ -16,8 +15,11 @@ shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/should_apply = false
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ej76a"]
+load_path = "res://.godot/imported/tilemap2.png-7ef2473fc2f733f4896b509b1deea4af.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6su3"]
-atlas = ExtResource("1_d1uex")
+atlas = SubResource("CompressedTexture2D_ej76a")
 region = Rect2(85, 119, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gtkte"]
