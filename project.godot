@@ -11,8 +11,10 @@ config_version=5
 [application]
 
 config/name="GODOT WILD JAM 68"
-run/main_scene="res://menu/menu.tscn"
+run/main_scene="res://intro.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 boot_splash/image="res://ui/Elements/SliderMiniGame/Forging_1.png"
 config/icon="res://icon/Game_Icon_anvil.png"
 
@@ -31,6 +33,7 @@ SoundControl="*res://Audio/SoundControl.gd"
 window/size/viewport_width=1600
 window/size/viewport_height=900
 window/size/mode=4
+window/size/borderless=true
 window/stretch/mode="viewport"
 
 [editor_plugins]
