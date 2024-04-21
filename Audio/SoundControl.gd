@@ -1,6 +1,7 @@
 extends Node
 
-@export var music : AudioStream = preload("res://Audio/forge-194549.mp3")
+@export var menu_music: AudioStream = preload("res://Audio/music_menu.wav")
+@export var game_music: AudioStream = preload("res://Audio/music_gameplay.wav")
 
 # Load sound effects
 @export var discard_sound : AudioStream = preload("res://Audio/sfx/sfx_discard.wav")
@@ -21,7 +22,6 @@ extends Node
 @export var snort_sound : AudioStream = preload("res://Audio/sfx/sfx_snort.wav")
 @export var victory_sound : AudioStream = preload("res://Audio/sfx/sfx_victory.wav")
 @export var wrong_order_sound : AudioStream = preload("res://Audio/sfx/sfx_wrong order.wav")
-
 
 # Instance variables for AudioStreamPlayers
 var music_player : AudioStreamPlayer
@@ -55,10 +55,9 @@ func _ready():
 	
 	# Initialize and configure audio players for different sound effects
 	music_player = create_audio_player("MusicPlayer", true)
-	music_player.stream = music
 	music_player.volume_db = linear_to_decibels(1)
 	music_player.autoplay = true
-	music_player.play()
+	music_player.process_mode = Node.PROCESS_MODE_ALWAYS
 	
 	sfx_discard_player = create_audio_player("SFXDiscard")
 	sfx_forge_machine_player = create_audio_player("SFXForgeMachine")
@@ -118,6 +117,17 @@ func stop_all_sfx():
 		if child is AudioStreamPlayer:
 			child.stop()  # ou child.pause() dependendo da versão da sua engine
 
+
+func play_menu_music():
+	if(music_player.stream == menu_music):
+		return
+	music_player.stream = menu_music
+	music_player.play()
+	
+func play_game_music():
+	music_player.stream = game_music
+	music_player.play()
+	
 # Functions to play various sounds using dedicated players
 func play_discard():
 	sfx_discard_player.stream = discard_sound

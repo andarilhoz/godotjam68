@@ -15,7 +15,6 @@ func _ready():
 
 func _on_start_pressed():
 	print("start")
-	
 	var goal_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	goal_tween.tween_property(panel, "scale", Vector2.ZERO, .5)
 	goal_tween.tween_property(self, "modulate:a", 0, .5)

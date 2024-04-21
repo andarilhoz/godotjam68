@@ -4,6 +4,7 @@ extends Control
 
 func _ready():
 	play_btn.grab_focus()
+	SoundControl.play_menu_music()
 
 func _on_play_pressed():
 	get_tree().change_scene_to_file("res://complete_game.tscn")
