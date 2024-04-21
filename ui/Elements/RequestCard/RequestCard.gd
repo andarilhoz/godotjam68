@@ -39,6 +39,7 @@ func initialize_card(order: Order):
 	
 	timer.one_shot = true
 	timer.start(order.expire_time_in_seconds)
+	SoundControl.play_order_received()
 
 func _process(delta):
 	var percent_of_time: float = get_percentage_time()

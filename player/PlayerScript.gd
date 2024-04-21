@@ -7,6 +7,7 @@ const breath_scene = preload("res://player/breath.tscn")
 
 @onready var holding_item: TextureRect = $Smoothing2D/AnimatedSprite2D/HoldingItem
 @onready var breath_time_start: Timer = $breath_time_start
+@onready var breath_cd: Timer = $breath_cd
 @onready var walk_timer: Timer = $walk_timer
 @onready var area2d : Area2D = $Area2D
 @onready var player_sprite: AnimatedSprite2D = $Smoothing2D/AnimatedSprite2D
@@ -30,13 +31,13 @@ var is_forging : bool = false
 func _ready():
 	last_breath.animation_looped.connect(_hide_breath)
 
-func stop_breah():
+func stop_breath():
 	bufando_state = false
 
 func _hide_breath():
-	if not bufando_state:
-		last_breath.hide()
-		last_breath.stop()
+	last_breath.hide()
+	last_breath.stop()
+	stop_breath()
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -57,8 +58,9 @@ func process_animation():
 		else:
 			player_sprite.animation = "idle"
 		return
-	stop_breah()
+	stop_breath()
 	breath_time_start.stop()
+	breath_cd.stop()
 	if walk_timer.time_left <= 0:
 		SoundControl.play_footstep()
 		walk_timer.start(0.3)
@@ -103,6 +105,7 @@ func reveice_material(material: Item):
 		print("ERROR, already has material in hands")
 		return
 	print("Received material: ", material.get_item_name())
+		
 	holding_material = material
 	holding_item.texture = material.sprite
 	holding_item.show()
@@ -206,11 +209,25 @@ func _on_area_2d_body_exited(body):
 
 
 func breath():
+	if is_forging:
+		return
 	bufando_state = true
 	last_breath.scale = Vector2(-0.3, 0.3) if player_sprite.flip_h else Vector2(0.3, 0.3)
 	last_breath.position = self.position + (Vector2(-100,36) if player_sprite.flip_h else Vector2(100,36))
 	last_breath.play()
+	print("bufa")
+	SoundControl.play_snort()
 	last_breath.show()
+	breath_cd.start(.8)
 
+func start_breath():
+	if bufando_state:
+		return
+	breath()
+	
 func _on_breath_time_start_timeout():
+	start_breath()
+
+
+func _on_breath_cd_timeout():
 	breath()

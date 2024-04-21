@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://f20npurtnipa"
-path="res://.godot/imported/take iron.wav-bca95137ef65264cd766923b18bcd528.sample"
+uid="uid://cena1r8a05aw5"
+path="res://.godot/imported/sfx_deliver.wav-8439158e9b8a690b4824bbdd5d27ef26.sample"
 
 [deps]
 
-source_file="res://Audio/sfx/take iron.wav"
-dest_files=["res://.godot/imported/take iron.wav-bca95137ef65264cd766923b18bcd528.sample"]
+source_file="res://Audio/sfx/sfx_deliver.wav"
+dest_files=["res://.godot/imported/sfx_deliver.wav-8439158e9b8a690b4824bbdd5d27ef26.sample"]
 
 [params]
 

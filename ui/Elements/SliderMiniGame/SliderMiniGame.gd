@@ -129,8 +129,12 @@ func press():
 	
 	if precise:
 		print("precise: ", retrieve_slider.value )
+		SoundControl.play_forge_hit()
+		if is_masterpiece:
+			SoundControl.play_masterpiece()
 		correct_hits += 3 if is_masterpiece else 1
 	else:
+		SoundControl.play_forge_miss()
 		print("not precise: ",retrieve_slider.value )
 		correct_hits = 0
 	

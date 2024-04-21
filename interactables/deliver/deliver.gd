@@ -15,7 +15,6 @@ func do_action(player_body: Player):
 	print("Delivering order: ", player_body.holding_material.get_item_name() )
 	reveice_material(player_body.holding_material)
 	SignalManager.on_order_deliver.emit(player_body.holding_material)
-	SoundControl.play_deliver_weapon()
 	player_body.delete_material()
 
 func reveice_material(holding_material: Item):

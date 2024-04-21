@@ -22,7 +22,7 @@ func generate_order():
 	if order_list.size() >= max_orders:
 		timer.start(time_between_orders)
 		return
-
+	
 	var random_item = randi() % item_list.size()
 	var request_card_item = instantiate_card(item_list[random_item])
 	order_list[request_card_item.get_instance_id()] = {"order": item_list[random_item], "card": request_card_item}
@@ -47,18 +47,22 @@ func _on_order_received(item: Item):
 	var order = get_order_by_item(item)
 	if order == null:
 		SignalManager.on_order_misplaced.emit()
+		SoundControl.play_wrong_order()
 		return
+	SoundControl.play_deliver_weapon()
 	SignalManager.on_order_successful.emit(order)
 	remove_order(order["index"])
 
 func remove_order(index):
-	if not order_list[index]:
+	if not order_list.has(index):
 		return
+
 	order_list[index]["card"].expire()
 	order_list.erase(index)
 
 func _on_card_expire(card: Node):
 	SignalManager.on_order_expired.emit()
+	SoundControl.play_order_expired()
 	remove_order(card.get_instance_id())
 
 func get_order_by_item(item: Item):

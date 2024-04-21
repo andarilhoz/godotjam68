@@ -58,6 +58,7 @@ func _process(delta):
 	if timer.time_left < 20:
 		hourglass_wobble(timer.time_left/level_timer_in_seconds)
 	if timer.time_left < hourglass_critical_time:
+		SoundControl.play_hurry_loop()
 		critical_timing()
 		
 	timer_label.text = "[center]" + str(roundf(timer.time_left)) + "[/center]"

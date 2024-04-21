@@ -86,6 +86,10 @@ func _should_interact(player: Player):
 func reveice_material(player_body: Node2D):
 	print("Received material: ", player_body.holding_material.get_item_name())
 	holding_itens.append(player_body.holding_material)
+	if player_body.holding_material.item_type == ForgeEnum.ForgeItem.WOOD:
+		SoundControl.play_take_wood()
+	else:
+		SoundControl.play_take_iron()
 	if holding_itens.size() > 2:
 		start_processing()
 	set_content_sprite()

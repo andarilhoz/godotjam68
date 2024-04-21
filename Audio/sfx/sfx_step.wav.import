@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://c4bihu8b8ygpd"
-path="res://.godot/imported/take wood.wav-fcda9a79967d359c0ea3ac7ac6f0254a.sample"
+uid="uid://2r0lfebg0yh6"
+path="res://.godot/imported/sfx_step.wav-42236d56f307c003f9e3513ffac983a7.sample"
 
 [deps]
 
-source_file="res://Audio/sfx/take wood.wav"
-dest_files=["res://.godot/imported/take wood.wav-fcda9a79967d359c0ea3ac7ac6f0254a.sample"]
+source_file="res://Audio/sfx/sfx_step.wav"
+dest_files=["res://.godot/imported/sfx_step.wav-42236d56f307c003f9e3513ffac983a7.sample"]
 
 [params]
 
