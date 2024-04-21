@@ -75,6 +75,7 @@ size_flags_vertical = 8
 [node name="Play" type="Button" parent="MarginContainer/VBox_Botoes"]
 layout_mode = 2
 size_flags_vertical = 4
+focus_neighbor_top = NodePath("../Quit")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.964706, 0.392157, 0, 1)
 theme_override_colors/font_focus_color = Color(0.964706, 0.392157, 0, 1)
@@ -112,6 +113,7 @@ alignment = 0
 [node name="Quit" type="Button" parent="MarginContainer/VBox_Botoes"]
 layout_mode = 2
 size_flags_vertical = 6
+focus_neighbor_bottom = NodePath("../Play")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.964706, 0.392157, 0, 1)
 theme_override_colors/font_focus_color = Color(0.964706, 0.392157, 0, 1)

@@ -10,4 +10,5 @@ func _input(event):
 
 func _ready():
 	$InGame_CanvasLayer.visible = true
+	SoundControl.play_game_music()
 	toggle_sound.button_pressed = SoundControl.muted
