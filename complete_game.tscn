@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b4pqbp85pfaw5"]
+[gd_scene load_steps=29 format=3 uid="uid://b4pqbp85pfaw5"]
 
 [ext_resource type="PackedScene" uid="uid://oak2a85ikl0d" path="res://player/Player.tscn" id="1_5le0k"]
 [ext_resource type="Script" path="res://scripts/general_script.gd" id="1_8yawa"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://c14gfpjam6fk2" path="res://menu/goal_panel.tscn" id="16_ldslg"]
 [ext_resource type="PackedScene" uid="uid://c2gyloh8prenp" path="res://menu/pause_panel.tscn" id="16_qbhlg"]
 [ext_resource type="PackedScene" uid="uid://yhn4s8jmud6m" path="res://endgame_panel.tscn" id="16_ym271"]
+[ext_resource type="PackedScene" uid="uid://ptchskj3ugr3" path="res://menu/high_score_panel.tscn" id="17_pemrq"]
 [ext_resource type="PackedScene" uid="uid://drxlqqfv1yty1" path="res://interactables/deliver/deliver.tscn" id="19_qe31l"]
 [ext_resource type="Texture2D" uid="uid://cdh7p2q2aixxi" path="res://Art/stage_background.png" id="20_t2wt8"]
 
@@ -141,6 +142,9 @@ size_flags_vertical = 0
 visible = false
 
 [node name="EndgamePanel" parent="InGame_CanvasLayer" instance=ExtResource("16_ym271")]
+visible = false
+
+[node name="HighScorePanel" parent="InGame_CanvasLayer" instance=ExtResource("17_pemrq")]
 visible = false
 
 [node name="LevelTimer" type="Timer" parent="."]

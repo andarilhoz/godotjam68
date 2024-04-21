@@ -4,6 +4,7 @@ extends Panel
 @onready var points_label : RichTextLabel = $"Paper/TextureRect/TextureRect/Label - Video"
 @onready var label_panel = $"Paper/TextureRect/Label - Video"
 @onready var restart = $Paper/TextureRect/Restart
+@onready var high_score_panel = $"../HighScorePanel"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,8 +18,7 @@ func show_end_game(points: int, target_points: int):
 	var highscore = ConfigFileHandler.get_highscore()
 	
 	if points > highscore:
-		SilentWolf.Scores.save_score("Magno", points)
-		ConfigFileHandler.save_highscore(points)
+		high_score_panel.open_panel(points)
 		
 	var endgame_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	endgame_tween.tween_property(panel, "scale", Vector2.ONE, .5)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ptchskj3ugr3"]
+[gd_scene load_steps=7 format=3 uid="uid://ptchskj3ugr3"]
 
 [ext_resource type="Texture2D" uid="uid://ptvuj4bdgogn" path="res://ui/Images/UI_paper_menu.png" id="1_7f8kb"]
+[ext_resource type="Script" path="res://menu/high_score_panel.gd" id="1_50jxu"]
 [ext_resource type="FontFile" uid="uid://2pj81tysaxwc" path="res://menu/PirataOne-Regular.ttf" id="2_2a1ut"]
 [ext_resource type="Texture2D" uid="uid://ccplnso5jegml" path="res://ui/Elements/Contadores/UI_Star.png" id="3_wsqnm"]
 
@@ -15,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_50jxu")
 
 [node name="Paper" type="Panel" parent="."]
 z_index = 5
@@ -184,5 +186,7 @@ process_mode = 3
 one_shot = true
 
 [connection signal="pressed" from="Paper/TextureRect/Send" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Paper/TextureRect/Send" to="." method="_on_send_pressed"]
 [connection signal="pressed" from="Paper/TextureRect/Next" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Paper/TextureRect/Next" to="." method="_on_next_pressed"]
 [connection signal="timeout" from="EscCD" to="." method="_on_esc_cd_timeout"]
