@@ -7,7 +7,7 @@ extends Control
 @export var points_loose_expire = 5
 @export var points_loose_wrong = 10
 
-@export var level_timer_in_seconds: float = 180
+@export var level_timer_in_seconds: float = 60
 @onready var timer : Timer = $LevelTimer
 @onready var timer_label : RichTextLabel = $TimerIcon/Contador_Timer
 	
@@ -50,6 +50,7 @@ func critical_timing():
 	if critical_mode:
 		return
 	critical_mode = true
+	SoundControl.play_hurry_loop()
 	hourglass_color_tween.kill()
 	var critical_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK).set_loops()
 	critical_tween.tween_property(timer_label, "theme_override_colors/default_color", Color.RED, .1)
@@ -58,7 +59,6 @@ func _process(delta):
 	if timer.time_left < 20:
 		hourglass_wobble(timer.time_left/level_timer_in_seconds)
 	if timer.time_left < hourglass_critical_time:
-		SoundControl.play_hurry_loop()
 		critical_timing()
 		
 	timer_label.text = "[center]" + str(roundf(timer.time_left)) + "[/center]"
