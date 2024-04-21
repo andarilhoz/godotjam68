@@ -2,8 +2,8 @@ class_name SliderMinigame
 extends Control
 
 @onready var retrieve_slider: HSlider = $Panel/HSlider
-@onready var slider_speed: float = 1.0
-@onready var slider_speed_masterpiece: float = 2.0
+@onready var slider_speed: float = 1.8
+@onready var slider_speed_masterpiece: float = 2.2
 
 @onready var bg_animation: AnimatedTextureRect = $Panel/TextureRect
 @onready var actionBtn_animation : AnimatedTextureRect = $Panel/ActionBtn
@@ -20,7 +20,7 @@ extends Control
 
 @export var empty_marker : Texture
 @export var filled_marker : Texture
-@export var masterpiece_chance: float = 50.0
+@export var masterpiece_chance: float = 17.0
 @export var markers : Array[TextureRect]
 
 signal on_minigame_end

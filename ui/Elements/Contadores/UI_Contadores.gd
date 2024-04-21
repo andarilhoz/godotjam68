@@ -3,9 +3,8 @@ extends Control
 @onready var text_label : RichTextLabel = $CoinIcon/Contador_Estrelas
 @onready var coin_icon : TextureRect = $CoinIcon
 @onready var hourglass_icon : TextureRect = $TimerIcon
-@export var points_per_order = 25
-@export var points_loose_expire = 5
-@export var points_loose_wrong = 10
+@export var points_loose_expire = 3
+@export var points_loose_wrong = 1
 
 @onready var endgame_panel = $"../EndgamePanel"
 
@@ -19,7 +18,7 @@ extends Control
 	 0 : "Meh"
 }
 
-@export var phase_target_points : int = 50
+@export var phase_target_points : int = 20
 var points : int = 0;
 var hourglass_wobbling : bool = false
 var hourglass_critical_time: float = 10.0
