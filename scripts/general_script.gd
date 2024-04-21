@@ -1,11 +1,12 @@
 extends Node2D
 
 @onready var toggle_sound: TextureButton = $InGame_CanvasLayer/ToggleSound
+@onready var pause_panel = $InGame_CanvasLayer/PausePanel
 
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
-			get_tree().quit()
+			pause_panel.pause_game()
 
 func _ready():
 	$InGame_CanvasLayer.visible = true

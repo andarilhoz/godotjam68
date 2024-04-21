@@ -13,6 +13,7 @@ const breath_scene = preload("res://player/breath.tscn")
 @onready var player_sprite: AnimatedSprite2D = $Smoothing2D/AnimatedSprite2D
 @export var speed_reducer_carry : float = 0.12
 @onready var last_breath : AnimatedSprite2D = $"../breath"
+@onready var pause_panel = $"../InGame_CanvasLayer/PausePanel"
 
 const max_speed = 550
 const acceleration = 7000
@@ -118,43 +119,8 @@ func delete_material():
 	holding_material = null
 	holding_item.hide()
 	
-func _input(event):
-	if event is InputEventKey:
-		if event.pressed and event.keycode == KEY_SPACE:
-			print("debug")
 
 func _process(delta):		
-	if not area2d.has_overlapping_bodies():
-		return
-	
-	var bodies = area2d.get_overlapping_bodies()
-	
-	var interactables : Array[Interactable] = []
-	for body in bodies:
-		if not is_instance_valid(body) and not body is StaticBody2D:
-			continue
-		var parent = body.get_parent()
-		if not parent is Interactable:
-			continue
-			
-		if (parent as Interactable)._should_interact(self):
-			interactables.append(parent)
-	
-	if interactables.size() < 1:
-		return
-		
-	var current_closest = get_closest_interactable(interactables)
-	if closest_interactable == current_closest:
-		return
-	
-	if closest_interactable != null :
-		closest_interactable.on_player_leave()
-		
-	current_closest.on_player_close(self)
-	closest_interactable = current_closest
-
-func manual_process():
-	print("manual process")
 	if not area2d.has_overlapping_bodies():
 		return
 	

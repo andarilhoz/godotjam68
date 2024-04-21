@@ -149,6 +149,6 @@ text = "Menu"
 flat = true
 alignment = 0
 
-[connection signal="pressed" from="Paper/TextureRect/Start" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Paper/TextureRect/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Paper/TextureRect/Start" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Paper/TextureRect/Menu" to="." method="_on_menu_pressed"]
