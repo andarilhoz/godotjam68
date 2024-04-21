@@ -76,7 +76,11 @@ offset_top = 75.0
 offset_right = 450.0
 offset_bottom = 117.0
 size_flags_vertical = 3
-theme_override_constants/outline_size = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "FULLSCREEN"
 
@@ -86,7 +90,11 @@ offset_left = 150.0
 offset_top = 125.0
 offset_right = 450.0
 offset_bottom = 167.0
-theme_override_constants/outline_size = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "CAMERA SHAKE"
 
