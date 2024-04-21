@@ -140,8 +140,30 @@ theme_override_font_sizes/font_size = 56
 text = "Credits"
 alignment = 0
 
+[node name="Leaderboard" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -309.0
+offset_top = 34.0
+offset_right = -59.0
+offset_bottom = 107.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.964706, 0.392157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.964706, 0.392157, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.0235294, 0, 1)
+theme_override_fonts/font = ExtResource("5_62eur")
+theme_override_font_sizes/font_size = 56
+text = "Leaderboard"
+alignment = 0
+
 [connection signal="pressed" from="MarginContainer/VBox_Botoes/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBox_Botoes/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBox_Botoes/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="MarginContainer/VBox_Botoes/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBox_Botoes_2/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Leaderboard" to="." method="_on_leaderboard_pressed"]

@@ -20,3 +20,6 @@ func _on_quit_pressed():
 
 func _on_credits_pressed():
 	SceneTransition.change_scene_to_file("res://menu/credits_menu.tscn")
+
+func _on_leaderboard_pressed():
+	SceneTransition.change_scene_to_file("res://menu/scores.tscn")

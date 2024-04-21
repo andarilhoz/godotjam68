@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bo3irieyh11vw"]
+[gd_scene load_steps=6 format=3 uid="uid://b00pesio1b2jf"]
 
 [ext_resource type="Theme" uid="uid://5jdis1w6dpq2" path="res://menu/Default_Theme.tres" id="1_kbx63"]
+[ext_resource type="Script" path="res://menu/scores.gd" id="2_3cxpf"]
 [ext_resource type="Texture2D" uid="uid://df633ylq7dj7q" path="res://menu/Menu_Bg.png" id="3_jq6jn"]
 [ext_resource type="FontFile" uid="uid://2pj81tysaxwc" path="res://menu/PirataOne-Regular.ttf" id="4_2igyg"]
 
@@ -17,6 +18,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_kbx63")
+script = ExtResource("2_3cxpf")
 
 [node name="MenuBg" type="TextureRect" parent="."]
 layout_mode = 0
@@ -54,7 +56,7 @@ layout_mode = 0
 offset_right = 400.0
 offset_bottom = 176.0
 
-[node name="RichTextLabel7" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Scores/VBoxContainer"]
+[node name="Title" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Scores/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
@@ -66,7 +68,47 @@ bbcode_enabled = true
 text = "[center]Leaderboard[/center]"
 fit_content = true
 
-[node name="RichTextLabel8" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Scores/VBoxContainer"]
+[node name="RichTextLabel1" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Scores/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "10 - Raphael"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Scores/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "10 - Raphael"
+fit_content = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Scores/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "10 - Raphael"
+fit_content = true
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Scores/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "10 - Raphael"
+fit_content = true
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Scores/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -96,3 +138,5 @@ theme_override_fonts/font = ExtResource("4_2igyg")
 theme_override_font_sizes/font_size = 56
 text = "Back"
 alignment = 0
+
+[connection signal="pressed" from="Control/VBox_Botoes/Back" to="." method="_on_back_pressed"]
