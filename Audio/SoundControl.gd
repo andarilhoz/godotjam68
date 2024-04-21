@@ -121,6 +121,7 @@ func play_discard():
 func play_forge_machine():
 	sfx_forge_machine_player.stream = forge_machine
 	sfx_forge_machine_player.volume_db = linear_to_decibels(.5)
+	sfx_forge_machine_player.max_polyphony = 2
 	sfx_forge_machine_player.play()
 
 func play_take_iron():
