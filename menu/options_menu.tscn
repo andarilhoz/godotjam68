@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c38htlq5xgrkj"]
+[gd_scene load_steps=7 format=3 uid="uid://c38htlq5xgrkj"]
 
 [ext_resource type="Script" path="res://menu/options_menu.gd" id="1_rdfi1"]
 [ext_resource type="Theme" uid="uid://5jdis1w6dpq2" path="res://menu/Default_Theme.tres" id="1_v04qp"]
 [ext_resource type="Texture2D" uid="uid://df633ylq7dj7q" path="res://menu/Menu_Bg.png" id="3_mh8my"]
+[ext_resource type="Texture2D" uid="uid://cqxw8xwvdaokr" path="res://menu/bolina_de_focus.png" id="4_5yl3b"]
 [ext_resource type="FontFile" uid="uid://2pj81tysaxwc" path="res://menu/PirataOne-Regular.ttf" id="4_us2p4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gik0m"]
@@ -50,6 +51,8 @@ theme_override_constants/separation = 15
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/normal_font_size = 72
 bbcode_enabled = true
 text = "[center]Settings[/center]"
@@ -68,6 +71,8 @@ offset_top = 9.0
 offset_right = 340.0
 offset_bottom = 109.0
 size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/normal_font_size = 51
 text = "Video"
 
@@ -80,9 +85,11 @@ offset_bottom = 117.0
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
 text = "FULLSCREEN"
 
@@ -94,9 +101,11 @@ offset_right = 450.0
 offset_bottom = 167.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0.501961, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 32
 text = "MINIGAME SHAKE"
 
@@ -112,6 +121,8 @@ offset_left = 40.0
 offset_top = 10.0
 offset_right = 240.0
 offset_bottom = 110.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/normal_font_size = 51
 text = "Audio"
 
@@ -122,6 +133,8 @@ offset_left = 150.0
 offset_top = 75.0
 offset_right = 450.0
 offset_bottom = 125.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/normal_font_size = 32
 text = "MASTER VOLUME"
 
@@ -131,6 +144,7 @@ offset_left = 150.0
 offset_top = 122.0
 offset_right = 450.0
 offset_bottom = 138.0
+theme_override_icons/grabber_highlight = ExtResource("4_5yl3b")
 value = 100.0
 
 [node name="Label - SFX Volume" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Audio"]
@@ -140,6 +154,8 @@ offset_left = 150.0
 offset_top = 152.0
 offset_right = 450.0
 offset_bottom = 202.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/normal_font_size = 32
 text = "SFX VOLUME"
 
@@ -149,6 +165,7 @@ offset_left = 150.0
 offset_top = 198.0
 offset_right = 450.0
 offset_bottom = 214.0
+theme_override_icons/grabber_highlight = ExtResource("4_5yl3b")
 value = 70.0
 
 [node name="Label - Music Volume" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Audio"]
@@ -158,6 +175,8 @@ offset_left = 150.0
 offset_top = 232.0
 offset_right = 450.0
 offset_bottom = 282.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/normal_font_size = 32
 text = "MUSIC VOLUME"
 
@@ -167,6 +186,7 @@ offset_left = 150.0
 offset_top = 278.0
 offset_right = 450.0
 offset_bottom = 294.0
+theme_override_icons/grabber_highlight = ExtResource("4_5yl3b")
 value = 70.0
 
 [node name="VBox_Botoes" type="VBoxContainer" parent="Control"]
