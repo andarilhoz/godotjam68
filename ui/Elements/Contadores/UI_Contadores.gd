@@ -3,7 +3,7 @@ extends Control
 @onready var text_label : RichTextLabel = $CoinIcon/Contador_Estrelas
 @onready var coin_icon : TextureRect = $CoinIcon
 @onready var hourglass_icon : TextureRect = $TimerIcon
-@export var points_loose_expire = 3
+@export var points_loose_expire = 2
 @export var points_loose_wrong = 1
 
 @onready var endgame_panel = $"../EndgamePanel"
