@@ -15,8 +15,8 @@ const breath_scene = preload("res://player/breath.tscn")
 @onready var last_breath : AnimatedSprite2D = $"../breath"
 
 const max_speed = 550
-const acceleration = 3500
-const friction = 1500
+const acceleration = 7000
+const friction = 3000
 
 var input = Vector2.ZERO
 
