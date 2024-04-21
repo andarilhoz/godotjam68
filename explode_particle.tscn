@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://biutt8fcj2cyv"]
+
+[sub_resource type="Gradient" id="Gradient_v57dk"]
+offsets = PackedFloat32Array(0, 0.449541, 1)
+colors = PackedColorArray(1, 1, 0, 1, 1, 0.385321, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bndka"]
+gradient = SubResource("Gradient_v57dk")
+
+[sub_resource type="Curve" id="Curve_v4n2m"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.351648), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_hpe0r"]
+curve = SubResource("Curve_v4n2m")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ttsva"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 600.0
+initial_velocity_max = 600.0
+gravity = Vector3(0, 500, 0)
+scale_min = 5.0
+scale_max = 15.0
+scale_curve = SubResource("CurveTexture_hpe0r")
+color_ramp = SubResource("GradientTexture1D_bndka")
+
+[sub_resource type="Environment" id="Environment_w02y2"]
+background_mode = 3
+glow_enabled = true
+glow_blend_mode = 1
+glow_hdr_threshold = 3.04
+
+[node name="Particle" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -884.0
+offset_top = -763.0
+offset_right = 1822.0
+offset_bottom = 1943.0
+color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+
+[node name="Explosion" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_ttsva")
+explosiveness = 1.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_w02y2")

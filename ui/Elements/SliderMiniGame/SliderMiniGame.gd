@@ -1,7 +1,6 @@
 class_name SliderMinigame
 extends Control
 
-
 @onready var retrieve_slider: HSlider = $Panel/HSlider
 @onready var slider_speed: float = 1.0
 @onready var slider_speed_masterpiece: float = 2.0
@@ -11,6 +10,7 @@ extends Control
 @onready var press_cd_timer : Timer = $Panel/PressCD
 @onready var panel : Panel = $Panel
 @onready var player: Player = $"../../Player"
+@onready var explosion_particle : GPUParticles2D = $Panel/Explosion
 
 @export var right_zone_length = 0.3
 @export var right_zone_length_masterpiece = 0.1
@@ -129,10 +129,12 @@ func press():
 	
 	if precise:
 		print("precise: ", retrieve_slider.value )
-		correct_hits += 3 if is_masterpiece else 1 
+		correct_hits += 3 if is_masterpiece else 1
 	else:
 		print("not precise: ",retrieve_slider.value )
 		correct_hits = 0
+	
+	explosion_particle.restart() 
 	
 	press_cd_timer.start()
 	update_markers()

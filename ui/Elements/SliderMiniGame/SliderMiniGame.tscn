@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ddyetxupeiaq7"]
+[gd_scene load_steps=29 format=3 uid="uid://ddyetxupeiaq7"]
 
 [ext_resource type="Script" path="res://ui/Elements/SliderMiniGame/AnimatedTextureRect.gd" id="1_4geq0"]
 [ext_resource type="Script" path="res://ui/Elements/SliderMiniGame/SliderMiniGame.gd" id="1_sme4g"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cnqxblroivaex" path="res://ui/Elements/SliderMiniGame/Forging_2.png" id="7_atq5m"]
 [ext_resource type="Texture2D" uid="uid://c0qovqc15y1m0" path="res://ui/Elements/SliderMiniGame/frame_forge_feedback.png" id="8_5fqvp"]
 [ext_resource type="Texture2D" uid="uid://odwrutk6fm4p" path="res://ui/Elements/SliderMiniGame/Forging_1.png" id="8_xy438"]
+[ext_resource type="Texture2D" uid="uid://bex01u7lm3txr" path="res://ui/Images/glow_particle.png" id="11_yxaf7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ntiyy"]
 shader = ExtResource("4_cd3la")
@@ -92,6 +93,33 @@ animations = [{
 "name": &"keyboard",
 "speed": 2.0
 }]
+
+[sub_resource type="Gradient" id="Gradient_4uc57"]
+offsets = PackedFloat32Array(0, 0.484931, 0.589041, 0.953425, 0.99726)
+colors = PackedColorArray(4, 1.21569, 0.227451, 1, 0.882353, 0.32549, 0.0235294, 1, 4, 0, 0, 1, 4, 0, 0, 1, 4, 0, 0, 0.501961)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lt77p"]
+gradient = SubResource("Gradient_4uc57")
+
+[sub_resource type="Curve" id="Curve_owxtq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0219779), 0.568742, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6a5ds"]
+curve = SubResource("Curve_owxtq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_q6q2a"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+initial_velocity_min = 600.0
+initial_velocity_max = 600.0
+gravity = Vector3(0, 800, 0)
+scale_min = 0.05
+scale_max = 0.2
+scale_curve = SubResource("CurveTexture_6a5ds")
+color_ramp = SubResource("GradientTexture1D_lt77p")
 
 [node name="SliderMiniGame" type="Control" node_paths=PackedStringArray("markers")]
 layout_mode = 3
@@ -198,5 +226,17 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("8_5fqvp")
 expand_mode = 5
+
+[node name="Explosion" type="GPUParticles2D" parent="Panel"]
+light_mask = 3
+visibility_layer = 3
+z_index = 6
+position = Vector2(155, 599)
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_q6q2a")
+texture = ExtResource("11_yxaf7")
+one_shot = true
+explosiveness = 1.0
 
 [connection signal="timeout" from="Panel/PressCD" to="." method="_on_press_cd_timeout"]
