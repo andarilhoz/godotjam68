@@ -11,6 +11,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p347m"]
 
 [node name="PausePanel" type="Panel"]
+process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -150,6 +151,11 @@ text = "Menu"
 flat = true
 alignment = 0
 
+[node name="EscCD" type="Timer" parent="."]
+process_mode = 3
+one_shot = true
+
 [connection signal="pressed" from="Paper/TextureRect/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Paper/TextureRect/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Paper/TextureRect/Menu" to="." method="_on_menu_pressed"]
+[connection signal="timeout" from="EscCD" to="." method="_on_esc_cd_timeout"]
