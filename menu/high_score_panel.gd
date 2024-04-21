@@ -19,8 +19,13 @@ func open_panel(received_points: int):
 func _on_send_pressed():
 	SilentWolf.Scores.save_score(text_edit.text, points)
 	ConfigFileHandler.save_highscore(points)
+	_on_next_pressed()
 
 func _on_next_pressed():
 	var highscore_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	highscore_tween.tween_property(panel, "scale", Vector2.ZERO, .5)
 	highscore_tween.finished.connect(hide)
+
+func _on_text_edit_text_changed():
+	if text_edit.text.length() > 10:
+		text_edit.text = text_edit.text.substr(0, 10)
