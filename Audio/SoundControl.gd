@@ -88,6 +88,7 @@ func create_audio_player(name: String, is_music: bool = false) -> AudioStreamPla
 	else:
 		player.bus = AudioServer.get_bus_name(2)#    # Assign all SFX players to the SFX bus
 	add_child(player)
+	player.max_polyphony = 5
 	return player
 
 # Helper function to setup audio buses

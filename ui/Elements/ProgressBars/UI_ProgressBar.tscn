@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://dwuaikhjopydu" path="res://ui/Elements/ProgressBars/UI_ProgressBar.tres" id="1_2qlu8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yi4g5"]
+resource_local_to_scene = true
 shader = ExtResource("1_2qlu8")
 shader_parameter/Percent = 35
 

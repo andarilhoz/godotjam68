@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://yhn4s8jmud6m"]
+[gd_scene load_steps=8 format=3 uid="uid://yhn4s8jmud6m"]
 
 [ext_resource type="Script" path="res://endgame_panel.gd" id="1_5y0cg"]
 [ext_resource type="Texture2D" uid="uid://ptvuj4bdgogn" path="res://ui/Images/UI_paper_menu.png" id="1_rc162"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://ccplnso5jegml" path="res://ui/Elements/Contadores/UI_Star.png" id="3_7yyaa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylyhl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y2qg1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p347m"]
 
 [node name="EndgamePanel" type="Panel"]
 anchors_preset = 15
@@ -110,6 +114,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("2_dwtil")
 theme_override_font_sizes/font_size = 56
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y2qg1")
 text = "Restart"
 flat = true
 alignment = 0
@@ -137,6 +142,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("2_dwtil")
 theme_override_font_sizes/font_size = 56
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p347m")
 text = "Quit"
 flat = true
 alignment = 0

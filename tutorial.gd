@@ -58,11 +58,13 @@ func _on_back_pressed():
 func update_button_state():
 	if current_panel_index == 0:
 		previous_btn.hide()
+		next_btn.grab_focus()
 	else:
 		previous_btn.show()
 	
 	if (current_panel_index == panels.size() - 1):
 		next_btn.hide()
+		previous_btn.grab_focus()
 	else:
 		next_btn.show() 
 	
