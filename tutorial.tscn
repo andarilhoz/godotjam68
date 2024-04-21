@@ -78,10 +78,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 113.0
-offset_top = 77.0
-offset_right = -436.0
-offset_bottom = -502.0
+offset_left = 125.0
+offset_top = 89.0
+offset_right = -424.0
+offset_bottom = -490.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 2
@@ -98,16 +98,16 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 139.0
-offset_top = 207.0
-offset_right = -477.0
-offset_bottom = -51.0
+offset_left = 154.0
+offset_top = 230.0
+offset_right = -506.0
+offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 2
 theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
 theme_override_fonts/normal_font = ExtResource("5_g50ih")
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 26
 text = "Bert, the bull blacksmith, is a legendary figure in the lands from whence he hails. With his imposing presence and unparalleled skills at the forge, Bert is known for crafting items of exceptional quality. Whether a simple sword or shield, each piece that leaves his hands is wrought with precision and care, reflecting not only his prowess as a blacksmith but also his profound reverence for the craft."
 
 [node name="TextureRect2" type="TextureRect" parent="Control/Panel"]
@@ -130,10 +130,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 113.0
-offset_top = 77.0
-offset_right = -436.0
-offset_bottom = -502.0
+offset_left = 125.0
+offset_top = 89.0
+offset_right = -424.0
+offset_bottom = -490.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 2
@@ -150,16 +150,16 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 139.0
-offset_top = 207.0
-offset_right = -477.0
-offset_bottom = -51.0
+offset_left = 154.0
+offset_top = 231.0
+offset_right = -568.0
+offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 2
 theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
 theme_override_fonts/normal_font = ExtResource("5_g50ih")
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 26
 text = "What truly sets Bert apart from other blacksmiths is his unique ability to produce masterpieces. From time to time, when inspiration strikes, he creates something truly extraordinary - a weapon so sharp it seems to cut through the very air itself or a shield so resilient it appears to defy the very laws of nature."
 
 [node name="TextureRect3" type="TextureRect" parent="Control/Panel"]
@@ -182,17 +182,17 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 136.0
-offset_top = 106.0
-offset_right = -533.0
-offset_bottom = -152.0
+offset_left = 157.0
+offset_top = 134.0
+offset_right = -512.0
+offset_bottom = -124.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 2
 theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
 theme_override_fonts/normal_font = ExtResource("5_g50ih")
 theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "When the [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color] opens, you'll need to complete as many [color=purple][i][b][font_size=28]orders[/font_size][/b][/i][/color] as possible within the specified [color=blue][i][b][font_size=28]time[/font_size][/b][/i][/color]. To end the day well, make sure to meet the [color=yellow][i][b][font_size=28]satisfaction star[/font_size][/b][/i][/color] goal before time runs out."
 
@@ -216,19 +216,19 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 136.0
-offset_top = 106.0
-offset_right = -533.0
-offset_bottom = -365.0
+offset_left = 149.0
+offset_top = 194.0
+offset_right = -535.0
+offset_bottom = -277.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 2
 theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
 theme_override_fonts/normal_font = ExtResource("5_g50ih")
 theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "To  [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color]  an item, follow its  [color=white][i][b][font_size=28]recipe[/font_size][/b][/i][/color]  and place the corresponding  [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color]  in the  [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color] ."
+text = "To [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color] an item, follow its [color=white][i][b][font_size=28]recipe[/font_size][/b][/i][/color] and place the corresponding [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color] in the [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color] ."
 
 [node name="TextureRect5" type="TextureRect" parent="Control/Panel"]
 layout_mode = 1
@@ -250,19 +250,19 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 136.0
-offset_top = 106.0
-offset_right = -501.0
-offset_bottom = -328.0
+offset_left = 158.0
+offset_top = 104.0
+offset_right = -531.0
+offset_bottom = -330.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 2
 theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
 theme_override_fonts/normal_font = ExtResource("5_g50ih")
 theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
-text = "Pick up  [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color] from their respective stacks and bring them to the  [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color]. If you pick up the wrong  [color=black][i][b][font_size=28]material[/font_size][/b][/i][/color], you can leave it on an empty  [color=red][i][b][font_size=28]workbench[/font_size][/b][/i][/color] to use later or toss it in the  [color=blue][i][b][font_size=28]forge[/font_size][/b][/i][/color] to keep your workshop organized.
+text = "Pick up [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color] from their respective stacks and bring them to the [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color]. If you pick up the wrong [color=black][i][b][font_size=28]material[/font_size][/b][/i][/color], you can leave it on an empty [color=red][i][b][font_size=28]workbench[/font_size][/b][/i][/color] to use later or toss it in the [color=blue][i][b][font_size=28]forge[/font_size][/b][/i][/color] to keep your workshop organized.
 "
 
 [node name="TextureRect6" type="TextureRect" parent="Control/Panel"]
@@ -285,19 +285,19 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 131.0
-offset_top = 69.0
-offset_right = -506.0
-offset_bottom = -302.0
+offset_left = 163.0
+offset_top = 90.0
+offset_right = -482.0
+offset_bottom = -281.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 2
 theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
 theme_override_fonts/normal_font = ExtResource("5_g50ih")
 theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
-text = "Once you've completed the [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color] requirements of the [color=white][i][b][font_size=28]recipe[/font_size][/b][/i][/color], the [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color] will take some time to prepare the [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color]. After this material preparation time, you'll need to pick up your [color=brown][i][b][font_size=28]hammer[/font_size][/b][/i][/color] and make precise strikes on the glowing metal to produce an item of impeccable quality."
+text = "Once you've completed the [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color] requirements of the [color=white][i][b][font_size=28]recipe[/font_size][/b][/i][/color], the [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color] will take some time to prepare the [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color]. After this material preparation time, you'll need to pick up your [color=brown][i][b][font_size=28]hammer[/font_size][/b][/i][/color] and make 3 consecutive precise strikes on the glowing metal to produce an item of impeccable quality."
 
 [node name="TextureRect7" type="TextureRect" parent="Control/Panel"]
 layout_mode = 1
@@ -319,17 +319,17 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 147.0
-offset_top = 85.0
-offset_right = -490.0
-offset_bottom = -286.0
+offset_left = 162.0
+offset_top = 108.0
+offset_right = -475.0
+offset_bottom = -263.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 2
 theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
 theme_override_fonts/normal_font = ExtResource("5_g50ih")
 theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Occasionally, Bert may be inspired, giving you the chance to produce a [color=aqua][i][b][font_size=28]masterpiece[/font_size][/b][/i][/color]. But be warned that this type of item is much more difficult to produce than normal items.
 
@@ -355,19 +355,19 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 147.0
-offset_top = 85.0
-offset_right = -534.0
-offset_bottom = -189.0
+offset_left = 159.0
+offset_top = 92.0
+offset_right = -581.0
+offset_bottom = -182.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 2
 theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
 theme_override_fonts/normal_font = ExtResource("5_g50ih")
 theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "Deliver the produced items to the [color=red][i][b][font_size=28]delivery counter[/font_size][/b][/i][/color] to ensure customer [color=yellow][i][b][font_size=28]satisfaction star[/font_size][/b][/i][/color]. Depending on how long it takes you to deliver an item, you'll receive more or fewer[color=yellow][i][b][font_size=28]satisfaction stars[/font_size][/b][/i][/color].
+text = "Deliver the produced items to the [color=red][i][b][font_size=28]delivery counter[/font_size][/b][/i][/color] to ensure customer [color=yellow][i][b][font_size=28]satisfaction star[/font_size][/b][/i][/color]. Depending on how long it takes you to deliver an item, you'll receive more or fewer [color=yellow][i][b][font_size=28]satisfaction stars[/font_size][/b][/i][/color].
 
 Producing a [color=aqua][i][b][font_size=28]masterpiece[/font_size][/b][/i][/color] also ensures the gain of one [color=yellow][i][b][font_size=28]satisfaction star[/font_size][/b][/i][/color].
 "
@@ -392,17 +392,17 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 144.0
-offset_top = 72.0
-offset_right = -468.0
-offset_bottom = -94.0
+offset_left = 164.0
+offset_top = 100.0
+offset_right = -507.0
+offset_bottom = -66.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 2
 theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
 theme_override_fonts/normal_font = ExtResource("5_g50ih")
 theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
 text = "Master Tip:
 
