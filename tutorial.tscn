@@ -295,7 +295,7 @@ size_flags_vertical = 2
 theme_override_colors/default_color = Color(0.337255, 0.0392157, 0.00784314, 1)
 theme_override_fonts/normal_font = ExtResource("5_g50ih")
 theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
-theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Once you've completed the [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color] requirements of the [color=white][i][b][font_size=28]recipe[/font_size][/b][/i][/color], the [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color] will take some time to prepare the [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color]. After this material preparation time, you'll need to pick up your [color=brown][i][b][font_size=28]hammer[/font_size][/b][/i][/color] and make precise strikes on the glowing metal to produce an item of impeccable quality."
 

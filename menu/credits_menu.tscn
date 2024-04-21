@@ -1,0 +1,180 @@
+[gd_scene load_steps=5 format=3 uid="uid://2b78ovk3qc60"]
+
+[ext_resource type="Theme" uid="uid://5jdis1w6dpq2" path="res://menu/Default_Theme.tres" id="1_imxpe"]
+[ext_resource type="Texture2D" uid="uid://df633ylq7dj7q" path="res://menu/Menu_Bg.png" id="3_5wjod"]
+[ext_resource type="FontFile" uid="uid://2pj81tysaxwc" path="res://menu/PirataOne-Regular.ttf" id="4_ecso8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gik0m"]
+bg_color = Color(0.533333, 0.533333, 0.533333, 0)
+
+[node name="Options_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_imxpe")
+
+[node name="MenuBg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1600.0
+offset_bottom = 900.0
+texture = ExtResource("3_5wjod")
+expand_mode = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 500.0
+offset_top = 100.0
+offset_right = -500.0
+offset_bottom = 636.0
+grow_horizontal = 2
+theme_override_constants/separation = 15
+
+[node name="Panel - Video" type="Panel" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gik0m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/Panel - Video"]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 94.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Video/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]Programming[/center]"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Video/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Magno Gouveia[/center]"
+fit_content = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Video/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]Tech Art[/center]"
+fit_content = true
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Video/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]DJ Aligator (Rafael)[/center]"
+fit_content = true
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Video/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]Art and Sound[/center]"
+fit_content = true
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Video/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Raphael Saraiva[/center]"
+fit_content = true
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Video/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]Game Design[/center]"
+fit_content = true
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Video/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Raphael Saraiva[/center]"
+fit_content = true
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Video/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]Vinicius Ferreira[/center]"
+fit_content = true
+
+[node name="VBox_Botoes" type="VBoxContainer" parent="Control"]
+layout_mode = 2
+offset_left = 70.0
+offset_top = 777.0
+offset_right = 164.0
+offset_bottom = 850.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="Back" type="Button" parent="Control/VBox_Botoes"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.964706, 0.392157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.964706, 0.392157, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.0235294, 0, 1)
+theme_override_fonts/font = ExtResource("4_ecso8")
+theme_override_font_sizes/font_size = 56
+text = "Back"
+alignment = 0
+
+[connection signal="pressed" from="Control/VBox_Botoes/Back" to="." method="_on_back_pressed"]
