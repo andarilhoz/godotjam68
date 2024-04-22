@@ -18,7 +18,7 @@ func show_end_game(points: int, target_points: int):
 	else:
 		SoundControl.play_game_over()
 	
-	var endgame_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	var endgame_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	endgame_tween.tween_property(panel, "scale", Vector2.ONE, .5)
 	points_label.text = "[center]" + str(points) + "/" + str(target_points) + "[/center]"
 	label_panel.text = "[center]" + ("Success" if points >= target_points else "Game over") + "[/center]"

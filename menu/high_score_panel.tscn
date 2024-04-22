@@ -194,8 +194,8 @@ process_mode = 3
 one_shot = true
 
 [connection signal="text_changed" from="Paper/TextureRect/TextEdit" to="." method="_on_text_edit_text_changed"]
-[connection signal="pressed" from="Paper/TextureRect/Send" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Paper/TextureRect/Send" to="." method="_on_send_pressed"]
-[connection signal="pressed" from="Paper/TextureRect/Next" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Paper/TextureRect/Send" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Paper/TextureRect/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Paper/TextureRect/Next" to="." method="_on_restart_pressed"]
 [connection signal="timeout" from="EscCD" to="." method="_on_esc_cd_timeout"]

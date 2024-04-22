@@ -17,7 +17,7 @@ func _ready():
 
 func _on_resume_pressed():
 	can_esc = false
-	var endgame_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	var endgame_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	endgame_tween.tween_property(panel, "scale", Vector2.ZERO, .5)
 	endgame_tween.tween_property(self, "modulate:a", 0, .5)
 	endgame_tween.finished.connect(_on_close)
@@ -27,7 +27,7 @@ func pause_game():
 	can_esc = false
 	esc_cd.start()
 	get_tree().set_deferred("paused", true)
-	var endgame_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	var endgame_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	endgame_tween.tween_property(self, "modulate:a", 1, .5)
 	endgame_tween.tween_property(panel, "scale", Vector2.ONE, .5)
 	resume.grab_focus()

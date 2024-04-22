@@ -262,7 +262,7 @@ theme_override_fonts/normal_font = ExtResource("5_g50ih")
 theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
 theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
-text = "Pick up [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color] from their respective stacks and bring them to the [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color]. If you pick up the wrong [color=black][i][b][font_size=28]material[/font_size][/b][/i][/color], you can leave it on an empty [color=red][i][b][font_size=28]workbench[/font_size][/b][/i][/color] to use later or toss it in the [color=blue][i][b][font_size=28]forge[/font_size][/b][/i][/color] to keep your workshop organized.
+text = "Pick up [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color] from their respective stacks and bring them to the [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color]. If you pick up the wrong [color=black][i][b][font_size=28]material[/font_size][/b][/i][/color], you can leave it on an empty [color=red][i][b][font_size=28]workbench[/font_size][/b][/i][/color] to use later or toss it in the [color=blue][i][b][font_size=28]trash[/font_size][/b][/i][/color] to keep your workshop organized.
 "
 
 [node name="TextureRect6" type="TextureRect" parent="Control/Panel"]
@@ -297,7 +297,7 @@ theme_override_fonts/normal_font = ExtResource("5_g50ih")
 theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
 theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
-text = "Once you've completed the [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color] requirements of the [color=white][i][b][font_size=28]recipe[/font_size][/b][/i][/color], the [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color] will take some time to prepare the [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color]. After this material preparation time, you'll need to pick up your [color=brown][i][b][font_size=28]hammer[/font_size][/b][/i][/color] and make 3 consecutive precise strikes on the glowing metal to produce an item of impeccable quality."
+text = "Once you've completed the [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color] requirements of the [color=white][i][b][font_size=28]recipe[/font_size][/b][/i][/color], the [color=red][i][b][font_size=28]forge[/font_size][/b][/i][/color] will take some time to prepare the [color=black][i][b][font_size=28]materials[/font_size][/b][/i][/color]. After this preparation time, you'll need to pick up your [color=brown][i][b][font_size=28]hammer[/font_size][/b][/i][/color] and make 3 consecutive precise strikes on the glowing metal to produce an item of impeccable quality."
 
 [node name="TextureRect7" type="TextureRect" parent="Control/Panel"]
 layout_mode = 1
@@ -404,11 +404,11 @@ theme_override_fonts/normal_font = ExtResource("5_g50ih")
 theme_override_fonts/bold_italics_font = ExtResource("8_fgy5g")
 theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
-text = "Master Tip:
+text = "[b]Master Tip:[/b]
 
-Keep an eye on the [color=aqua][i][b][font_size=28]expiration time[/font_size][/b][/i][/color]. of [color=magenta][i][b][font_size=28]orders[/font_size][/b][/i][/color].. If they expire, you'll lose [color=yellow][i][b][font_size=28]satistaction stars[/font_size][/b][/i][/color].
+Keep an eye on the [color=aqua][i][b][font_size=28]expiration time[/font_size][/b][/i][/color]. of [color=magenta][i][b][font_size=28]orders[/font_size][/b][/i][/color]. If they expire, you'll lose [color=yellow][i][b][font_size=28]satistaction stars[/font_size][/b][/i][/color].
 
-You'll also lose [color=yellow][i][b][font_size=28]satisfaction star[/font_size][/b][/i][/color]. if you deliver an item that isn't among the [color=magenta][i][b][font_size=28]active orders[/font_size][/b][/i][/color]. So, if an [color=magenta][i][b][font_size=28]order[/font_size][/b][/i][/color]. expires and you're in the middle of its production, use the [color=red][i][b][font_size=28]workbenches[/font_size][/b][/i][/color]. to store that item for a future customer who requests an item of that type."
+You'll also lose [color=yellow][i][b][font_size=28]satisfaction star[/font_size][/b][/i][/color]. If you deliver an item that isn't among the [color=magenta][i][b][font_size=28]active orders[/font_size][/b][/i][/color]. So, if an [color=magenta][i][b][font_size=28]order[/font_size][/b][/i][/color] expires and you're in the middle of its production, use the [color=red][i][b][font_size=28]workbenches[/font_size][/b][/i][/color] to store that item for a future customer who requests an item of that type."
 
 [node name="Previous" type="Button" parent="Control/Panel"]
 layout_mode = 0

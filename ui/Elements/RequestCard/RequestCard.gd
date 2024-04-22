@@ -15,7 +15,7 @@ signal on_card_expire
 signal on_card_disapear
 
 func tween_card():
-	var card_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
+	var card_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
 	card_tween.tween_property(panel, "scale", Vector2(1,1), .5)
 
 func card_disapear():
@@ -24,7 +24,7 @@ func card_disapear():
 	queue_free()
 
 func expire():
-	var card_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
+	var card_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
 	card_tween.tween_property(panel, "scale", Vector2.ZERO, .5)
 	card_tween.finished.connect(queue_free)
 	on_card_disapear.emit()

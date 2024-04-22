@@ -68,11 +68,11 @@ func show_minigame(forge_id):
 	can_press = true
 	correct_hits = 0
 	update_markers()
-	var minigame_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
+	var minigame_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
 	minigame_tween.tween_property(panel, "position", Vector2.ZERO, .5)
 	
 func shake_panel(x_intensity: float, y_intensity: float, duration: float):
-	var minigame_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_LINEAR)
+	var minigame_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_LINEAR)
 	var original_position = panel.position  # Armazena a posição original do painel.
 	
 	# Define os parâmetros do tremor.
@@ -101,7 +101,7 @@ func hide_minigame():
 	
 	current_forge = null
 	enabled = false
-	var minigame_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
+	var minigame_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
 	minigame_tween.tween_property(panel, "position", Vector2(800,0), .5)
 
 

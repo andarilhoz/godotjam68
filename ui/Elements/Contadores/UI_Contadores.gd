@@ -9,7 +9,7 @@ extends Control
 
 @onready var endgame_panel = $"../EndgamePanel"
 
-@export var level_timer_in_seconds: float = 2
+@export var level_timer_in_seconds: float = 180
 @onready var timer : Timer = $LevelTimer
 @onready var timer_label : RichTextLabel = $TimerIcon/Contador_Timer
 	
@@ -20,7 +20,7 @@ extends Control
 }
 
 static var phase_target_points : int = 25
-var points : int = 40;
+var points : int = 0;
 var hourglass_wobbling : bool = false
 var hourglass_critical_time: float = 10.0
 var hourglass_color_tween : Tween
@@ -34,7 +34,7 @@ func _ready():
 	timer.start(level_timer_in_seconds)
 	
 func coin_wobble():
-	var coin_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
+	var coin_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
 	coin_tween.tween_property(coin_icon, "scale", Vector2(1.25, 1.25), .25)
 	coin_tween.tween_property(coin_icon, "scale", Vector2(1,1), .25)
 	
@@ -42,8 +42,8 @@ func hourglass_wobble(percentage_time_left):
 	if hourglass_wobbling:
 		return
 	hourglass_wobbling = true
-	var hourglass_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK).set_loops()
-	hourglass_color_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK).set_loops()
+	var hourglass_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK).set_loops()
+	hourglass_color_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK).set_loops()
 	hourglass_tween.tween_property(hourglass_icon, "rotation_degrees", 5.0, .5)
 	hourglass_tween.tween_property(hourglass_icon, "rotation_degrees", -5.0, .5)
 	hourglass_color_tween.tween_property(timer_label, "theme_override_colors/default_color", Color.RED, .5)
@@ -55,7 +55,7 @@ func critical_timing():
 	critical_mode = true
 	SoundControl.play_hurry_loop()
 	hourglass_color_tween.kill()
-	var critical_tween = get_tree().create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK).set_loops()
+	var critical_tween = create_tween().set_process_mode(Tween.TWEEN_PROCESS_IDLE).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK).set_loops()
 	critical_tween.tween_property(timer_label, "theme_override_colors/default_color", Color.RED, .1)
 	critical_tween.tween_property(timer_label, "theme_override_colors/default_color", Color.WHITE, .1)
 	
