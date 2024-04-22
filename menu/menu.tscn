@@ -21,19 +21,22 @@ theme = ExtResource("1_6hama")
 script = ExtResource("1_wgnd0")
 
 [node name="MenuBg" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1600.0
-offset_bottom = 900.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("3_3rdut")
 expand_mode = 2
 
 [node name="Control" type="Control" parent="."]
-layout_mode = 2
-anchors_preset = 0
-offset_left = 70.0
-offset_top = 40.0
-offset_right = 1550.0
-offset_bottom = 850.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Título_Img" type="TextureRect" parent="Control"]
 material = SubResource("ShaderMaterial_ad6o8")

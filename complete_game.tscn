@@ -42,9 +42,7 @@ visible = false
 navigation_polygon = SubResource("NavigationPolygon_fekae")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(290, 53)
 scale = Vector2(8, 8)
-zoom = Vector2(0.833, 0.833)
 limit_left = -960
 limit_top = -540
 limit_right = 960
@@ -69,10 +67,13 @@ collision_mask = 2
 layer = 3
 
 [node name="TextureRect" type="TextureRect" parent="InGame_CanvasLayer"]
-offset_left = -170.0
-offset_top = -2.0
-offset_right = 622.0
-offset_bottom = 901.0
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -172.0
+offset_top = -3.0
+offset_right = 1555.78
+offset_bottom = -3.0
+grow_vertical = 2
 texture = ExtResource("9_4058q")
 expand_mode = 3
 stretch_mode = 4

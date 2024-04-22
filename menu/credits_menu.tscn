@@ -21,9 +21,12 @@ theme = ExtResource("1_imxpe")
 script = ExtResource("2_m1vcg")
 
 [node name="MenuBg" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1600.0
-offset_bottom = 900.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("3_5wjod")
 expand_mode = 2
 
@@ -37,13 +40,17 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-offset_left = 500.0
-offset_top = 100.0
-offset_right = -500.0
-offset_bottom = 636.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -440.0
+offset_right = 350.0
+offset_bottom = 160.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 15
 
 [node name="Panel - Video" type="Panel" parent="Control/VBoxContainer"]
@@ -52,9 +59,14 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gik0m")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/Panel - Video"]
-layout_mode = 0
-offset_right = 600.0
-offset_bottom = 94.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_right = 300.0
+offset_bottom = 761.0
+grow_horizontal = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Video/VBoxContainer"]
 layout_mode = 2
@@ -159,11 +171,15 @@ text = "[center]Vinicius Ferreira[/center]"
 fit_content = true
 
 [node name="VBox_Botoes" type="VBoxContainer" parent="Control"]
-layout_mode = 2
-offset_left = 70.0
-offset_top = 777.0
-offset_right = 164.0
-offset_bottom = 850.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -180.0
+offset_right = 194.0
+offset_bottom = -107.0
+grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 

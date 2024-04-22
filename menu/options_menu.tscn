@@ -22,9 +22,12 @@ theme = ExtResource("1_v04qp")
 script = ExtResource("1_rdfi1")
 
 [node name="MenuBg" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1600.0
-offset_bottom = 900.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("3_mh8my")
 expand_mode = 2
 
@@ -77,11 +80,18 @@ theme_override_font_sizes/normal_font_size = 51
 text = "Video"
 
 [node name="FullScreenBtn" type="CheckButton" parent="Control/VBoxContainer/Panel - Video"]
-layout_mode = 2
-offset_left = 150.0
-offset_top = 75.0
-offset_right = 450.0
-offset_bottom = 117.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -21.0
+offset_right = 150.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -95,10 +105,12 @@ text = "FULLSCREEN"
 
 [node name="CameraShakeBtn" type="CheckButton" parent="Control/VBoxContainer/Panel - Video"]
 layout_mode = 2
-offset_left = 150.0
+offset_left = 310.0
 offset_top = 125.0
-offset_right = 450.0
+offset_right = 610.0
 offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 0.501961, 0, 1)
@@ -129,9 +141,9 @@ text = "Audio"
 [node name="Label - Master Volume" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Audio"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-offset_left = 150.0
+offset_left = 310.0
 offset_top = 75.0
-offset_right = 450.0
+offset_right = 610.0
 offset_bottom = 125.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
@@ -140,9 +152,9 @@ text = "MASTER VOLUME"
 
 [node name="Slider - Master Volume" type="HSlider" parent="Control/VBoxContainer/Panel - Audio"]
 layout_mode = 2
-offset_left = 150.0
+offset_left = 310.0
 offset_top = 122.0
-offset_right = 450.0
+offset_right = 610.0
 offset_bottom = 138.0
 theme_override_icons/grabber_highlight = ExtResource("4_5yl3b")
 value = 100.0
@@ -150,9 +162,9 @@ value = 100.0
 [node name="Label - SFX Volume" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Audio"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-offset_left = 150.0
+offset_left = 310.0
 offset_top = 152.0
-offset_right = 450.0
+offset_right = 610.0
 offset_bottom = 202.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
@@ -161,9 +173,9 @@ text = "SFX VOLUME"
 
 [node name="Slider - SFX Volume" type="HSlider" parent="Control/VBoxContainer/Panel - Audio"]
 layout_mode = 2
-offset_left = 150.0
+offset_left = 310.0
 offset_top = 198.0
-offset_right = 450.0
+offset_right = 610.0
 offset_bottom = 214.0
 theme_override_icons/grabber_highlight = ExtResource("4_5yl3b")
 value = 70.0
@@ -171,9 +183,9 @@ value = 70.0
 [node name="Label - Music Volume" type="RichTextLabel" parent="Control/VBoxContainer/Panel - Audio"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-offset_left = 150.0
+offset_left = 310.0
 offset_top = 232.0
-offset_right = 450.0
+offset_right = 610.0
 offset_bottom = 282.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
@@ -182,19 +194,23 @@ text = "MUSIC VOLUME"
 
 [node name="Slider - Music Volume" type="HSlider" parent="Control/VBoxContainer/Panel - Audio"]
 layout_mode = 2
-offset_left = 150.0
+offset_left = 310.0
 offset_top = 278.0
-offset_right = 450.0
+offset_right = 610.0
 offset_bottom = 294.0
 theme_override_icons/grabber_highlight = ExtResource("4_5yl3b")
 value = 70.0
 
 [node name="VBox_Botoes" type="VBoxContainer" parent="Control"]
-layout_mode = 2
-offset_left = 70.0
-offset_top = 777.0
-offset_right = 164.0
-offset_bottom = 850.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -180.0
+offset_right = 194.0
+offset_bottom = -107.0
+grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 
